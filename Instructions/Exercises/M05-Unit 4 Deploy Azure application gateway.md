@@ -9,6 +9,9 @@ Exercise:
 
 En este ejercicio, usará Azure Portal para crear una puerta de enlace de aplicación. Luego, lo probará para asegurarse de que funciona correctamente.
 
+![Diagrama de la arquitectura de puerta de enlace de aplicación.](../media/4-exercise-deploy-azure-application-gateway.png)
+
+
 >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 #### Tiempo estimado: 25 minutos
@@ -94,7 +97,7 @@ En este ejercicio, aprenderá a:
     | **Configuración**   | **Valor**         |
     | ------------- | ----------------- |
     | Nombre del cliente de escucha | Agente de escucha          |
-    | Priority      | **100**           |
+    | Prioridad      | **100**           |
     | Dirección IP de front-end   | Seleccione **Público**. |
 
 1. Acepte los valores predeterminados de las demás opciones en la pestaña **Agente de escucha**.
@@ -189,4 +192,4 @@ No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, per
 
 1. Actualice el explorador varias veces y, después, debería ver las conexiones a BackendVM1 y BackendVM2.
 
-¡Enhorabuena! Ha configurado y probado una instancia de Azure Application Gateway.
+Felicidades. Ha configurado y probado una instancia de Azure Application Gateway.

@@ -12,7 +12,7 @@ Exercise:
 
 En este ejercicio, configurará una opción de Azure Front Door que agrupa dos instancias de una aplicación web que se ejecuta en diferentes regiones de Azure. Esta configuración dirige el tráfico al sitio más cercano que ejecuta la aplicación. Azure Front Door supervisa continuamente la aplicación web. Demostrará la conmutación automática por error al siguiente sitio disponible si el sitio más cercano no lo está. La configuración de red se muestra en el siguiente diagrama:
 
-![Configuración de red para Azure Front Door.](../media/front-door-environment-diagram.png)
+![Configuración de red para Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
 En este ejercicio, aprenderá a:
 

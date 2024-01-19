@@ -8,6 +8,8 @@ Exercise:
 ## Escenario del ejercicio 
 En esta unidad, configurará la conectividad entre CoreServicesVnet y ManufacturingVnet agregando emparejamientos para permitir el flujo de tráfico. 
 
+![Diagrama de emparejamiento de redes virtuales.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
+
 En esta unidad, aprenderá a:
 
 + Tarea 1: Creación de una máquina virtual para probar la configuración
@@ -150,7 +152,7 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
  
 
-¡Enhorabuena! Ha configurado correctamente la conectividad entre redes virtuales mediante la adición de emparejamientos. 
+Felicidades. Ha configurado correctamente la conectividad entre redes virtuales mediante la adición de emparejamientos. 
 
 ## Tarea 6: limpiar los recursos
 

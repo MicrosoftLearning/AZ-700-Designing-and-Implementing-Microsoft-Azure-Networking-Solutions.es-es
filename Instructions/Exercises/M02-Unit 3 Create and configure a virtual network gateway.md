@@ -9,6 +9,8 @@ Exercise:
 
 En este ejercicio, configurará una puerta de enlace de red virtual para conectar la red virtual de Contoso Core Services y la red virtual Manufacturing. 
 
+![Diagrama de puerta de enlace de red virtual.](../media/3-exercise-create-configure-local-network-gateway.png)
+
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de CoreServicesVnet y ManufacturingVnet

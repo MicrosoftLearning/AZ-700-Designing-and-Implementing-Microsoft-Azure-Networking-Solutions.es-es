@@ -9,6 +9,8 @@ Exercise:
 ## Escenario del ejercicio 
 En esta unidad, configurará la resolución de nombres DNS para Contoso Ltd. Creará una zona DNS privada llamada contoso.com, vinculará las redes virtuales para el registro y la resolución y, luego, creará dos máquinas virtuales y probará la configuración.
 
+![Diagrama de arquitectura de ISS.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
+
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de una zona DNS privada
@@ -173,4 +175,4 @@ En esta sección, creará dos máquinas virtuales de prueba para probar la confi
 1. Como alternativa, puede escribir el comando nslookup TestVM2.contoso.com y comprobar que recibe un registro de resolución de nombres correcto para VM2
  
 
-¡Enhorabuena! Ha creado una zona DNS privada, ha agregado un vínculo de resolución de nombres y registro automático y ha probado la resolución de nombres en la configuración. 
+Felicidades. Ha creado una zona DNS privada, ha agregado un vínculo de resolución de nombres y registro automático y ha probado la resolución de nombres en la configuración. 

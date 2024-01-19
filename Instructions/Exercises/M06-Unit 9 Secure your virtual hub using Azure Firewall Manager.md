@@ -9,6 +9,9 @@ Exercise:
 
 En este ejercicio, creará la red virtual de radio y un centro virtual protegido. A continuación, conectará las redes virtuales en estrella tipo hub-and-spoke y enrutará el tráfico al centro de conectividad. Luego, implementará los servidores de carga de trabajo, creará una directiva de firewall y protegerá el centro de conectividad. Por último, probará el firewall.
 
+![Diagrama de la arquitectura de red virtual con un centro de conectividad seguro.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
+
+
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ## Creación de una arquitectura en estrella tipo hub-and-spoke

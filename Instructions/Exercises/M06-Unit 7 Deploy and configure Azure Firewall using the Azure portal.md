@@ -8,6 +8,8 @@ Exercise:
 
 Al formar parte del equipo de seguridad de red de Contoso, la tarea siguiente consiste en crear reglas de firewall para permitir o denegar el acceso a determinados sitios web. Los pasos siguientes lo ayudarán a crear un grupo de recursos, una red virtual y subredes, y una máquina virtual como tareas de preparación del entorno y, luego, a implementar un firewall y una directiva de firewall, configurar rutas predeterminadas y reglas de aplicación, red y DNAT. Por último, podrá probar el firewall.
 
+![Diagrama de red virtual con arquitectura de Azure Firewall.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
+
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de un grupo de recursos
@@ -234,7 +236,7 @@ En esta tarea, agregará una regla de aplicación que permita el acceso saliente
    | ---------------------- | ----------------------------------------- |
    | Nombre                   | **App-Coll01**                            |
    | Tipo de colección de reglas   | **Aplicación**                           |
-   | Priority               | **200**                                   |
+   | Prioridad               | **200**                                   |
    | Acción de colección de reglas | **Permitir**                                 |
    | Grupo de colección de reglas  | **DefaultApplicationRuleCollectionGroup** |
    | **Sección Reglas**      |                                           |
@@ -243,7 +245,7 @@ En esta tarea, agregará una regla de aplicación que permita el acceso saliente
    | Source                 | **10.0.2.0/24**                           |
    | Protocolo               | **http,https**                            |
    | Tipo de destino       | **FQDN**                                  |
-   | Destination            | **www.google.com**                        |
+   | Destino            | **www.google.com**                        |
 
 
    ![Agregar una colección de reglas de aplicación](../media/add-an-application-rule-for-firewall.png)
@@ -266,7 +268,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
    | ---------------------- | ------------------------------------------------------------ |
    | Nombre                   | **Net-Coll01**                                               |
    | Tipo de colección de reglas   | **Network**                                                  |
-   | Priority               | **200**                                                      |
+   | Prioridad               | **200**                                                      |
    | Acción de colección de reglas | **Permitir**                                                    |
    | Grupo de colección de reglas  | **DefaultNetworkRuleCollectionGroup**                        |
    | **Sección Reglas**      |                                                              |
@@ -276,7 +278,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
    | Protocolo               | **UDP**                                                      |
    | Puertos de destino      | **53**                                                       |
    | Tipo de destino       | **Dirección IP**                                               |
-   | Destination            | **209.244.0.3, 209.244.0.4**<br />Estos son servidores DNS públicos ofrecidos por Century Link |
+   | Destino            | **209.244.0.3, 209.244.0.4**<br />Estos son servidores DNS públicos ofrecidos por Century Link |
 
 
     ![Agregar una colección de reglas de red](../media/add-a-network-rule-for-firewall.png)
@@ -299,16 +301,16 @@ En esta tarea, agregará una regla DNAT que le permita conectar un escritorio re
    | --------------------- | ------------------------------------------------------------ |
    | Nombre                  | **rdp**                                                      |
    | Tipo de colección de reglas  | **DNAT**                                                     |
-   | Priority              | **200**                                                      |
+   | Prioridad              | **200**                                                      |
    | Grupo de colección de reglas | **DefaultDnatRuleCollectionGroup**                           |
    | **Sección Reglas**     |                                                              |
    | Nombre                  | **rdp-nat**                                                  |
    | Tipo de origen           | **Dirección IP**                                               |
-   | Origen                | *                                                            |
+   | Source                | *                                                            |
    | Protocolo              | **TCP**                                                      |
    | Puertos de destino     | **3389**                                                     |
    | Tipo de destino      | **Dirección IP**                                               |
-   | Destination           | Escriba la IP pública del firewall de **fw-pip** que anotó anteriormente.<br />**Por ejemplo, 20.90.136.51** |
+   | Destino           | Escriba la IP pública del firewall de **fw-pip** que anotó anteriormente.<br />**Por ejemplo, 20.90.136.51** |
    | Dirección traducida    | Escriba la dirección IP privada de **Srv-Work** que anotó anteriormente.<br />**Por ejemplo, 10.0.2.4** |
    | Puerto traducido       | **3389**                                                     |
 

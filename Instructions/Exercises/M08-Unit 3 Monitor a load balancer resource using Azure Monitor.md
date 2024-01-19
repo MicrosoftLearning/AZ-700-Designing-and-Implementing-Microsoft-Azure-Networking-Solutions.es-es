@@ -11,7 +11,7 @@ En este ejercicio, creará un equilibrador de carga interno para la organizació
 
 En el diagrama siguiente se muestra el entorno que se va a implementar en este ejercicio.
 
-![Diagrama en el que se ilustra la arquitectura del equilibrador de carga que se creará en el ejercicio: incluye el equilibrador de carga, la red virtual, subred, la subred de Bastion y las máquinas virtuales](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![Diagrama en el que se ilustra la arquitectura del equilibrador de carga que se creará en el ejercicio: incluye el equilibrador de carga, la red virtual, subred, la subred de Bastion y las máquinas virtuales](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
  En este ejercicio, aprenderá a:
 
@@ -95,7 +95,7 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
 
    | **Configuración**           | **Valor**                |
    | --------------------- | ------------------------ |
-   | Pestaña Aspectos básicos            |                          | 
+   | Pestaña Datos básicos            |                          | 
    | Suscripción          | Seleccione la suscripción. |
    | Resource group        | **IntLB-RG**             |
    | Nombre                  | **myIntLoadBalancer**    |
@@ -248,7 +248,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Size                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria** |
    | Nombre de usuario             | **TestUser**                                 |
    | Contraseña             | **Proporcione una contraseña segura**                |
-   | Confirmación de la contraseña     | **Proporcione una contraseña segura**                |
+   | Confirmar contraseña     | **Proporcione una contraseña segura**                |
 
 1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**. 
 
@@ -259,7 +259,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Virtual network                                              | **IntLB-VNet**                |
    | Subnet                                                       | **myBackendSubnet**           |
    | Dirección IP pública                                                    | Cambiar a **Ninguno**            |
-   | Grupo de seguridad de red de NIC                                   | **Avanzadas**                  |
+   | Grupo de seguridad de red de NIC                                   | **Avanzado**                  |
    | Configuración del grupo de seguridad de red                             | Seleccione el grupo **myNSG** existente. |
    | Equilibrio de carga                                               | **Ninguno** (o desactivado)       |
 
