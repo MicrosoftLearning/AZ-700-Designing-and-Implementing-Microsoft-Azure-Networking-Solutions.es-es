@@ -9,6 +9,8 @@ Exercise:
 
 Los puntos de conexión de servicio de red virtual permiten que el acceso de la red a algunos recursos de servicio de Azure esté restringido a una subred de la red virtual. También se puede quitar el acceso de Internet a los recursos. Los puntos de conexión de servicio proporcionan a la red virtual conexión directa con los servicios de Azure compatibles, de modo que se puede usar el espacio de direcciones privadas de la red virtual para acceder a los servicios de Azure. El tráfico destinado a los recursos de Azure a través de los puntos de conexión de servicio siempre se mantiene en la red troncal de Microsoft Azure.
 
+![Diagrama de la arquitectura del punto de conexión de servicio.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
+
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de una red virtual
@@ -125,7 +127,7 @@ De forma predeterminada, todas las máquinas virtuales de una subred pueden comu
    | Intervalos de puertos de destino | *                         |
    | Protocolo                | Cualquiera                       |
    | Acción                  | Permitir                     |
-   | Priority                | 100                       |
+   | Prioridad                | 100                       |
    | Nombre                    | Allow-Storage-All (Permitir-almacenar-todo)         |
 
 1. Seleccione **Agregar**:
@@ -167,8 +169,8 @@ Cree una regla de seguridad de entrada que permita que el tráfico de Protocolo 
 
    | **Configuración**             | **Valor**                 |
    | ----------------------- | ------------------------- |
-   | Source                  | Cualquiera                       |
-   | Source port ranges      | *                         |
+   | Origen                  | Cualquiera                       |
+   | Rangos del puerto origen      | *                         |
    | Destination             | Seleccione **VirtualNetwork** |
    | Servicio                 | Personalizado                    |
    | Intervalos de puertos de destino | 3389                      |

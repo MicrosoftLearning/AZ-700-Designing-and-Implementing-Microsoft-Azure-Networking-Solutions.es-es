@@ -15,9 +15,8 @@ En este ejercicio, creará un equilibrador de carga interno para la organizació
 
 Los pasos para crear un equilibrador de carga interno son muy similares a los que ya ha aprendido en este módulo para crear un equilibrador de carga público. La principal diferencia es que con un equilibrador de carga público se accede al front-end a través de una dirección IP pública y se prueba la conectividad desde un host que se encuentra fuera de la red virtual; mientras que, con un equilibrador de carga interno, el front-end es una dirección IP privada dentro de la red virtual y se prueba la conectividad desde un host dentro de la misma red.
 
-En el diagrama siguiente se muestra el entorno que se va a implementar en este ejercicio.
 
-![diagrama de equilibrador de carga estándar interno](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![diagrama de equilibrador de carga estándar interno](../media/4-exercise-create-configure-azure-load-balancer.png)
 
  
 En este ejercicio, aprenderá a:
@@ -81,7 +80,7 @@ En esta sección, creará tres máquinas virtuales, que estarán en el mismo con
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
  > **Nota:** si es la primera vez que has abierto Cloud Shell, puede que se te pida crear una cuenta de almacenamiento. Seleccione **Crear almacenamiento**.
-2. En la barra de herramientas del panel Cloud Shell, selecciona el icono **Cargar/Descargar archivos**, en el menú desplegable, selecciona **Cargar** y carga los archivos azuredeploy.json, azuredeploy.parameters.vm1.json, azuredeploy.parameters.vm2.json y azuredeploy.parameters.vm3.json siguientes en el directorio principal de Cloud Shell uno por uno.
+2. En la barra de herramientas del panel de Cloud Shell, seleccione el icono **Cargar o descargar archivos**, en el menú desplegable, seleccione **Cargar** y cargue los siguientes archivos azuredeploy.json y azuredeploy.parameters.json en el directorio principal de Cloud Shell uno a uno.
 
 3. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
@@ -90,9 +89,7 @@ En esta sección, creará tres máquinas virtuales, que estarán en el mismo con
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
 Puede tardar entre 5 y 10 minutos en crear estas tres máquinas virtuales. No tienes que esperar hasta que se complete este trabajo, ya puedes continuar con la siguiente tarea.
@@ -117,8 +114,9 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    | Resource group        | **IntLB-RG**             |
    | Nombre                  | **myIntLoadBalancer**    |
    | Region                | **(EE. UU.) Este de EE. UU.**         |
-   | Tipo                  | **Interno**             |
    | SKU                   | **Estándar**             |
+   | Tipo                  | **Interno**             |
+   | Nivel                  | **Regional**             |
 
 
 1. Selecciona **Siguiente: Configuraciones de direcciones IP de front-end**.
@@ -161,8 +159,8 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
 
 1. Activa las casillas de las tres máquinas virtuales (**myVM1**, **myVM2** y **myVM3**) y después selecciona **Agregar**.
 
-1. Seleccione **Agregar**.
-   ![Imagen 7](../media/add-vms-backendpool.png)
+1. Seleccione **Guardar**.
+   ![Imagen 7](../media/add-vms-backendpool.png)
    
 
 ### Creación de un sondeo de estado
@@ -180,7 +178,6 @@ El equilibrador de carga supervisa el estado de la aplicación con un sondeo de 
    | Port                | **80**            |
    | Ruta de acceso                | **/**             |
    | Intervalo            | **15**            |
-   | Umbral incorrecto | **2**             |
 
 
 1. Seleccione **Agregar**.
@@ -192,7 +189,7 @@ El equilibrador de carga supervisa el estado de la aplicación con un sondeo de 
 
 Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye el tráfico a las máquinas virtuales. Defina la configuración IP del front-end para el tráfico entrante y el grupo de direcciones IP de back-end para recibir el tráfico. Los puertos de origen y de destino se definen en la regla. Aquí creará una regla de equilibrador de carga.
 
-1. En la página **Grupos back-end** del equilibrador de carga, en **Configuración**, selecciona **Reglas de equilibrio de carga** y después selecciona **Agregar**.
+1. En **Configuración**, seleccione **Reglas de equilibrio de carga** y, a continuación, seleccione **Agregar**.
 
 1. En la página **Agregar regla de equilibrio de carga**, escriba la información de la tabla siguiente.
 
@@ -201,17 +198,17 @@ Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye
    | Nombre                   | **myHTTPRule**           |
    | Versión de la dirección IP             | **IPv4**                 |
    | Dirección IP del front-end    | **LoadBalancerFrontEnd** |
+   | Grupo back-end           | **myBackendPool**        |
    | Protocolo               | **TCP**                  |
    | Port                   | **80**                   |
    | Puerto back-end           | **80**                   |
-   | Grupo back-end           | **myBackendPool**        |
    | Sondeo de mantenimiento           | **myHealthProbe**        |
    | Persistencia de la sesión    | **None**                 |
    | Tiempo de espera de inactividad (minutos) | **15**                   |
    | Dirección IP flotante            | **Deshabilitado**             |
 
 
-1. Seleccione **Agregar**.
+1. Seleccione **Guardar**.
    ![Imagen 6](../media/create-loadbalancerrule.png)
 
  
@@ -242,7 +239,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Size                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria**   |
    | Nombre de usuario             | **TestUser**                                 |
    | Contraseña             | **Proporcione una contraseña segura**                |
-   | Confirmación de la contraseña     | **Proporcione una contraseña segura**                |
+   | Confirmar contraseña     | **Proporcione una contraseña segura**                |
 
 
 1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**. 
@@ -254,9 +251,9 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Virtual network                                              | **IntLB-VNet**                |
    | Subnet                                                       | **myBackendSubnet**           |
    | Dirección IP pública                                                    | Cambiar a **Ninguno**            |
-   | Grupo de seguridad de red de NIC                                   | **Avanzadas**                  |
+   | Grupo de seguridad de red de NIC                                   | **Avanzado**                  |
    | Configuración del grupo de seguridad de red                             | Seleccione el grupo **myNSG** existente. |
-   | Opciones de equilibrio de carga                                       | **Ninguna**                      |
+   | Opciones de equilibrio de carga                                       | **Ninguno**                      |
 
 
 1. Seleccione **Revisar + crear**.

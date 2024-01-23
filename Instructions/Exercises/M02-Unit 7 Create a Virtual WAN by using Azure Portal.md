@@ -6,8 +6,10 @@ Exercise:
 
 # M02: Unidad 7 Creación de una instancia de Virtual WAN mediante Azure Portal
 
-
 En este ejercicio, creará una instancia de Virtual WAN para Contoso.
+
+![Diagrama de la arquitectura WAN de red virtual.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
+
 
 En este ejercicio, aprenderá a:
 
