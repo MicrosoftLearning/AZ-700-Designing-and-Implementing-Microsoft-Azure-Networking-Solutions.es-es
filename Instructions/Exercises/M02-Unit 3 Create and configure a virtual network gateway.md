@@ -43,6 +43,7 @@ En este ejercicio, aprenderá a:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
+ > **Nota:** Actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación. 
 
 ## Tarea 2: Creación de CoreServicesVM
 
@@ -167,7 +168,7 @@ En este ejercicio, aprenderá a:
    | Aspectos básicos          | Detalles del proyecto   | Suscripción                                | No se necesitan cambios          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Detalles de la instancia  | NOMBRE                                        | ManufacturingVnetGateway     |
-   |                 |                   | Region                                      | Oeste de Europa                  |
+   |                 |                   | Region                                      | Norte de Europa                  |
    |                 |                   | Tipo de puerta de enlace                                | VPN                          |
    |                 |                   | Tipo de VPN                                    | basada en rutas                  |
    |                 |                   | SKU                                         | VpnGw1                       |
