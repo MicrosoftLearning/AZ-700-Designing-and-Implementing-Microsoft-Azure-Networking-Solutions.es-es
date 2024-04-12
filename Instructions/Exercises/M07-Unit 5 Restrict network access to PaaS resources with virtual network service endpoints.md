@@ -6,6 +6,7 @@ Exercise:
 
 # M07: Unidad 5 Restricción del acceso a red a los recursos de PaaS mediante puntos de conexión de servicio de red virtual
 
+## Escenario del ejercicio
 
 Los puntos de conexión de servicio de red virtual permiten que el acceso de la red a algunos recursos de servicio de Azure esté restringido a una subred de la red virtual. También se puede quitar el acceso de Internet a los recursos. Los puntos de conexión de servicio proporcionan a la red virtual conexión directa con los servicios de Azure compatibles, de modo que se puede usar el espacio de direcciones privadas de la red virtual para acceder a los servicios de Azure. El tráfico destinado a los recursos de Azure a través de los puntos de conexión de servicio siempre se mantiene en la red troncal de Microsoft Azure.
 
@@ -16,7 +17,7 @@ En este ejercicio, aprenderá a:
 + Tarea 1: Creación de una red virtual
 + Tarea 2: Habilitación de un punto de conexión de servicio
 + Tarea 3: Restricción del acceso de la red a una subred
-+ Tarea 4: Incorporación de reglas de salida adicionales 
++ Tarea 4: Incorporación de reglas de salida adicionales
 + Tarea 5: Permiso de acceso a las conexiones RDP
 + Tarea 6: Restricción del acceso de la red a un recurso
 + Tarea 7: Creación de un recurso compartido de archivos en la cuenta de almacenamiento
@@ -27,7 +28,7 @@ En este ejercicio, aprenderá a:
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 35 minutos
+### Tiempo estimado: 35 minutos
 
 ## Tarea 1: Creación de una red virtual
 
@@ -62,7 +63,7 @@ En este ejercicio, aprenderá a:
    | Protección de red contra DDoS | Deshabilitado  |
    | Firewall                | Disabled  |
 
-1. Seleccione **Revisar + crear**. Una vez validado el recurso, seleccione **Crear**. 
+1. Seleccione **Revisar + crear**. Una vez validado el recurso, seleccione **Crear**.
 
 ## Tarea 2: Habilitación de un punto de conexión de servicio
 
@@ -86,18 +87,15 @@ Ahora debe tener dos subredes configuradas:
 
 ![Interfaz gráfica de usuario, texto, aplicación, Descripción generada automáticamente del correo electrónico](../media/configured-subnets.png)
 
- 
-
 ## Tarea 3: Restricción del acceso de la red a una subred
 
 De forma predeterminada, todas las máquinas virtuales de una subred pueden comunicarse con todos los recursos. Puede limitar la comunicación hacia y desde todos los recursos de una subred mediante la creación de un grupo de seguridad de red y su asociación a la subred.
 
 1. En el cuadro **Buscar en recursos, servicios y documentos** en la parte superior del portal, escriba **grupo de seguridad**. Cuando aparezca **Grupos de seguridad de red** en los resultados de la búsqueda, selecciónelo.
 
-1. En Grupos de seguridad de red, seleccione **+ Crear**. 
+1. En Grupos de seguridad de red, seleccione **+ Crear**.
 
-1. Escriba o seleccione la siguiente información: 
-
+1. Escriba o seleccione la siguiente información:
 
    | **Configuración**    | **Valor**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -132,10 +130,9 @@ De forma predeterminada, todas las máquinas virtuales de una subred pueden comu
 
 1. Seleccione **Agregar**:
 
+## Tarea 4: Incorporación de reglas de salida adicionales
 
-## Tarea 4: Incorporación de reglas de salida adicionales 
-
-Cree otra regla de seguridad de salida que deniegue la comunicación a Internet. Esta regla invalida una regla predeterminada en todos los grupos de seguridad de red que permite la comunicación saliente de Internet. 
+Cree otra regla de seguridad de salida que deniegue la comunicación a Internet. Esta regla invalida una regla predeterminada en todos los grupos de seguridad de red que permite la comunicación saliente de Internet.
 
 1. Seleccione **+Agregar** en **Reglas de seguridad de salida**.
 
@@ -200,7 +197,6 @@ Los pasos que deben seguirse para restringir el acceso de la red a los recursos 
 1. Seleccione +Crear.
 
 1. Escriba o seleccione la siguiente información y acepte los valores predeterminados restantes:
-
 
    | **Configuración**    | **Valor**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -269,7 +265,6 @@ Para probar el acceso de la red a una cuenta de almacenamiento, implemente una m
   
 1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
 
-
 ## Tarea 10: Confirmación del acceso a la cuenta de almacenamiento
 
 1. Una vez que la máquina virtual ContosoWestPrivate termine de crearse, abre la hoja de la máquina virtual seleccionando Ir al recurso. Seleccione el botón Conectar y, a continuación, seleccione RDP.
@@ -279,7 +274,6 @@ Para probar el acceso de la red a una cuenta de almacenamiento, implemente una m
 1. Seleccione **Aceptar**.
 1. Puede recibir una advertencia de certificado durante el proceso de inicio de sesión. Si recibe la advertencia, seleccione Sí o Continuar para continuar con la conexión.
 1. En la máquina virtual ContosoWestPrivate, asigna el recurso compartido de archivos de Azure a la unidad Z mediante PowerShell. Antes de ejecutar los comandos siguientes, reemplaza <storage-account-key>, <storage-account-name>  (p.ej. contosostoragewestxx) y my-file-share (p. ej., marketing) por los valores que proporción y recuperó en la tarea Crear una cuenta de almacenamiento.
-
 
 ```azurecli
 $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
@@ -296,7 +290,6 @@ El recurso compartido de archivos de Azure se ha asignado correctamente a la uni
 
  hacer ping en bing.com
 
-
 Dado que el grupo de seguridad de red asociado a la subred Private no permite el acceso de salida a Internet, no recibirá ninguna respuesta.
 
 1. Cierra la sesión de escritorio remoto en la máquina virtual ContosoPrivate.
@@ -308,12 +301,12 @@ Dado que el grupo de seguridad de red asociado a la subred Private no permite el
 1. Cuando **ContosoWestPublic** aparezca en los resultados de la búsqueda, selecciónalo.
 
 1. Sigue los pasos 1 a 6 que se indican en la tarea Confirmación del acceso a la cuenta de almacenamiento con la máquina virtual ContosoPublic VM.  
-     
+
    Después de una breve espera, recibirá un error New-PSDrive: Se denegó el acceso. El acceso se deniega porque ContosoPublic VM está implementada en la subred pública. La subred Public no tiene un punto de conexión de servicio habilitado para Azure Storage. La cuenta de almacenamiento solo permite el acceso a la red desde la subred Private, no desde la subred Public.
 
 1. Confirma que la máquina virtual no tiene conectividad de salida a Internet desde un símbolo del sistema:
 
- hacer ping en bing.com    
+ hacer ping en bing.com
 
 1. Cierra la sesión de escritorio remoto en ContosoPublic VM.
 

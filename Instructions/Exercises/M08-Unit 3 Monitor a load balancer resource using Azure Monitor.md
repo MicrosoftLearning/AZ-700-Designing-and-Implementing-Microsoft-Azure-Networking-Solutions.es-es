@@ -6,8 +6,9 @@ Exercise:
 
 # M08: Unidad 3 Supervisión de un recurso de equilibrador de carga mediante Azure Monitor
 
+## Escenario del ejercicio
 
-En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd. Después, creará un área de trabajo de Log Analytics y usará conclusiones de Azure Monitor para ver información sobre el equilibrador de carga interno. Verá la vista de dependencia funcional, verá métricas detalladas para el recurso del equilibrador de carga y verá la información de estado de los recursos para el equilibrador de carga. Por último, establecerá la configuración de diagnóstico del equilibrador de carga para enviar métricas al área de trabajo de Log Analytics que ha creado. 
+En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd. Después, creará un área de trabajo de Log Analytics y usará conclusiones de Azure Monitor para ver información sobre el equilibrador de carga interno. Verá la vista de dependencia funcional, verá métricas detalladas para el recurso del equilibrador de carga y verá la información de estado de los recursos para el equilibrador de carga. Por último, establecerá la configuración de diagnóstico del equilibrador de carga para enviar métricas al área de trabajo de Log Analytics que ha creado.
 
 En el diagrama siguiente se muestra el entorno que se va a implementar en este ejercicio.
 
@@ -30,14 +31,12 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 13: Configuración de las opciones de diagnóstico
 + Tarea 14: Limpieza de recursos
 
-
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-
 > [!Note]  
-> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo. 
+> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
 
-#### Tiempo estimado: 55 minutos
+### Tiempo estimado: 55 minutos
 
 ## Tarea 1: Creación de la red virtual
 
@@ -88,14 +87,13 @@ En esta sección, creará una red virtual y una subred.
 
 En esta sección, creará un equilibrador de carga de SKU estándar interno. La razón por la que en este ejercicio se va a crear un equilibrador de carga de SKU Estándar, en lugar de uno de SKU Básica, es que en ejercicios posteriores se necesitará una versión de SKU Estándar del equilibrador de carga.
 
-1.  En la página principal de Azure, en el cuadro de búsqueda, escriba **Load Balancer**. 
-1.  Seleccione **Crear equilibrador de carga**.
-1.  En la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el equilibrador de carga.
-    
+1. En la página principal de Azure, en el cuadro de búsqueda, escriba **Load Balancer**.
+1. Seleccione **Crear equilibrador de carga**.
+1. En la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el equilibrador de carga.
 
    | **Configuración**           | **Valor**                |
    | --------------------- | ------------------------ |
-   | Pestaña Datos básicos            |                          | 
+   | Pestaña Datos básicos            |                          |
    | Suscripción          | Seleccione la suscripción. |
    | Resource group        | **IntLB-RG**             |
    | Nombre                  | **myIntLoadBalancer**    |
@@ -108,12 +106,9 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    | Subnet                | **myBackendSubnet**      |
    | Asignación de dirección IP | **Dinámica**              |
 
-
 1. Seleccione **Revisar + crear**.
 
-
 1. Seleccione **Crear**.
-
 
 ## Tarea 3: Creación de un grupo de back-end
 
@@ -135,8 +130,6 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
 
    ![Grupo de back-end creado en el equilibrador de carga](../media/create-backendpool.png)
 
-   
-
 ## Tarea 4: Creación de un sondeo de estado
 
 El equilibrador de carga supervisa el estado de la aplicación con un sondeo de estado. El sondeo de estado agrega o quita las máquinas virtuales del equilibrador de carga a partir de su respuesta a las comprobaciones de estado. Aquí creará un sondeo de estado para supervisar el estado de las máquinas virtuales.
@@ -156,8 +149,6 @@ El equilibrador de carga supervisa el estado de la aplicación con un sondeo de 
 1. Seleccione **Agregar**.
 
    ![Sondeo de estado creado en el equilibrador de carga](../media/create-healthprobe.png)
-
-
 
 ## Tarea 5: Creación de una regla de equilibrador de carga
 
@@ -187,11 +178,12 @@ Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye
 
 ## Tarea 6: Creación de servidores de back-end
 
-
 En esta sección, creará tres máquinas virtuales para el grupo de back-end del equilibrador de carga, las agregará al grupo de back-end y, después, instalará IIS en las tres máquinas virtuales para probar el equilibrador de carga.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
+
  > **Nota:** si es la primera vez que has abierto Cloud Shell, puede que se te pida crear una cuenta de almacenamiento. Seleccione **Crear almacenamiento**.
+
 1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json**en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M08**.
 
 1. Implementa las siguientes plantillas de ARM para crear la red virtual, las subredes y las máquinas virtuales necesarias para este ejercicio:
@@ -204,7 +196,7 @@ En esta sección, creará tres máquinas virtuales para el grupo de back-end del
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
-    > **Nota:** Esto tardará varios minutos en implementarse. 
+    > **Nota:** Esto tardará varios minutos en implementarse.
 
 ## Tarea 7: Adición de máquinas virtuales al grupo de back-end
 
@@ -222,8 +214,6 @@ En esta sección, creará tres máquinas virtuales para el grupo de back-end del
 
    ![Máquinas virtuales agregadas al grupo de back-end en el equilibrador de carga](../media/add-vms-backendpool.png)
 
- 
-
 ## Tarea 8: Prueba del equilibrador de carga
 
 En esta sección, creará una máquina virtual de prueba y, después, probará el equilibrador de carga.
@@ -231,9 +221,9 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 ### Creación de la máquina virtual de prueba
 
 > [!Note]  
-> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo. 
+> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
 
-1. En la página principal de Azure, en la búsqueda global, escribe **Máquinas virtuales** y selecciona máquinas virtuales en servicios. 
+1. En la página principal de Azure, en la búsqueda global, escribe **Máquinas virtuales** y selecciona máquinas virtuales en servicios.
 
 1. Selecciona **Crear una máquina virtual**, en la pestaña **Datos básicos**, usa la información de la tabla siguiente para crear la primera máquina virtual.
 
@@ -250,7 +240,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Contraseña             | **Proporcione una contraseña segura**                |
    | Confirmar contraseña     | **Proporcione una contraseña segura**                |
 
-1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**. 
+1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**.
 
 1. En la pestaña **Redes**, use la información de la tabla siguiente para configurar las opciones de red.
 
@@ -306,7 +296,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
    ![Acceso a Áreas de trabajo de Log Analytics desde la página principal de Azure Portal](../media/log-analytics-workspace-1.png)
 
-1. Seleccione **Crear**. 
+1. Seleccione **Crear**.
 
 1. En la página **Crear área de trabajo de Log Analytics**, en la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el área de trabajo.
 
@@ -320,8 +310,6 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 1. Seleccione **Revisar y crear** y, a continuación, seleccione **Crear**.
 
    ![Lista de áreas de trabajo de Log Analytics](../media/log-analytics-workspace-2.png)
-
-
 
 ## Tarea 110: Uso de la vista de dependencias funcionales
 
@@ -337,11 +325,11 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 1. Use los botones **Acercar (+)** y **Alejar (-)** de la esquina inferior derecha de la página para acercar y alejar el diagrama de topología (también puede usar la rueda del mouse si tiene una). También puede arrastrar el diagrama de topología por la página para moverlo.
 
-1. Mantenga el puntero sobre el componente **LoadBalancerFrontEnd** en el diagrama y después sobre el componente **myBackendPool**. 
+1. Mantenga el puntero sobre el componente **LoadBalancerFrontEnd** en el diagrama y después sobre el componente **myBackendPool**.
 
 1. Observe que puede usar los vínculos de estas ventanas emergentes para ver información sobre estos componentes del equilibrador de carga y abrir sus respectivos paneles de Azure Portal.
 
-1. Para descargar una copia del archivo .SVG del diagrama de topología, selecciona **Descargar topología** y guarda el archivo en la carpeta **Descargas**. 
+1. Para descargar una copia del archivo .SVG del diagrama de topología, selecciona **Descargar topología** y guarda el archivo en la carpeta **Descargas**.
 
 1. En la esquina superior derecha, selecciona **Ver métricas** para volver a abrir el panel de métricas en el lado derecho de la pantalla.
     ![Vista de dependencia funcional de las conclusiones de red de Azure Monitor: botón Ver métricas resaltado](../media/network-insights-functional-dependency-view-3.png)
@@ -349,8 +337,6 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 1. En el panel Métricas se proporciona una vista rápida de algunas métricas clave para este recurso de equilibrador de carga, en forma de gráficos de barras y líneas.
 
     ![Conclusiones de red de Azure Monitor: vista de métricas básicas](../media/network-insights-basicmetrics-view.png)
-
- 
 
 ## Tarea 11: Visualización de métricas detalladas
 
@@ -368,11 +354,9 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 1. Mantenga el puntero sobre algunos de los puntos de datos de los gráficos y verá que los valores cambian para mostrar el valor exacto en ese momento dado.
    ![Conclusiones de red de Azure Monitor: vista Métricas detalladas: pestaña de rendimiento de datos](../media/network-insights-detailedmetrics-3.png)
 
-1. Selecciona la pestaña **Distribución del flujo** y desplázate hacia abajo en la página para ver los gráficos de la sección **Creación de flujos y tráfico de red de máquina virtual**. 
+1. Selecciona la pestaña **Distribución del flujo** y desplázate hacia abajo en la página para ver los gráficos de la sección **Creación de flujos y tráfico de red de máquina virtual**.
 
    ![Conclusiones de red de Azure Monitor: vista de métricas detalladas: gráficos de creación de máquinas virtuales y tráfico de red](../media/network-insights-detailedmetrics-4.png)
-
- 
 
 ## Tarea 12: Visualización del estado de los recursos
 
@@ -391,8 +375,6 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 1. En la página **Estado de los recursos** se identificarán los principales problemas de disponibilidad con el recurso de equilibrador de carga. Si hay algún evento en la sección **Historial de estado**, puede expandirlo para ver más detalles. Incluso puede guardar los detalles sobre el evento como un archivo PDF para su posterior revisión y para crear informes.
 
    ![Service Health>vista Estado de los recursos](../media/resource-health-2.png)
-
- 
 
 ## Tarea 13: Configuración de las opciones de diagnóstico
 
@@ -413,8 +395,6 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 1. Seleccione **Guardar**.
 
    ![Página de configuración de diagnóstico para el equilibrador de carga](../media/diagnostic-settings-2.png)
-
- 
 
 ## Tarea 14: Limpieza de recursos
 

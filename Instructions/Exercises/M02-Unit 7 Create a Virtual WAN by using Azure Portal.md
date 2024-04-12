@@ -6,10 +6,11 @@ Exercise:
 
 # M02: Unidad 7 Creación de una instancia de Virtual WAN mediante Azure Portal
 
+## Escenario del ejercicio
+
 En este ejercicio, creará una instancia de Virtual WAN para Contoso.
 
 ![Diagrama de la arquitectura WAN de red virtual.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
-
 
 En este ejercicio, aprenderá a:
 
@@ -20,7 +21,7 @@ En este ejercicio, aprenderá a:
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
+### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
 ## Tarea 1: Creación de una instancia de Virtual WAN
 
@@ -30,21 +31,19 @@ En este ejercicio, aprenderá a:
 
    ![Busca Virtual WAN en Azure Portal.](../media/search-for-virtual-wan.png)
 
- 
-
-1. En la página Red WAN virtual, seleccione **+ Crear**. 
+1. En la página Red WAN virtual, seleccione **+ Crear**.
 
 1. Dentro de la página Crear una red WAN, en la pestaña **Aspectos básicos**, rellene los campos siguientes:
 
-   - **Suscripción:** use la suscripción existente.
+   + **Suscripción:** use la suscripción existente.
 
-   - **Grupo de recursos:** ContosoResourceGroup
+   + **Grupo de recursos:** ContosoResourceGroup
 
-   - **Ubicación del grupo de recursos:** elija una ubicación del recurso en la lista desplegable. Una red WAN es un recurso global y no reside en una región determinada. Pero tendrá que seleccionar una región para administrar y ubicar el recurso de WAN que cree.
+   + **Ubicación del grupo de recursos:** elija una ubicación del recurso en la lista desplegable. Una red WAN es un recurso global y no reside en una región determinada. Pero tendrá que seleccionar una región para administrar y ubicar el recurso de WAN que cree.
 
-   - **Nombre:** ContosoVirtualWAN.
+   + **Nombre:** ContosoVirtualWAN.
 
-   - **Tipo:** Estándar. 
+   + **Tipo:** Estándar.
 
 1. Cuando haya terminado de rellenar los campos, seleccione **Revisar y crear**.
 
@@ -54,29 +53,29 @@ En este ejercicio, aprenderá a:
 
 Un centro de conectividad contiene puertas de enlace para las funcionalidades de sitio a sitio, ExpressRoute o de punto a sitio. La creación de la puerta de enlace de VPN de sitio a sitio en el centro de conectividad virtual tarda 30 minutos. Debe crear una red WAN virtual para poder crear un centro.
 
-1. Ubique la red WAN virtual que ha creado. 
+1. Ubique la red WAN virtual que ha creado.
 1. En la página Red WAN virtual, en **Conectividad**, seleccione **Centros**.
 1. En la página Centros, seleccione **+Nuevo centro de conectividad** para abrir la página Crear centro de conectividad virtual.
    ![Crear centro virtual, pestaña Datos básicos.](../media/create-vwan-hub.png)
 1. En la página Crear centro de conectividad virtual, en la pestaña **Aspectos básicos** rellene los siguientes campos:
-   - **Región:** Oeste de EE. UU.
-   - **Nombre:** ContosoVirtualWANHub-WestUS
-   - **Espacio de direcciones privadas del centro de conectividad:**  10.60.0.0/24
-   - **Capacidad del centro virtual:** 2 unidades de infraestructura de enrutamiento
-   - **Preferencia de enrutamiento del centro de conectividad**: deja por defecto
+   + **Región:** Oeste de EE. UU.
+   + **Nombre:** ContosoVirtualWANHub-WestUS
+   + **Espacio de direcciones privadas del centro de conectividad:**  10.60.0.0/24
+   + **Capacidad del centro virtual:** 2 unidades de infraestructura de enrutamiento
+   + **Preferencia de enrutamiento del centro de conectividad**: deja por defecto
 1. Seleccione **Siguiente: De sitio a sitio**.
 1. En la pestaña **De sitio a sitio**, rellene los siguientes campos:
-   - **¿Quiere crear una instancia de sitio a sitio (puerta de enlace de VPN)?:** Sí
-   - El campo **Número AS** no se puede modificar.
-   - **Unidades de escalado de puerta de enlace:** 1 unidad de escalado = 500 Mbps x 2
-   - **Preferencia de enrutamiento**: deja por defecto 
+   + **¿Quiere crear una instancia de sitio a sitio (puerta de enlace de VPN)?:** Sí
+   + El campo **Número AS** no se puede modificar.
+   + **Unidades de escalado de puerta de enlace:** 1 unidad de escalado = 500 Mbps x 2
+   + **Preferencia de enrutamiento**: deja por defecto
 1. Seleccione **Revisar y crear** para validar.
-1. Seleccione **Crear** para crear un centro de conectividad. 
-1. Pasados 30 minutos haga clic en **Actualizar** para ver el centro de conectividad en la página Centros. 
+1. Seleccione **Crear** para crear un centro de conectividad.
+1. Pasados 30 minutos haga clic en **Actualizar** para ver el centro de conectividad en la página Centros.
 
 ## Tarea 3: Conexión de una red virtual al centro de conectividad virtual
 
-1. Ubique la red WAN virtual que ha creado. 
+1. Ubique la red WAN virtual que ha creado.
 
 1. En ContosoVirtualWAN, en **Conectividad**, seleccione **Conexiones de red virtual**.
 
@@ -86,23 +85,21 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
 
 1. En Agregar conexión, use la información siguiente para crear la conexión.
 
-   - **Nombre de la conexión:** ContosoVirtualWAN-to-ResearchVNet
+   + **Nombre de la conexión:** ContosoVirtualWAN-to-ResearchVNet
 
-   - **Centros:** ContosoVirtualWANHub-WestUS
+   + **Centros:** ContosoVirtualWANHub-WestUS
 
-   - **Suscripción:** sin cambios
+   + **Suscripción:** sin cambios
 
-   - **Grupo de recursos:** ContosoResourceGroup
+   + **Grupo de recursos:** ContosoResourceGroup
 
-   - **Red virtual:** ResearchVNet
+   + **Red virtual:** ResearchVNet
 
-   - **Propagar a ninguno:** Sí
+   + **Propagar a ninguno:** Sí
 
-   - **Asociar tabla de rutas:** valor predeterminado
+   + **Asociar tabla de rutas:** valor predeterminado
 
 1. Seleccione **Crear**.
-
- 
 
 Felicidades. Ha creado una red WAN virtual y un centro de red WAN virtual, y ha conectado ResearchVNet al centro.
 

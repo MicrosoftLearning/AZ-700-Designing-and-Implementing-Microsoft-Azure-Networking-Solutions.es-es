@@ -6,11 +6,13 @@ Exercise:
 
 # M04: Unidad 6 Creación de un perfil de Traffic Manager mediante Azure Portal
 
-En este ejercicio, creará un perfil de Traffic Manager para ofrecer alta disponibilidad para la aplicación web ficticia de la organización Contoso Ltd. 
+## Escenario del ejercicio
+
+En este ejercicio, creará un perfil de Traffic Manager para ofrecer alta disponibilidad para la aplicación web ficticia de la organización Contoso Ltd.
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 35 minutos
+### Tiempo estimado: 35 minutos
 
 Creará dos instancias de una aplicación web implementada en dos regiones diferentes (Este de EE. UU. y Oeste de Europa). La región Este de EE. UU. actuará como punto de conexión principal para Traffic Manager y la región Oeste de Europa actuará como punto de conexión de conmutación por error.
 
@@ -18,7 +20,7 @@ A continuación, creará un perfil de Traffic Manager según la prioridad del pu
 
 En el diagrama siguiente se muestra el entorno aproximado que se va a implementar en este ejercicio.
 
-    ![Picture 14](../media/exercise-traffic-manager-environment-diagram.png)
+ ![Imagen 14](../media/exercise-traffic-manager-environment-diagram.png)
 
  En este ejercicio, aprenderá a:
 
@@ -27,7 +29,6 @@ En el diagrama siguiente se muestra el entorno aproximado que se va a implementa
 + Tarea 3: Adición de puntos de conexión de Traffic Manager
 + Tarea 4: Prueba del perfil de Traffic Manager
 + Tarea 5: Limpieza de recursos
-
 
 ## Tarea 1: Creación de las aplicaciones web
 
@@ -49,7 +50,6 @@ En esta sección, creará dos instancias de una aplicación web implementada en 
    | Plan de Windows     | Seleccione **Crear nuevo**  Nombre: **ContosoAppServicePlanEastUS** |
    | Plan de precios     | **Estándar S1, 100 de total de ACU, 1,75 GB de memoria**               |
 
-
 1. Selecciona la pestaña **Supervisión**.
 
 1. En la pestaña **Supervisión**, seleccione la opción **No** para **Habilitar Application Insights**.
@@ -60,7 +60,7 @@ En esta sección, creará dos instancias de una aplicación web implementada en 
 
 1. Seleccione **Crear**. Cuando la aplicación web se implementa correctamente, crea un sitio web predeterminado.
 
-1. Repita los pasos 1 a 6 anteriores para crear una segunda aplicación web. Use la misma configuración que antes, excepto la información de la tabla siguiente. 
+1. Repita los pasos 1 a 6 anteriores para crear una segunda aplicación web. Use la misma configuración que antes, excepto la información de la tabla siguiente.
 
    | **Configuración**    | **Valor**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -69,14 +69,11 @@ En esta sección, creará dos instancias de una aplicación web implementada en 
    | Region         | **Oeste de Europa**                                              |
    | Plan de Windows   | Seleccione **Crear nuevo**  Nombre: **ContosoAppServicePlanWestEurope** |
 
-
 1. En la página principal de Azure, seleccione **Todos los servicios**, en el menú de navegación izquierdo, seleccione **Web** y, a continuación, seleccione **App Services**.
 
 1. Debe ver las dos nuevas aplicaciones web en la lista.
 
    ![Imagen 19](../media/create-web-app-2.png)
-
- 
 
 ## Tarea 2: Creación de un perfil de Traffic Manager
 
@@ -100,10 +97,7 @@ Ahora creará un perfil de Traffic Manager que dirija el tráfico de los usuario
    | Resource group          | **Contoso-RG-TM1**       |
    | Ubicación del grupo de recursos | **Este de EE. UU.**              |
 
-
 1. Seleccione **Crear**.
-
- 
 
 ## Tarea 3: Adición de puntos de conexión de Traffic Manager
 
@@ -125,17 +119,15 @@ En esta sección, agregará el sitio web en el Este de EE. UU. como punto de co
    | Recurso de destino      | **ContosoWebAppEastUS (Este de EE. UU.)** |
    | Prioridad             | **1**                             |
 
-
 1. Seleccione **Agregar**.
 
-1. Repita los pasos 2 a 4 anteriores para crear el punto de conexión de conmutación por error. Use la misma configuración que antes, excepto la información de la tabla siguiente. 
+1. Repita los pasos 2 a 4 anteriores para crear el punto de conexión de conmutación por error. Use la misma configuración que antes, excepto la información de la tabla siguiente.
 
    | **Configuración**     | **Valor**                                 |
    | --------------- | ----------------------------------------- |
    | Nombre            | **myFailoverEndpoint**                    |
    | Recurso de destino | **ContosoWebAppWestEurope (Oeste de Europa)** |
    | Prioridad        | **2**                                     |
-
 
 1. Establecer una prioridad de 2 significa que el tráfico se enrutará a este punto de conexión de conmutación por error si el punto de conexión principal configurado se vuelve incorrecto.
 
@@ -144,8 +136,6 @@ En esta sección, agregará el sitio web en el Este de EE. UU. como punto de co
 1. Los dos nuevos puntos de conexión se muestran en el perfil de Traffic Manager. Observe que, transcurridos unos minutos, el **Supervisando el estado** debe cambiar a **En línea**.
 
    ![Imagen 22](../media/create-tmendpoints-2.png)
-
- 
 
 ## Tarea 4: Prueba del perfil de Traffic Manager
 
@@ -181,8 +171,7 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
 1. Compruebe que la aplicación web sigue respondiendo. Como el punto de conexión principal no estaba disponible, el tráfico se enrutó en su lugar al punto de conexión de conmutación por error para permitir que el sitio web siguiese funcionando.
 
- 
- ## Tarea 5: Limpieza de recursos
+## Tarea 5: Limpieza de recursos
 
    >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -198,5 +187,3 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
    ```
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
- 
-

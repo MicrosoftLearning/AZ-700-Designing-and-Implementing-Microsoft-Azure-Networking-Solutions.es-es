@@ -6,10 +6,11 @@ Exercise:
 
 # M06: Unidad 4 Configuración de protección de DDoS en una red virtual mediante Azure Portal
 
+## Escenario del ejercicio
+
 Como responsable del equipo de seguridad de red de Contoso, va a ejecutar un ataque DDoS ficticio en la red virtual. Los pasos siguientes lo ayudarán a crear una red virtual, configurar DDoS Protection y crear un ataque que puede observar y supervisar con datos de telemetría y métricas.
 
 ![Diagrama de arquitectura DDoS.](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
-
 
 En este ejercicio, aprenderá a:
 
@@ -24,8 +25,7 @@ En este ejercicio, aprenderá a:
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-
-#### Tiempo estimado: 40 minutos.
+### Tiempo estimado: 40 minutos.
 
 ## Tarea 1: Creación de un grupo de recursos
 
@@ -33,7 +33,7 @@ En este ejercicio, aprenderá a:
 
 1. En la página principal de Azure Portal, seleccione **Grupos de recursos**.
 
-1. Seleccione **Crear**. 
+1. Seleccione **Crear**.
 
 1. En la pestaña **Aspectos básicos**, en **Grupo de recursos**, escriba **MyResourceGroup**.
 
@@ -42,8 +42,6 @@ En este ejercicio, aprenderá a:
 1. Seleccione **Revisar + crear**.
 
 1. Seleccione **Crear**.
-
-
 
 ## Tarea 2: Crear un plan de protección contra DDoS
 
@@ -57,8 +55,6 @@ En este ejercicio, aprenderá a:
 
 1. Seleccione **Crear**.
 
- 
-
 ## Tarea 3: Habilitar DDoS Protection en una red virtual nueva
 
 Aquí habilitará DDoS en una red virtual nueva en lugar de hacerlo en una existente, por lo que primero debe crear la red virtual y, a continuación, habilitar la protección contra DDoS en ella con el plan que creó anteriormente.
@@ -69,7 +65,7 @@ Aquí habilitará DDoS en una red virtual nueva en lugar de hacerlo en una exist
 
 1. En la pestaña **Aspectos básicos**, seleccione el grupo de recursos que creó anteriormente.
 
-1. En el cuadro **Nombre**, escribe **MyVirtualNetwork** y selecciona la pestaña **Seguridad**. 
+1. En el cuadro **Nombre**, escribe **MyVirtualNetwork** y selecciona la pestaña **Seguridad**.
 
 1. En la pestaña **Seguridad**, junto a **Protección de red contra DDoS**, selecciona **Habilitar**.
 
@@ -80,8 +76,6 @@ Aquí habilitará DDoS en una red virtual nueva en lugar de hacerlo en una exist
 1. Seleccione **Revisar + crear**.
 
 1. Seleccione **Crear**.
-
- 
 
 ## Tarea 4: Configurar la telemetría de DDoS
 
@@ -119,8 +113,6 @@ Cree una IP pública y, luego, configure la telemetría en los pasos siguientes.
 
     ![Métricas creadas para la telemetría de DDoS](../media/metrics-created-for-ddos-telemetry.png)
 
- 
-
 ## Tarea 5: Configurar registros de diagnóstico de DDoS
 
 1. En la página principal de Azure, seleccione **Todos los recursos**.
@@ -129,9 +121,9 @@ Cree una IP pública y, luego, configure la telemetría en los pasos siguientes.
 
 1. En **Supervisión**, seleccione **Configuración de diagnóstico**.
 
-1. Seleccione **Agregar configuración de diagnóstico**. 
+1. Seleccione **Agregar configuración de diagnóstico**.
 
-1. En la página **Configuración de diagnóstico**, en el cuadro **Nombre de la configuración de diagnóstico**, escriba **MyDiagnosticSetting**. 
+1. En la página **Configuración de diagnóstico**, en el cuadro **Nombre de la configuración de diagnóstico**, escriba **MyDiagnosticSetting**.
 
 1. En **Detalles de la categoría**, active las tres casillas que se encuentran en **log** (registro) y la casilla **AllMetrics**.
 
@@ -142,8 +134,6 @@ Cree una IP pública y, luego, configure la telemetría en los pasos siguientes.
 1. Por lo general, ahora seleccionaría **Guardar** para guardar la configuración de diagnóstico. pero observe que esta opción aparece atenuada porque todavía no se puede completar la configuración.
 
 1. Seleccione **Descartar** y, después, **Sí**.
-
- 
 
 ## Tarea 6: Configurar alertas de DDoS
 
@@ -164,15 +154,13 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
    | Nombre de la máquina virtual  | **MyVirtualMachine**                                         |
    | Region                | Su región                                                  |
    | Opciones de disponibilidad  | **No se requiere redundancia de la infraestructura**                   |
-   | Imagen                 | **Ubuntu Server 20.04 LTS -  Gen 2** (selecciona el vínculo Configurar la generación de máquina virtual si es necesario) |                     
+   | Imagen                 | **Ubuntu Server 20.04 LTS -  Gen 2** (selecciona el vínculo Configurar la generación de máquina virtual si es necesario) |
    | Size                  | Selecciona **Ver todos los tamaños**, luego elige **B1ls** en la lista y luego, **Seleccionar****(Standard_B1ls - 1 vCPU, 0,5 GiB de memoria**) |
    | Tipo de autenticación   | **Clave pública SSH.**                                           |
    | Nombre de usuario              | **azureuser**                                                |
    | Origen de la clave pública SSH | **Generar par de claves nuevo**                                    |
    | Nombre del par de claves         | **myvirtualmachine-ssh-key**                                 |
    | Puertos de entrada públicos  | Seleccione Ninguno.                                                  |
-
-
 
 1. Seleccione **Revisar + crear**.
 
@@ -224,10 +212,7 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
 1. Seleccione **Crear regla de alertas**.
 
- 
-
 ## Tarea 7: Prueba con asociados de simulación
-
 
 1. Revisa [Directiva de pruebas de simulación de Azure DDoS](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
 
@@ -235,7 +220,7 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
 1. En la página principal de Azure Portal, seleccione **Todos los recursos**.
 
-1. En la lista de recursos, seleccione el recurso **MyPublicIPAddress** y, luego, en **Supervisión**, seleccione **Métricas**. 
+1. En la lista de recursos, seleccione el recurso **MyPublicIPAddress** y, luego, en **Supervisión**, seleccione **Métricas**.
 
 1. En el cuadro **Métrica**, seleccione **Under DDoS attack or not** (Bajo ataque DDoS o no) en la lista.
 
@@ -243,7 +228,6 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
    ![Métricas que muestra el recurso bajo ataque DDoS](../media/metrics-showing-resource-under-attack.png)
 
- 
 ## Tarea 8: Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.

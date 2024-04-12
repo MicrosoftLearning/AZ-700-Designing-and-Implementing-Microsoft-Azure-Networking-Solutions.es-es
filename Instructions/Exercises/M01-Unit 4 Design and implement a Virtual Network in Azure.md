@@ -5,8 +5,7 @@ Exercise:
 ---
 # M01: Unidad 4 Diseño e implementación de una red virtual en Azure
 
-
-## Escenario del ejercicio 
+## Escenario del ejercicio
 
 Ahora está listo para implementar redes virtuales en Azure Portal.
 
@@ -14,7 +13,7 @@ Considere la organización ficticia Contoso Ltd, que está en proceso de migrar 
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
 La red virtual **CoreServicesVnet** se implementa en la región **Este de EE. UU.**. Esta red virtual tendrá el mayor número de recursos. Tendrá conectividad con redes locales a través de una conexión VPN. Esta red tendrá servicios web, bases de datos y otros sistemas que son fundamentales para las operaciones de la empresa. Los servicios compartidos, como los controladores de dominio y DNS, también se ubicarán aquí. Se prevé una gran cantidad de crecimiento, por lo que se necesita un gran espacio de direcciones para esta red virtual.
 
@@ -22,28 +21,26 @@ La red virtual **ManufacturingVnet** se implementa en la región **Oeste de Euro
 
 La red virtual **ResearchVnet** se implementa en la región **Sudeste Asiático**, cerca de la ubicación del equipo de investigación y desarrollo de la organización. El equipo de investigación y desarrollo usa esta red virtual. El equipo tiene un conjunto de recursos pequeño y estable que no se espera que crezca. Para su trabajo, necesitan un pequeño número de direcciones IP para algunas máquinas virtuales.
 
-![Diseño de red de Contoso. On-premises 10.10.0.0/16 ResearchVNet Southeast Asia 10.40.40.0/24 CoreServicesVNet East US 10.20.0.0/16 ManufacturingVNet West Europe 10.30.0.0/16
+![Diseño de red de Contoso.
+On-premises 10.10.0.0/16 ResearchVNet Southeast Asia 10.40.40.0/24 CoreServicesVNet East US 10.20.0.0/16 ManufacturingVNet West Europe 10.30.0.0/16
 ](../media/design-implement-vnet-peering.png)
 
-
 Creará los recursos siguientes:
- 
 
-| **Virtual Network** | **Región**   | **Espacio de direcciones de red virtual** | **Subred**                | **Subred**    |
-| ------------------- | ------------ | --------------------------------- | ------------------------- | ------------- |
-| CoreServicesVnet    | Este de EE. UU.      | 10.20.0.0/16                      |                           |               |
-|                     |              |                                   | GatewaySubnet             | 10.20.0.0/27  |
-|                     |              |                                   | SharedServicesSubnet      | 10.20.10.0/24 |
-|                     |              |                                   | DatabaseSubnet            | 10.20.20.0/24 |
-|                     |              |                                   | PublicWebServiceSubnet    | 10.20.30.0/24 |
-| ManufacturingVnet   | Oeste de Europa  | 10.30.0.0/16                      |                           |               |
-|                     |              |                                   | ManufacturingSystemSubnet | 10.30.10.0/24 |
-|                     |              |                                   | SensorSubnet1             | 10.30.20.0/24 |
-|                     |              |                                   | SensorSubnet2             | 10.30.21.0/24 |
-|                     |              |                                   | SensorSubnet3             | 10.30.22.0/24 |
-| ResearchVnet        |Sudeste de Asia| 10.40.0.0/16                      |                           |               |
-|                     |              |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
-
+| **Virtual Network** | **Región**     | **Espacio de direcciones de red virtual** | **Subred**                | **Subred**    |
+| ------------------- | -------------- | --------------------------------- | ------------------------- | ------------- |
+| CoreServicesVnet    | Este de EE. UU.        | 10.20.0.0/16                      |                           |               |
+|                     |                |                                   | GatewaySubnet             | 10.20.0.0/27  |
+|                     |                |                                   | SharedServicesSubnet      | 10.20.10.0/24 |
+|                     |                |                                   | DatabaseSubnet            | 10.20.20.0/24 |
+|                     |                |                                   | PublicWebServiceSubnet    | 10.20.30.0/24 |
+| ManufacturingVnet   | Oeste de Europa    | 10.30.0.0/16                      |                           |               |
+|                     |                |                                   | ManufacturingSystemSubnet | 10.30.10.0/24 |
+|                     |                |                                   | SensorSubnet1             | 10.30.20.0/24 |
+|                     |                |                                   | SensorSubnet2             | 10.30.21.0/24 |
+|                     |                |                                   | SensorSubnet3             | 10.30.22.0/24 |
+| ResearchVnet        | Sudeste de Asia | 10.40.0.0/16                      |                           |               |
+|                     |                |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 Estas redes virtuales y subredes están estructuradas de manera que se adaptan a los recursos existentes, pero permiten el crecimiento previsto. A continuación se crearán estas redes virtuales y subredes para sentar las bases de la infraestructura de red.
 
@@ -68,14 +65,11 @@ En este ejercicio, aprenderá a:
 | **Tab**         | **Opción**                                 | **Valor**            |
 | --------------- | ------------------------------------------ | -------------------- |
 | Aspectos básicos          | Resource group                             | ContosoResourceGroup |
-|                 | Region                                     | (EE. UU.) Este de EE. UU.         |
+|                 | Región                                     | (EE. UU.) Este de EE. UU.         |
 | Etiquetas            | No se necesitan cambios                        |                      |
 | Revisar y crear | Revise la configuración y seleccione **Crear**. |                      |
 
-
 5. En Grupos de recursos, compruebe que **ContosoResourceGroup** aparece en la lista.
-
- 
 
 ## Tarea 2: Creación de la red virtual CoreServicesVnet y de las subredes
 
@@ -84,13 +78,11 @@ En este ejercicio, aprenderá a:
 3. Use la información de la tabla siguiente para crear la red virtual CoreServicesVnet.  
    Quitar o sobrescribir el espacio de direcciones IP predeterminado![Configuración de direcciones IP para la implementación de redes virtuales de Azure ](../media/default-vnet-ip-address-range-annotated.png)
 
- 
-
 | **Tab**      | **Opción**         | **Valor**            |
 | ------------ | ------------------ | -------------------- |
 | Aspectos básicos       | Grupo de recursos     | ContosoResourceGroup |
 |              | Nombre               | CoreServicesVnet     |
-|              | Region             | (EE. UU.) Este de EE. UU.         |
+|              | Región             | (EE. UU.) Este de EE. UU.         |
 | Direcciones IP | Espacio de direcciones IPv4 | 10.20.0.0/16         |
 
  4. Use la información de la tabla siguiente para crear las subredes de CoreServicesVnet.
@@ -111,20 +103,17 @@ En este ejercicio, aprenderá a:
  6. Para terminar de crear la red virtual CoreServicesVnet y las subredes asociadas, seleccione **Revisar y crear**.
 
  7. Compruebe que la configuración superó la validación y, luego, seleccione **Crear**.
- 
+
  8. Repita los pasos del 1 al 8 con cada red virtual en función de las tablas siguientes.  
 
 ## Tarea 3: Creación de la red virtual ManufacturingVnet y de las subredes
 
-
-| **Tab**      | **Opción**         | **Valor**             |
-| ------------ | ------------------ | --------------------- |
-| Aspectos básicos       | Grupo de recursos     | ContosoResourceGroup  |
-|              | Nombre               | ManufacturingVnet     |
-|              | Region             | (Europa) Oeste de Europa  |
-| Direcciones IP | Espacio de direcciones IPv4 | 10.30.0.0/16          |
-
-
+| **Tab**      | **Opción**         | **Valor**            |
+| ------------ | ------------------ | -------------------- |
+| Aspectos básicos       | Grupo de recursos     | ContosoResourceGroup |
+|              | Nombre               | ManufacturingVnet    |
+|              | Region             | (Europa) Oeste de Europa |
+| Direcciones IP | Espacio de direcciones IPv4 | 10.30.0.0/16         |
 
 | **Subred**                | **Opción**           | **Valor**                 |
 | ------------------------- | -------------------- | ------------------------- |
@@ -136,10 +125,8 @@ En este ejercicio, aprenderá a:
 |                           | Intervalo de direcciones de subred | 10.30.21.0/24             |
 | SensorSubnet3             | Nombre de subred          | SensorSubnet3             |
 |                           | Intervalo de direcciones de subred | 10.30.22.0/24             |
- 
 
 ## Tarea 4: Creación de la red virtual ResearchVnet y de las subredes
-
 
 | **Tab**      | **Opción**         | **Valor**            |
 | ------------ | ------------------ | -------------------- |
@@ -152,7 +139,6 @@ En este ejercicio, aprenderá a:
 | -------------------- | -------------------- | -------------------- |
 | ResearchSystemSubnet | Nombre de subred          | ResearchSystemSubnet |
 |                      | Intervalo de direcciones de subred | 10.40.0.0/24         |
- 
 
 ## Tarea 5: Comprobación de la creación de las redes virtuales y las subredes
 
@@ -160,7 +146,7 @@ En este ejercicio, aprenderá a:
 
 2. Compruebe que se muestran las redes virtuales CoreServicesVnet, ManufacturingVnet y ResearchVnet.
 
-3 Selecciona **CoreServicesVnet**. 
+3. Seleccione **CoreServicesVnet**.
 
 4. En CoreServicesVnet, en **Configuración**, seleccione **Subredes**.
 
@@ -170,4 +156,4 @@ En este ejercicio, aprenderá a:
 
 6. Repite los pasos del 3 al 5 con cada VNet.
 
-¡Enhorabuena! Ha creado correctamente un grupo de recursos, tres redes virtuales y sus subredes asociadas. 
+Felicidades. Ha creado correctamente un grupo de recursos, tres redes virtuales y sus subredes asociadas.

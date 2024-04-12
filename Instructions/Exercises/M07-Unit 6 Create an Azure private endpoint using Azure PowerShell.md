@@ -6,14 +6,16 @@ Exercise:
 
 # M07: Unidad 6 Creación de un punto de conexión privado de Azure mediante Azure PowerShell
 
-Comience a trabajar con Azure Private Link usando un punto de conexión privado para conectarse de forma segura a una aplicación web de Azure. Hay muchas maneras de crear puntos de conexión, como el portal, la CLI, PowerShell, etc. 
+## Escenario del ejercicio
+
+Comience a trabajar con Azure Private Link usando un punto de conexión privado para conectarse de forma segura a una aplicación web de Azure. Hay muchas maneras de crear puntos de conexión, como el portal, la CLI, PowerShell, etc.
 
 ![Diagrama de la arquitectura de un punto de conexión privado.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 45 minutos
+### Tiempo estimado: 45 minutos
 
 Creará un punto de conexión privado para una aplicación web de Azure e implementará una máquina virtual para probar la conexión privada.
 
@@ -35,13 +37,13 @@ Si decide instalar y usar PowerShell de forma local, para realizar los pasos de 
 
 En este ejercicio, aprenderá a:
 
-+ Tarea 1: Creación de un grupo de recursos
-+ Tarea 2: Creación de una red virtual y un host bastión
-+ Tarea 3: Creación de una máquina virtual de prueba
-+ Tarea 4: Creación de un punto de conexión privado
-+ Tarea 5: Configuración de la zona DNS privada
-+ Tarea 6: Prueba de la conectividad con el punto de conexión privado
-+ Tarea 7: Limpieza de recursos
+- Tarea 1: Creación de un grupo de recursos
+- Tarea 2: Creación de una red virtual y un host bastión
+- Tarea 3: Creación de una máquina virtual de prueba
+- Tarea 4: Creación de un punto de conexión privado
+- Tarea 5: Configuración de la zona DNS privada
+- Tarea 6: Prueba de la conectividad con el punto de conexión privado
+- Tarea 7: Limpieza de recursos
 
 ## Tarea 1: Creación de un grupo de recursos e implementación de la aplicación web de requisitos previos
 
@@ -52,6 +54,7 @@ Cree un grupo de recursos con [New-AzResourceGroup](https://docs.microsoft.com/e
 ```PowerShell
 New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
+
 Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
    ```powershell
@@ -59,6 +62,7 @@ Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtual
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
+
 Si recibes un error (por ejemplo, mientras examinas el estado de implementación en el portal), como “El sitio web con el nombre especificado GEN-UNIQUE ya existe”. Asegúrate de ir a los requisitos previos mencionados anteriormente con respecto a la edición de la plantilla.
 
 ## Tarea 2: Creación de una red virtual y un host bastión
@@ -74,8 +78,6 @@ Creación de una red virtual y un host bastión con:
 - New-AzPublicIpAddress
 
 - New-AzBastion
-
- 
 
 ```PowerShell
 ## Create backend subnet config. ##
@@ -138,9 +140,6 @@ $parameters3 = @{
 
 New-AzBastion @parameters3
 ```
-
-
-
 
 ## Tarea 3: Creación de una máquina virtual de prueba
 
@@ -226,9 +225,6 @@ New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM 
 
 ```
 
-
-
-
 Azure proporciona una dirección IP efímera para las instancias de Azure Virtual Machines que no tienen asignada una dirección IP pública o que se encuentran en el grupo de back-end de una instancia de Azure Load Balancer del nivel Básico. El mecanismo de dirección IP efímera proporciona una dirección IP de salida que no se puede configurar.
 
 La dirección IP efímera se deshabilita cuando se asigna una dirección IP pública a la máquina virtual o cuando se coloca la máquina virtual en el grupo de back-end de una instancia de Load Balancer Estándar con o sin reglas de salida. Si se asigna un recurso de puerta de enlace de Azure Virtual Network NAT a la subred de la máquina virtual, la dirección IP efímera se deshabilita.
@@ -242,8 +238,6 @@ En esta sección creará el punto de conexión privado y la conexión con:
 - New-AzPrivateLinkServiceConnection
 
 - New-AzPrivateEndpoint
-
- 
 
 ```PowerShell
 ## Place web app into variable. This assumes that only one web app exists in the resource group. ##
@@ -292,9 +286,6 @@ $parameters2 = @{
 
 New-AzPrivateEndpoint @parameters2 
 ```
-
-
-
 
 ## Tarea 5: Configuración de la zona DNS privada
 
@@ -370,7 +361,6 @@ $parameters4 = @{
 New-AzPrivateDnsZoneGroup @parameters4 
 ```
 
-
 ## Tarea 6: Prueba de la conectividad con el punto de conexión privado
 
 En esta sección, usarás la máquina virtual creada en el paso anterior para conectarte a la aplicación web mediante el punto de conexión privado.
@@ -407,13 +397,12 @@ En esta sección, usarás la máquina virtual creada en el paso anterior para co
   Aliases: mywebapp8675.azurewebsites.net 
   ```  
 
-
 Se devuelve la dirección IP privada **10.0.0.5** para el nombre de la aplicación web. Esta dirección se encuentra en la subred de la red virtual que creó anteriormente.
 
 1. En la conexión bastión a **myVM**, abra Internet Explorer.
 1. Escribe la dirección URL de la aplicación web, **https://&lt;nombre-aplicación-web&gt;.azurewebsites.net**
 1. Recibirás la página de aplicación web predeterminada si la aplicación no se ha implementado: ![captura de pantalla de la página en Azure que indica que un servicio de aplicaciones está en funcionamiento.](../media/web-app-default-page.png)
-1. Cierre la conexión con **myVM**. 
+1. Cierre la conexión con **myVM**.
 
 ## Tarea 7: Limpieza de recursos
 
@@ -422,8 +411,3 @@ Cuando haya terminado con el punto de conexión privado y la máquina virtual, u
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
-
-
-
-
-
