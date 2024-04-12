@@ -5,7 +5,8 @@ Exercise:
 ---
 
 # M05: Unidad 4 Implementación de una puerta de enlace de aplicación de Azure.
- 
+
+## Escenario del ejercicio
 
 En este ejercicio, usará Azure Portal para crear una puerta de enlace de aplicación. Luego, lo probará para asegurarse de que funciona correctamente.
 
@@ -14,7 +15,7 @@ En este ejercicio, usará Azure Portal para crear una puerta de enlace de aplica
 
 >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 25 minutos
+### Tiempo estimado: 25 minutos
 
 La puerta de enlace de aplicaciones dirige el tráfico web de la aplicación a recursos específicos de un grupo de back-end. Se asignan escuchas a los puertos, se crean reglas y se agregan recursos a un grupo de back-end. Para simplificar, en este artículo se usa una configuración sencilla con una dirección IP de front-end pública, una escucha básica que hospede un único sitio en la puerta de enlace de aplicaciones, una regla de enrutamiento de solicitudes básica y dos máquinas virtuales que se usan con el grupo de back-end.
 
@@ -27,13 +28,12 @@ En este ejercicio, aprenderá a:
 + Tarea 3: Agregar servidores backend al grupo de back-end
 + Tarea 4: Probar la puerta de enlace de aplicación
 
-
 ## Tarea 1: Crear una puerta de enlace de aplicación
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com/) con su cuenta de Azure.
 
 1. En cualquier página de Azure Portal, en **Buscar recursos, servicios y documentos (G+/)**, escribe “puerta de enlace de aplicación” y después selecciona **Puertas de enlace de aplicaciones** en los resultados.
-    ![Búsqueda en Azure Portal de puerta de enlace de aplicación](../media/search-application-gateway.png)    
+    ![Búsqueda en Azure Portal de puerta de enlace de aplicación](../media/search-application-gateway.png)
 
 1. En la página Puertas de enlace de aplicaciones, seleccione **+ Crear**.
 
@@ -128,7 +128,7 @@ En este ejercicio, aprenderá a:
 
 1. Revise la configuración en la pestaña **Revisar y crear**.
 
-1. Seleccione **Crear** para crear la red virtual, la dirección IP pública y la puerta de enlace de aplicación. 
+1. Seleccione **Crear** para crear la red virtual, la dirección IP pública y la puerta de enlace de aplicación.
 
 Azure puede tardar varios minutos en crear la puerta de enlace de aplicaciones. Espere hasta que finalice la implementación correctamente antes de continuar con la siguiente sección.
 
@@ -162,11 +162,11 @@ Azure puede tardar varios minutos en crear la puerta de enlace de aplicaciones. 
 
 1. En la página Editar un grupo de back-end, en **Destinos de back-end**, en **Tipo de destino**, seleccione **Máquina virtual**.
 
-1. En **Destino**, seleccione **BackendVM1**. 
+1. En **Destino**, seleccione **BackendVM1**.
 
 1. En **Tipo de destino**, selecciona **Máquina virtual**.
 
-1. En **Destino**, seleccione **BackendVM2**. 
+1. En **Destino**, seleccione **BackendVM2**.
 
    ![Agregar back-ends de destino a un grupo de back-end en Azure Portal](../media/edit-backend-pool.png)
 
@@ -178,9 +178,9 @@ Espere a que la implementación se complete antes de continuar con el paso sigui
 
 No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, pero se instaló en este ejercicio para comprobar si Azure creó correctamente la puerta de enlace de aplicación.
 
-### Use IIS para probar la puerta de enlace de aplicaciones:
+### Use IIS para probar la puerta de enlace de aplicaciones
 
-1. Busque la dirección IP pública de la puerta de enlace de aplicaciones en la página de **información general**. 
+1. Busque la dirección IP pública de la puerta de enlace de aplicaciones en la página de **información general**.
 
    ![Búsqueda de la dirección IP pública de front-end en Azure Portal ](../media/app-gw-public-ip.png)
 

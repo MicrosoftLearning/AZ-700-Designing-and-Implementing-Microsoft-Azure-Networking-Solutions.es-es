@@ -6,6 +6,8 @@ Exercise:
 
 # M06: Unidad 7 Implementación y configuración de Azure Firewall mediante Azure Portal
 
+## Escenario del ejercicio
+
 Al formar parte del equipo de seguridad de red de Contoso, la tarea siguiente consiste en crear reglas de firewall para permitir o denegar el acceso a determinados sitios web. Los pasos siguientes lo ayudarán a crear un grupo de recursos, una red virtual y subredes, y una máquina virtual como tareas de preparación del entorno y, luego, a implementar un firewall y una directiva de firewall, configurar rutas predeterminadas y reglas de aplicación, red y DNAT. Por último, podrá probar el firewall.
 
 ![Diagrama de red virtual con arquitectura de Azure Firewall.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
@@ -26,8 +28,7 @@ En este ejercicio, aprenderá a:
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-
-#### Tiempo estimado: 60 minutos.
+### Tiempo estimado: 60 minutos.
 
 ## Tarea 1: Creación de un grupo de recursos
 
@@ -37,7 +38,7 @@ En esta tarea, creará un grupo de recursos nuevo.
 
 1. En la página principal de Azure Portal, seleccione **Grupos de recursos**.
 
-1. Seleccione **Crear**. 
+1. Seleccione **Crear**.
 
 1. En la pestaña **Aspectos básicos**, en **Grupo de recursos**, escriba **Test-FW-RG**.
 
@@ -48,8 +49,6 @@ En esta tarea, creará un grupo de recursos nuevo.
 1. Seleccione **Revisar + crear**.
 
 1. Seleccione **Crear**.
-
- 
 
 ## Tarea 2: Crear una red virtual y subredes
 
@@ -65,7 +64,7 @@ En esta tarea, creará una red virtual única con dos subredes.
 
    ![Creación de una red virtual, pestaña Aspectos básicos](../media/create-vnet-basics-for-azure-firewall.png)
 
-1. Seleccione **Siguiente: Direcciones IP**. Escribe el espacio de direcciones IPv4 10.0.0.0/16 si aún no existe de forma predeterminada. 
+1. Seleccione **Siguiente: Direcciones IP**. Escribe el espacio de direcciones IPv4 10.0.0.0/16 si aún no existe de forma predeterminada.
 
 1. En **Nombre de subred**, seleccione la palabra **predeterminada**.
 
@@ -77,9 +76,8 @@ En esta tarea, creará una red virtual única con dos subredes.
 
 1. Seleccione **Agregar subred** para crear otra subred, que hospedará el servidor de carga de trabajo que creará en breve.
 
-
     ![Agregar subred](../media/add-workload-subnet.png)
-    
+
 1. En el cuadro de diálogo **Editar subred**, cambie el nombre a **Workload-SN**.
 
 1. Cambie el **Intervalo de direcciones de subred** a **10.0.2.0/24**.
@@ -89,8 +87,6 @@ En esta tarea, creará una red virtual única con dos subredes.
 1. Seleccione **Revisar + crear**.
 
 1. Seleccione **Crear**.
-
- 
 
 ## Tarea 3: Crear una máquina virtual
 
@@ -117,7 +113,6 @@ En esta tarea, creará la máquina virtual de carga de trabajo y la colocará en
 1. Cuando finalice la implementación de la máquina virtual, haga clic en **Ir al recurso**.
 
 1. En la página **Información general** de **Srv-Work**, a la derecha de la página, en **Redes**, anote la **Dirección IP privada** de esta VM (por ejemplo, **10.0.2.4**).
- 
 
 ## Tarea 4: Implementar el firewall y la directiva de firewall
 
@@ -146,7 +141,6 @@ En esta tarea, implementará el firewall en la red virtual con una directiva de 
    | Red virtual          | **Test-FW-VN**                           |
    | Dirección IP pública        | Seleccione **Agregar nuevo**.<br />Nombre: **fw-pip** |
 
-
    ![Agregar una IP pública al firewall](../media/assign-public-ip-to-firewall.png)
 
 1. Revise toda la configuración para asegurarse de que coincide con la captura de pantalla siguiente.
@@ -165,8 +159,6 @@ En esta tarea, implementará el firewall en la red virtual con una directiva de 
 
 1. Anote la dirección que aparece en **Dirección IP** de la configuración de IP pública **fw-pip** (por ejemplo, **20.90.136.51**).
 
- 
-
 ## Tarea 5: Crear una ruta predeterminada
 
 En esta tarea, en la subred Workload-SN, configurará la ruta predeterminada de salida que pase por el firewall.
@@ -184,7 +176,6 @@ En esta tarea, en la subred Workload-SN, configurará la ruta predeterminada de 
    | Region                   | Su región              |
    | Nombre                     | **Firewall-route**       |
    | Propagar las rutas de la puerta de enlace | **Sí**                  |
-
 
 1. Seleccione **Revisar + crear**.
 
@@ -216,11 +207,9 @@ En esta tarea, en la subred Workload-SN, configurará la ruta predeterminada de 
 
     ![Agregar ruta de firewall](../media/add-firewall-route.png)
 
- 
-
 ## Tarea 6: Configurar una regla de aplicación
 
-En esta tarea, agregará una regla de aplicación que permita el acceso saliente a www.google.com.
+En esta tarea, agregará una regla de aplicación que permita el acceso saliente a <www.google.com>.
 
 1. En la página principal de Azure Portal, seleccione **Todos los recursos**.
 
@@ -245,14 +234,11 @@ En esta tarea, agregará una regla de aplicación que permita el acceso saliente
    | Source                 | **10.0.2.0/24**                           |
    | Protocolo               | **http,https**                            |
    | Tipo de destino       | **FQDN**                                  |
-   | Destino            | **www.google.com**                        |
-
+   | Destino            | **<www.google.com>**                        |
 
    ![Agregar una colección de reglas de aplicación](../media/add-an-application-rule-for-firewall.png)
 
 1. Seleccione **Agregar**.
-
- 
 
 ## Tarea 7: Configurar una regla de red
 
@@ -280,12 +266,9 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
    | Tipo de destino       | **Dirección IP**                                               |
    | Destino            | **209.244.0.3, 209.244.0.4**<br />Estos son servidores DNS públicos ofrecidos por Century Link |
 
-
     ![Agregar una colección de reglas de red](../media/add-a-network-rule-for-firewall.png)
 
 1. Seleccione **Agregar**.
-
- 
 
 ## Tarea 8: Configurar una regla de NAT de destino (DNAT)
 
@@ -314,12 +297,9 @@ En esta tarea, agregará una regla DNAT que le permita conectar un escritorio re
    | Dirección traducida    | Escriba la dirección IP privada de **Srv-Work** que anotó anteriormente.<br />**Por ejemplo, 10.0.2.4** |
    | Puerto traducido       | **3389**                                                     |
 
-
-        ![Add a DNAT rule collection](../media/add-a-dnat-rule.png)
+  ![Agregar una colección de reglas DNAT](../media/add-a-dnat-rule.png)
 
 1. Seleccione **Agregar**.
-
- 
 
 ## Tarea 9: Cambiar la dirección DNS primaria y secundaria para la interfaz de red del servidor
 
@@ -345,8 +325,6 @@ Con fines de prueba en este ejercicio, en esta tarea configurará las direccione
 
 1. Reinicie la máquina virtual **Srv-Work**.
 
- 
-
 ## Tarea 10: Probar el firewall
 
 En esta tarea final, probará el firewall para comprobar que las reglas están configuradas correctamente y funcionan según lo previsto. Esta configuración le permitirá establecer una conexión a Escritorio remoto con la máquina virtual Srv-Work a través del firewall mediante la IP pública del firewall.
@@ -367,7 +345,7 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
 
 1. Seleccione **Sí** en el mensaje de certificado.
 
-1. Abra Internet Explorer y vaya a **https://www.google.com**.
+1. Abra Internet Explorer y vaya a **<https://www.google.com>**.
 
 1. En el cuadro de diálogo **Alerta de seguridad**, selecciona **Aceptar**.
 
@@ -377,14 +355,13 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
 
     ![Sesión de RDP en el servidor Srv-work, explorador en google.com](../media/remote-desktop-connection-2.png)
 
-1. Vaya a **https://www.microsoft.com**.
+1. Vaya a **<https://www.microsoft.com>**.
 
 1. El firewall debería bloquearle.
 
     ![Sesión de RDP en el servidor Srv-work, explorador bloqueado en microsoft.com](../media/remote-desktop-connection-3.png)
 
- 
-## Tarea 11: Limpieza de recursos 
+## Tarea 11: Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
