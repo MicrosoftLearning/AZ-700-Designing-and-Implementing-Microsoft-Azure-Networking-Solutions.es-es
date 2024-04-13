@@ -5,8 +5,9 @@ Exercise:
 ---
 # M01: Unidad 8 Conexión de dos redes virtuales de Azure mediante el emparejamiento de red virtual global
 
-## Escenario del ejercicio 
-En esta unidad, configurará la conectividad entre CoreServicesVnet y ManufacturingVnet agregando emparejamientos para permitir el flujo de tráfico. 
+## Escenario del ejercicio
+
+En esta unidad, configurará la conectividad entre CoreServicesVnet y ManufacturingVnet agregando emparejamientos para permitir el flujo de tráfico.
 
 ![Diagrama de emparejamiento de redes virtuales.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
@@ -21,7 +22,7 @@ En esta unidad, aprenderá a:
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
 ## Tarea 1: Creación de una máquina virtual para probar la configuración
 
@@ -80,9 +81,7 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 1. En TestVM1, abra un símbolo del sistema de PowerShell y ejecute el siguiente comando: ipconfig.
 
-1. Anote la dirección IPv4. 
-
- 
+1. Anote la dirección IPv4.
 
 ## Tarea 3: Prueba de la conexión entre las máquinas virtuales
 
@@ -94,10 +93,7 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. La conexión de prueba producirá un error y verá un resultado similar al siguiente: ![ventana de PowerShell con Test-NetConnection 10.20.20.4, puerto 3389 que muestra un error ](../media/test-netconnection-fail.png)
-
- 
 
 ## Tarea 4: Creación de emparejamientos de VNet entre CoreServicesVnet y ManufacturingVnet
 
@@ -135,24 +131,19 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 1. En Redes virtuales, seleccione **ManufacturingVnet** y compruebe que el emparejamiento **ManufacturingVnet-to-CoreServicesVnet** aparece en la lista.
 
- 
-
 ## Tarea 5: Prueba de la conexión entre las máquinas virtuales
 
 1. En ManufacturingVM, abra un símbolo del sistema de PowerShell.
 
-1. Use el siguiente comando para comprobar que ahora hay una conexión a TestVM1 en CoreServicesVnet. 
+1. Use el siguiente comando para comprobar que ahora hay una conexión a TestVM1 en CoreServicesVnet.
 
    ```powershell
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. La conexión de prueba se realizará correctamente y verá un resultado similar al siguiente: ![Ventana de PowerShell con Test-NetConnection 10.20.20.4, puerto 3389 que muestra que la prueba de TCP se realizó correctamente: true](../media/test-connection-succeeded.png)
 
- 
-
-Felicidades. Ha configurado correctamente la conectividad entre redes virtuales mediante la adición de emparejamientos. 
+Felicidades. Ha configurado correctamente la conectividad entre redes virtuales mediante la adición de emparejamientos.
 
 ## Tarea 6: limpiar los recursos
 

@@ -7,18 +7,16 @@ Exercise:
 
 # M04: Unidad 4 Creación y configuración de un equilibrador de carga de Azure.
 
-En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd. 
+En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd.
 
 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-#### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
+### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
 Los pasos para crear un equilibrador de carga interno son muy similares a los que ya ha aprendido en este módulo para crear un equilibrador de carga público. La principal diferencia es que con un equilibrador de carga público se accede al front-end a través de una dirección IP pública y se prueba la conectividad desde un host que se encuentra fuera de la red virtual; mientras que, con un equilibrador de carga interno, el front-end es una dirección IP privada dentro de la red virtual y se prueba la conectividad desde un host dentro de la misma red.
 
-
 ![diagrama de equilibrador de carga estándar interno](../media/4-exercise-create-configure-azure-load-balancer.png)
 
- 
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de la red virtual
@@ -30,7 +28,7 @@ En este ejercicio, aprenderá a:
 ## Tarea 1: Creación de la red virtual
 
 En esta sección, creará una red virtual y una subred.
-   
+
 1. Inicie sesión en el Portal de Azure.
 
 2. En la página principal de Azure Portal, vaya a la barra Búsqueda global, busque **Redes virtuales** y seleccione Redes virtuales en servicios.  ![Resultados de la barra Búsqueda global de la página principal de Azure Portal para red virtual.](../media/global-search-bar.PNG)
@@ -45,7 +43,6 @@ En esta sección, creará una red virtual y una subred.
    | Resource group | Seleccione **Crear nuevo** Nombre: **IntLB-RG** |
    | Nombre           | **IntLB-VNet**                             |
    | Region         | **(EE. UU.) Este de EE. UU.**                           |
-
 
 5. Seleccione **Siguiente: Direcciones IP**.
 
@@ -69,7 +66,6 @@ En esta sección, creará una red virtual y una subred.
     | Espacio de direcciones de AzureBastionSubnet | **10.1.1.0/26**                               |
     | Dirección IP pública                 | Seleccione **Crear nuevo** Nombre: **myBastionIP** |
 
-
 13. Seleccione **Revisar + crear**.
 
 14. Seleccione **Crear**.
@@ -79,7 +75,9 @@ En esta sección, creará una red virtual y una subred.
 En esta sección, creará tres máquinas virtuales, que estarán en el mismo conjunto de disponibilidad, para el grupo de back-end del equilibrador de carga, las agregará al grupo de back-end y, después, instalará IIS en las tres máquinas virtuales para probar el equilibrador de carga.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
+
  > **Nota:** si es la primera vez que has abierto Cloud Shell, puede que se te pida crear una cuenta de almacenamiento. Seleccione **Crear almacenamiento**.
+
 2. En la barra de herramientas del panel de Cloud Shell, seleccione el icono **Cargar o descargar archivos**, en el menú desplegable, seleccione **Cargar** y cargue los siguientes archivos azuredeploy.json y azuredeploy.parameters.json en el directorio principal de Cloud Shell uno a uno.
 
 3. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
@@ -118,18 +116,16 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    | Tipo                  | **Interno**             |
    | Nivel                  | **Regional**             |
 
-
 1. Selecciona **Siguiente: Configuraciones de direcciones IP de front-end**.
 1. Selecciona Agregar una IP de front-end.
 1. En el panel **Agregar dirección IP de front-end**, escribe la información de la tabla siguiente y selecciona **Agregar**.
- 
+
    | **Configuración**     | **Valor**                |
    | --------------- | ------------------------ |
    | Nombre            | **LoadBalancerFrontEnd** |
    | Virtual network | **IntLB-VNet**           |
    | Subnet          | **myFrontEndSubnet**     |
    | Asignación      | **Dinámica**              |
-
 
 1. Seleccione **Revisar + crear**.
 
@@ -154,14 +150,12 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
    | Nombre            | **myBackendPool**    |
    | Virtual network | **IntLB-VNet**       |
 
-
 1. En **Máquinas virtuales**, selecciona **Agregar**.
 
 1. Activa las casillas de las tres máquinas virtuales (**myVM1**, **myVM2** y **myVM3**) y después selecciona **Agregar**.
 
 1. Seleccione **Guardar**.
    ![Imagen 7](../media/add-vms-backendpool.png)
-   
 
 ### Creación de un sondeo de estado
 
@@ -179,11 +173,8 @@ El equilibrador de carga supervisa el estado de la aplicación con un sondeo de 
    | Ruta de acceso                | **/**             |
    | Intervalo            | **15**            |
 
-
 1. Seleccione **Agregar**.
    ![Imagen 5](../media/create-healthprobe.png)
-
- 
 
 ### Creación de una regla de equilibrador de carga
 
@@ -207,16 +198,8 @@ Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye
    | Tiempo de espera de inactividad (minutos) | **15**                   |
    | Dirección IP flotante            | **Deshabilitado**             |
 
-
 1. Seleccione **Guardar**.
    ![Imagen 6](../media/create-loadbalancerrule.png)
-
- 
-
-
- 
-
- 
 
 ## Tarea 5: Prueba del equilibrador de carga
 
@@ -241,8 +224,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Contraseña             | **Proporcione una contraseña segura**                |
    | Confirmar contraseña     | **Proporcione una contraseña segura**                |
 
-
-1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**. 
+1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**.
 
 1. En la pestaña **Redes**, use la información de la tabla siguiente para configurar las opciones de red.
 
@@ -254,7 +236,6 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Grupo de seguridad de red de NIC                                   | **Avanzado**                  |
    | Configuración del grupo de seguridad de red                             | Seleccione el grupo **myNSG** existente. |
    | Opciones de equilibrio de carga                                       | **Ninguno**                      |
-
 
 1. Seleccione **Revisar + crear**.
 

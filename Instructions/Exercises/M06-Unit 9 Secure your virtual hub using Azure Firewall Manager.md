@@ -7,6 +7,8 @@ Exercise:
 
 # M06: Unidad 9 Protección de un centro virtual mediante Azure Firewall Manager
 
+## Escenario del ejercicio
+
 En este ejercicio, creará la red virtual de radio y un centro virtual protegido. A continuación, conectará las redes virtuales en estrella tipo hub-and-spoke y enrutará el tráfico al centro de conectividad. Luego, implementará los servidores de carga de trabajo, creará una directiva de firewall y protegerá el centro de conectividad. Por último, probará el firewall.
 
 ![Diagrama de la arquitectura de red virtual con un centro de conectividad seguro.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
@@ -31,11 +33,11 @@ En este ejercicio, aprenderá a:
 + Tarea 9: Probar la regla de red
 + Tarea 10: Limpiar los recursos
 
-#### Tiempo estimado: 35 minutos
+### Tiempo estimado: 35 minutos
 
 ## Tarea 1: Crear dos redes virtuales de radio y subredes
 
-En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales con una subred que hospedará los servidores de carga de trabajo. 
+En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales con una subred que hospedará los servidores de carga de trabajo.
 
 1. En la página de inicio de Azure Portal, en el cuadro de búsqueda, escribe **red virtual** y selecciona **Red virtual**cuando aparezca.
 2. Seleccione **Crear**.
@@ -43,7 +45,7 @@ En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales 
 4. En **Nombre**, escriba **Spoke-01**.
 5. En **Región**, seleccione su región.
 6. Seleccione **Siguiente: Direcciones IP**.
-7. En **Espacio de direcciones IPv4**, escriba **10.0.0.0/16**. 
+7. En **Espacio de direcciones IPv4**, escriba **10.0.0.0/16**.
 8. **Elimine** cualquier otro espacio de direcciones que aparezca aquí, como **10.1.0.0/16**.
 9. En **Nombre de subred**, seleccione la palabra **predeterminada**.
 10. En el cuadro de diálogo **Editar subred**, cambie el nombre a **Workload-01-SN**.
@@ -54,11 +56,11 @@ En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales 
 
 Repita los pasos 1 a 14 anteriores para crear otra red virtual y subred similares con la información siguiente:
 
-- Grupo de recursos: **fw-manager-rg** (seleccione el existente)
-- Nombre: **Spoke-02**
-- Espacio de direcciones: **10.1.0.0/16** (elimine cualquier otro espacio de direcciones que aparezcan)
-- Nombre de subred: **Workload-02-SN**
-- Intervalo de direcciones de subred: **10.1.1.0/24**
++ Grupo de recursos: **fw-manager-rg** (seleccione el existente)
++ Nombre: **Spoke-02**
++ Espacio de direcciones: **10.1.0.0/16** (elimine cualquier otro espacio de direcciones que aparezcan)
++ Nombre de subred: **Workload-02-SN**
++ Intervalo de direcciones de subred: **10.1.1.0/24**
 
 ## Tarea 2: Crear el centro virtual protegido
 
@@ -93,7 +95,7 @@ En esta tarea, creará el centro virtual protegido con Firewall Manager.
 
 14. Seleccione **Crear**.
 
-    > **[!NOTE]** 
+    > **[!NOTE]**
     >
     > Esta implementación puede tardar hasta 30 minutos en completarse.
 
@@ -131,8 +133,6 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 ![Agregar conexión en estrella tipo hub-and-spoke a la red Virtual WAN - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
 
- 
-
 ## Tarea 4: Implementar los servidores
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
@@ -155,13 +155,12 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 1. En la página **Información general** de **Srv-workload-02**, en el panel de la derecha, en la sección **Redes**, anote la **Dirección IP privada** (por ejemplo, **10.1.1.4**).
 
-
 ## Tarea 5: Crear una directiva de firewall y proteger el centro de conectividad
 
 En esta tarea, primero creará la directiva de firewall y, a continuación, protegerá el centro de conectividad. La directiva de firewall definirá colecciones de reglas para dirigir el tráfico en uno o varios centros virtuales protegidos.
 
 1. En la página principal de Azure Portal, seleccione **Firewall Manager**.
-   - Si el icono de Firewall Manager no aparece en la página principal, seleccione **Todos los servicios**. Luego, en el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
+   + Si el icono de Firewall Manager no aparece en la página principal, seleccione **Todos los servicios**. Luego, en el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
 
 1. En **Firewall Manager**, selecciona **Ver las directivas de Azure Firewall**.
 
@@ -274,7 +273,7 @@ En esta tarea, primero creará la directiva de firewall y, a continuación, prot
 En esta tarea, asociará la directiva de firewall con el centro virtual.
 
 1. En la página principal de Azure Portal, seleccione **Firewall Manager**.
-   - Si el icono de Firewall Manager no aparece en la página principal, seleccione **Todos los servicios**. Luego, en el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
+   + Si el icono de Firewall Manager no aparece en la página principal, seleccione **Todos los servicios**. Luego, en el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
 1. En **Firewall Manager**, en **Seguridad**, selecciona **Directivas de Azure Firewall**.
 1. Active la casilla correspondiente a **Policy-01**.
 1. Seleccione **Administrar asociaciones&gt;Asociar centros**.
@@ -283,8 +282,6 @@ En esta tarea, asociará la directiva de firewall con el centro virtual.
 1. Una vez que se adjunte la directiva, seleccione **Actualizar**. Debe aparecer la asociación.
 
 ![Mostrar directiva de firewall asociada en el centro de conectividad](../media/associate-firewall-policy-with-hub-end.png)
-
- 
 
 ## Tarea 7: Enrutar el tráfico al centro de conectividad
 
@@ -295,10 +292,9 @@ En esta tarea, se asegurará de que el tráfico se enruta a través del firewall
 1. En **Ajustes**, seleccione **Configuración de seguridad**.
 1. En **Tráfico de Internet**, selecciona **Azure Firewall**.
 1. En **Tráfico privado**, selecciona **Enviar a través de Azure Firewall**.
-1. Seleccione **Guardar**. 
+1. Seleccione **Guardar**.
 1. Esta operación tarda unos minutos en completarse.
 1. Una vez que se complete la configuración, asegúrese de que en **TRÁFICO DE INTERNET** y **TRÁFICO PRIVADO** diga **Protegido por Azure Firewall** para ambas conexiones en estrella tipo hub-and-spoke.
-
 
 ## Tarea 8: Probar la regla de aplicación
 
@@ -326,7 +322,7 @@ En esta tarea, probará la regla de aplicación para confirmar que funciona seg�
 
 1. Abra Internet Explorer y seleccione **Aceptar** en el cuadro de diálogo **Configurar Internet Explorer 11**.
 
-1. Ve a **https://****www.microsoft.com**.
+1. Vaya a **https://** **<www.microsoft.com>**.
 
 1. En el cuadro de diálogo **Alerta de seguridad**, selecciona **Aceptar**.
 
@@ -336,7 +332,7 @@ En esta tarea, probará la regla de aplicación para confirmar que funciona seg�
 
     ![Sesión RDP que explora microsoft.com](../media/microsoft-home-page.png)
 
-1. Ve a **https://****www.google.com**.
+1. Vaya a **https://** **<www.google.com>**.
 
 1. El firewall debería bloquearle.
 
@@ -364,8 +360,7 @@ En esta tarea, probará la regla de aplicación para confirmar que funciona seg�
 
 1. Cierre ambas sesiones RDP para desconectarlas.
 
-
-## Tarea 10: Limpiar los recursos 
+## Tarea 10: Limpiar los recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
