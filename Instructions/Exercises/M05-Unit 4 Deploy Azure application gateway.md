@@ -57,7 +57,11 @@ En este ejercicio, aprenderá a:
    | **SUBREDES**       |                                    |
    | Nombre de subred       | Cambie el **valor predeterminado** a **AGSubnet**. |
    | Intervalo de direcciones     | 10.0.0.0/24                        |
+   | Nombre de subred       | BackendSubnet                      |
+   | Intervalo de direcciones     | 10.0.1.0/24                        |
 
+
+>**Nota**: Si la interfaz de usuario no tiene la opción de agregar subredes adicionales, completa los pasos y agrega la subred de back-end después de crear la puerta de enlace. 
 
 1. Seleccione **Aceptar** para volver a la pestaña Aspectos básicos de Crear puerta de enlace de aplicaciones.
 
@@ -88,14 +92,13 @@ En este ejercicio, aprenderá a:
 
 1. En el cuadro **Nombre de regla**, escribe **RoutingRule**.
 
-1. En **Prioridad**, escribe **100**. 
-
 1. En la pestaña **Cliente de escucha**, escriba o seleccione la siguiente información:
 
     | **Configuración**   | **Valor**         |
     | ------------- | ----------------- |
     | Nombre del cliente de escucha | Agente de escucha          |
-    | Dirección IP de front-end   | Selecciona **IPv4 público** |
+    | Prioridad      | **100**           |
+    | Dirección IP de front-end   | Seleccione **Público**. |
 
 1. Acepte los valores predeterminados de las demás opciones en la pestaña **Agente de escucha**.
 
@@ -127,18 +130,7 @@ En este ejercicio, aprenderá a:
 
 1. Seleccione **Crear** para crear la red virtual, la dirección IP pública y la puerta de enlace de aplicación.
 
-1. Azure puede tardar varios minutos en crear la puerta de enlace de aplicaciones. Espera hasta que la implementación finalice correctamente.
-
-### Incorporación de una subred para servidores backend
-
-1. Busca y selecciona la **ContosoVNet**. Comprueba que se ha creado la **AGSubnet**. 
-
-1. Para crear la **BackendSubnet**, selecciona **Configuracion** y **Subredes**. Asegúrate de **agregar** la subred al finalizar.
-   
-   | **Configuración**       | **Valor**                          |
-   | ----------------- | ---------------------------------- |
-   | Nombre de subred       | BackendSubnet                      |
-   | Intervalo de direcciones     | 10.0.1.0/24                        |
+Azure puede tardar varios minutos en crear la puerta de enlace de aplicaciones. Espere hasta que finalice la implementación correctamente antes de continuar con la siguiente sección.
 
 ## Tarea 2: Creación de máquinas virtuales
 
@@ -147,20 +139,18 @@ En este ejercicio, aprenderá a:
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud.
       
-1. En la barra de herramientas del panel Cloud Shell, selecciona **Administrar archivos** y después **Cargar**. Carga los siguientes archivos: **backend.json**, **backend.parameters.json**, y **install-iis.ps1**. Los archivos están disponibles para su descarga desde el repositorio, carpeta **\Allfiles\Exercises\M05**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **backend.json** y **backend.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M05**.
 
 1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
->**Nota**: Se le pedirá que proporcione una contraseña de administrador. 
+>**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
-
->**Nota**: Dedica tiempo a revisar el archivo **backend.json**. Hay dos máquinas virtuales que se implementan. Además, IIS se instala en cada máquina. Esta operación puede tardar unos minutos. 
-
+  
 1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
 
 1. Compruebe que se han creado ambas máquinas virtuales.

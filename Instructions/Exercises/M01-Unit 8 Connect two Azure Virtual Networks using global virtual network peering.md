@@ -3,6 +3,7 @@ Exercise:
   title: 'M01: Unidad 8 Conexión de dos redes virtuales de Azure mediante el emparejamiento de red virtual global'
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
+
 # M01: Unidad 8 Conexión de dos redes virtuales de Azure mediante el emparejamiento de red virtual global
 
 ## Escenario del ejercicio
@@ -30,8 +31,10 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 ### Creación de ManufacturingVM
 
-1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
-  > **Nota:** si es la primera vez que has abierto Cloud Shell, puede que se te pida crear una cuenta de almacenamiento. Seleccione **Crear almacenamiento**.
+1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
+    + Seleccione **PowerShell**.
+    + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
+    + Espera a que se cree el terminal y se muestre una solicitud. 
 
 1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **ManufacturingVMazuredeploy.json** y **ManufacturingVMazuredeploy.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M01**.
 
@@ -57,7 +60,7 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 1. En ManufacturingVM, selecciona **Conectar &gt; RDP**.
 
-1. En ManufacturingVM | Conectar, selecciona **Descargar archivo RDP**.
+1. En ManufacturingVM \| Conectar, selecciona **Descargar archivo RDP**.
 
 1. Guarde el archivo RDP en el escritorio.
 
@@ -69,7 +72,7 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 1. En TestVM1, selecciona **Conectar &gt; RDP**.
 
-1. En TestVM1 | Conectar, selecciona **Descargar archivo RDP**.
+1. En TestVM1 \| Conectar, selecciona **Descargar archivo RDP**.
 
 1. Guarde el archivo RDP en el escritorio.
 
@@ -100,34 +103,34 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 1. En la página principal de Azure, seleccione **Redes virtuales** y, luego, **CoreServicesVnet**.
 
 1. En CoreServicesVnet, en **Configuración**, seleccione **Emparejamientos**.
-   ![Captura de pantalla de la configuración de emparejamiento de VNet de servicios principales ](../media/create-peering-on-coreservicesvnet.png)
+   ![Captura de pantalla de la configuración de emparejamiento de VNET de servicios principales ](../media/create-peering-on-coreservicesvnet.png)
 
-1. En CoreServicesVnet | Emparejamientos, seleccione **+ Agregar**.
+1. En CoreServicesVnet \| Emparejamientos, seleccione **+ Agregar**.
 
 1. Use la información de la tabla siguiente para crear el emparejamiento.
 
-| **Sección**                          | **Opción**                                    | **Valor**                             |
-| ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-| Esta red virtual                 |                                               |                                       |
-|                                      | Nombre del vínculo de emparejamiento                             | CoreServicesVnet-to-ManufacturingVnet |
-|                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
-|                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
-|                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
-| Red virtual remota               |                                               |                                       |
-|                                      | Nombre del vínculo de emparejamiento                             | ManufacturingVnet-to-CoreServicesVnet |
-|                                      | Modelo de implementación de red virtual              | Resource Manager                      |
-|                                      | Conozco mi Id. de recurso                         | No seleccionado                          |
-|                                      | Subscription                                  | Selecciona la suscripción proporcionada      |
-|                                      | Virtual network                               | ManufacturingVnet                     |
-|                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
-|                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
-|                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
-| Revise la configuración y seleccione Agregar. |                                               |                                       |
-|                                      |                                               |                                       |
+   | **Sección**                          | **Opción**                                    | **Valor**                             |
+   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
+   | Esta red virtual                 |                                               |                                       |
+   |                                      | Nombre del vínculo de emparejamiento                             | CoreServicesVnet-to-ManufacturingVnet |
+   |                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
+   |                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
+   |                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
+   | Red virtual remota               |                                               |                                       |
+   |                                      | Nombre del vínculo de emparejamiento                             | ManufacturingVnet-to-CoreServicesVnet |
+   |                                      | Modelo de implementación de red virtual              | Resource Manager                      |
+   |                                      | Conozco mi Id. de recurso                         | No seleccionado                          |
+   |                                      | Subscription                                  | Selecciona la suscripción proporcionada      |
+   |                                      | Virtual network                               | ManufacturingVnet                     |
+   |                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
+   |                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
+   |                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
+   | Revise la configuración y seleccione Agregar. |                                               |                                       |
+   |                                      |                                               |                                       |
 
- >**Nota**: Si no tienes una suscripción de MOC, usa la suscripción que has estado usando anteriormente. Es solo un nombre.
+   >**Nota**: Si no tienes una suscripción de MOC, usa la suscripción que has estado usando anteriormente.
 
-1. En CoreServicesVnet | Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**.
+1. En CoreServicesVnet \| Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**.
 
 1. En Redes virtuales, seleccione **ManufacturingVnet** y compruebe que el emparejamiento **ManufacturingVnet-to-CoreServicesVnet** aparece en la lista.
 
@@ -157,4 +160,4 @@ Felicidades. Ha configurado correctamente la conectividad entre redes virtuales 
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.

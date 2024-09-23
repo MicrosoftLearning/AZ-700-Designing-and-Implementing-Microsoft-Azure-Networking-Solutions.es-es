@@ -74,9 +74,10 @@ En esta sección, creará una red virtual y una subred.
 
 En esta sección, creará tres máquinas virtuales, que estarán en el mismo conjunto de disponibilidad, para el grupo de back-end del equilibrador de carga, las agregará al grupo de back-end y, después, instalará IIS en las tres máquinas virtuales para probar el equilibrador de carga.
 
-1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
-
- > **Nota:** si es la primera vez que has abierto Cloud Shell, puede que se te pida crear una cuenta de almacenamiento. Seleccione **Crear almacenamiento**.
+1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
+    + Seleccione **PowerShell**.
+    + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
+    + Espera a que se cree el terminal y se muestre una solicitud. 
 
 2. En la barra de herramientas del panel de Cloud Shell, seleccione el icono **Cargar o descargar archivos**, en el menú desplegable, seleccione **Cargar** y cargue los siguientes archivos azuredeploy.json y azuredeploy.parameters.json en el directorio principal de Cloud Shell uno a uno.
 
