@@ -125,9 +125,9 @@ En este ejercicio, aprenderá a:
 
 1. Revise la configuración en la pestaña **Revisar y crear**.
 
-1. Seleccione **Crear** para crear la red virtual, la dirección IP pública y la puerta de enlace de aplicación.
+1. Selecciona **Crear** para crear la red virtual, la dirección IP pública y la puerta de enlace de aplicación.
 
-1. Azure puede tardar varios minutos en crear la puerta de enlace de aplicaciones. Espera hasta que la implementación finalice correctamente.
+1. Azure puede tardar varios minutos en crear la puerta de enlace de aplicación. Espera hasta que la implementación finalice correctamente.
 
 ### Incorporación de una subred para servidores backend
 
@@ -143,13 +143,13 @@ En este ejercicio, aprenderá a:
 ## Tarea 2: Creación de máquinas virtuales
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud.
       
 1. En la barra de herramientas del panel Cloud Shell, selecciona **Administrar archivos** y después **Cargar**. Carga los siguientes archivos: **backend.json**, **backend.parameters.json**, y **install-iis.ps1**. Los archivos están disponibles para su descarga desde el repositorio, carpeta **\Allfiles\Exercises\M05**.
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
 >**Nota**: Se le pedirá que proporcione una contraseña de administrador. 
 
@@ -158,34 +158,52 @@ En este ejercicio, aprenderá a:
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
+>**Nota**: Dedica tiempo a revisar el archivo **backend.json**. Hay dos máquinas virtuales que se implementan. Esta operación puede tardar unos minutos. 
 
->**Nota**: Dedica tiempo a revisar el archivo **backend.json**. Hay dos máquinas virtuales que se implementan. Además, IIS se instala en cada máquina. Esta operación puede tardar unos minutos. 
+1. El comando debe completarse correctamente y enumerar **BackendVM1** y **BackendVM2**.
 
-1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
+### Instalación de IIS en una máquina virtual
 
-1. Compruebe que se han creado ambas máquinas virtuales.
+1. Cada servidor backend necesita que IIS esté instalado.
+
+1. Continúa en el símbolo del sistema de PowerShell y usa el script que se proporciona para instalar IIS en **BackendVM1**.
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+
+>**Nota**: mientras esperas, revisa el script de PowerShell. Ten en cuenta que la página principal de IIS se está personalizando para proporcionar el nombre de la máquina virtual.
+
+1. Vuelve a ejecutar el comando, esta vez para **BackendVM2**.
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+>**Nota:** el comando tardará un par de minutos en completarse.
 
 ## Tarea 3: Agregar servidores backend al grupo de back-end
 
-1. En el menú de Azure Portal, seleccione **Todos los recursos** o busque y seleccione Todos los recursos. Después, seleccione **ContosoAppGateway**.
+1. En el menú de Azure Portal, selecciona **Todos los recursos** o busca y selecciona Todos los recursos. Después, selecciona **ContosoAppGateway**.
 
-1. En **Configuración**, seleccione **Grupos de back-end**.
+1. En **Configuración**, selecciona **Grupos de backend**.
 
-1. Seleccione **BackendPool**.
+1. Selecciona **BackendPool**.
 
-1. En la página Editar un grupo de back-end, en **Destinos de back-end**, en **Tipo de destino**, seleccione **Máquina virtual**.
+1. En la página Editar un grupo de backend, en **Destinos de backend**, en **Tipo de destino**, selecciona **Máquina virtual**.
 
-1. En **Destino**, seleccione **BackendVM1**.
+1. En **Destino**, selecciona **BackendVM1-nic**.
 
 1. En **Tipo de destino**, selecciona **Máquina virtual**.
 
-1. En **Destino**, seleccione **BackendVM2**.
+1. En **Destino**, selecciona **BackendVM2-nic**.
 
    ![Agregar back-ends de destino a un grupo de back-end en Azure Portal](../media/edit-backend-pool.png)
 
-1. Seleccione **Guardar**.
+1. Selecciona **Guardar** y espera a que se agreguen los destinos. 
 
-Espere a que la implementación se complete antes de continuar con el paso siguiente.
+1. Comprueba que los servidores back-end están en buen estado. Selecciona **Supervisión** y, después, **Supervisión**. Ambos destinos deben ser correctos. 
+
+   ![Azure Portal comprueba el estado del back-end.](../media/contoso-backend-health.png)
 
 ## Tarea 4: Probar la puerta de enlace de aplicación
 
@@ -204,5 +222,6 @@ No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, per
    ![Explorador: muestra BackendVM1 o BackendVM2, en función del servidor backend que responda a la solicitud.](../media/browse-to-backend.png)
 
 1. Actualice el explorador varias veces y, después, debería ver las conexiones a BackendVM1 y BackendVM2.
+
 
 Felicidades. Ha configurado y probado una instancia de Azure Application Gateway.

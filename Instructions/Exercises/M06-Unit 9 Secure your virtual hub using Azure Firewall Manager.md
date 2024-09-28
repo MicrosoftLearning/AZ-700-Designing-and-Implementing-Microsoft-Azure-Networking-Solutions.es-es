@@ -135,7 +135,10 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 ## Tarea 4: Implementar los servidores
 
-1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
+1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
+    + Seleccione **PowerShell**.
+    + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
+    + Espera a que se cree el terminal y se muestre una solicitud. 
 
 1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **FirewallManager.json** y **FirewallManager.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M06**.
 
