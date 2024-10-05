@@ -73,6 +73,8 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 1. Seleccione **Revisar y crear**, revise el resumen y, después, seleccione **Crear**.
    ‎La implementación puede tardar varios minutos en completarse.
 
+**Nota:** si se produce un error de implementación, lee atentamente la notificación. Si el error implica la disponibilidad de la región debido a cuotas, intenta cambiar a otra región. 
+
 ## Tarea 2: Creación de una instancia de Front Door para una aplicación
 
 Configure Azure Front Door para dirigir el tráfico del usuario en función de la latencia más baja entre los dos servidores de las aplicaciones web. Para empezar, agregue un host de front-end para Azure Front Door.
