@@ -1,11 +1,13 @@
 ---
 demo:
-  title: 'Módulo 05: Application Gateway'
   module: Module 05 - Load balancing HTTPS traffic
+  title: Application Gateway (Módulo 05)
 ---
 ## Configuración de Azure Application Gateway
 
 En esta demostración aprenderá a crear una instancia de Azure Application Gateway. 
+
+**Simulación:**[Implementación de una instancia de Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)
 
 **Referencia**: [Inicio rápido: Dirección del tráfico web con Azure Application Gateway: Azure Portal](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 

@@ -1,6 +1,6 @@
 ---
 demo:
-  title: Enrutamiento a servicios compartidos
+  title: 'Módulo 02: Enrutamiento a servicios compartidos'
   module: Module 02 - Design and implement hybrid networking
 ---
 Plantéate hacer una demostración de esto al alumnado: 

@@ -1,7 +1,7 @@
 ---
 demo:
   module: Module 01 - Introduction to Azure Virtual Networks
-  title: 'Módulo 01: Rutas personalizadas'
+  title: Rutas personalizadas (Módulo 01)
 ---
 ## Configuración de enrutamiento de red y de puntos de conexión
 
