@@ -1,8 +1,8 @@
 # AZ-700: Diseño e implementación de soluciones para Redes de Microsoft Azure 
 
-## Bienvenido
+## Bienvenida
 
-- **[Vínculo a ejercicios (formato HTML)](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)**
+- **[Vínculo a ejercicios y demostraciones (formato HTML)](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)**
 - **¿Es un MCT?** Consulte nuestra [guía de usuario de GitHub para MCT](https://microsoftlearning.github.io/MCT-User-Guide/).
 - Para obtener una vista previa de este curso en un formato autodirigido, vea nuestras **[simulaciones de laboratorio interactivas](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulations%20-%20Designing%20and%20implementing%20Microsoft%20Azure%20networking%20solutions)** . Es posible que encuentre pequeñas diferencias entre la simulación interactiva y los laboratorios hospedados, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
