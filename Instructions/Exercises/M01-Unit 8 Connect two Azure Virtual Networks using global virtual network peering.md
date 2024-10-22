@@ -32,13 +32,13 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 ### Creación de ManufacturingVM
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **ManufacturingVMazuredeploy.json** y **ManufacturingVMazuredeploy.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M01**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **ManufacturingVMazuredeploy. json** y **ManufacturingVMazuredeploy.parameters.json** en el directorio principal de Cloud Shell uno a uno desde la carpeta de origen **F:\Allfiles\Exercises\M01**..
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
@@ -107,29 +107,35 @@ En esta sección, creará una máquina virtual de prueba en ManufacturingVNet pa
 
 1. En CoreServicesVnet \| Emparejamientos, seleccione **+ Agregar**.
 
-1. Use la información de la tabla siguiente para crear el emparejamiento.
+1. Usa esta información para crear el emparejamiento. Cuando termine, seleccione **Agregar**. 
 
-   | **Sección**                          | **Opción**                                    | **Valor**                             |
-   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-   | Esta red virtual                 |                                               |                                       |
-   |                                      | Nombre del vínculo de emparejamiento                             | CoreServicesVnet-to-ManufacturingVnet |
-   |                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
-   |                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
-   |                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
-   | Red virtual remota               |                                               |                                       |
-   |                                      | Nombre del vínculo de emparejamiento                             | ManufacturingVnet-to-CoreServicesVnet |
-   |                                      | Modelo de implementación de red virtual              | Resource Manager                      |
-   |                                      | Conozco mi Id. de recurso                         | No seleccionado                          |
-   |                                      | Subscription                                  | Selecciona la suscripción proporcionada      |
-   |                                      | Virtual network                               | ManufacturingVnet                     |
-   |                                      | Tráfico hacia la red virtual remota             | Permitir (predeterminado)                       |
-   |                                      | Tráfico reenviado desde la red virtual remota | Permitir (predeterminado)                       |
-   |                                      | Servidor de rutas o puerta de enlace de la red virtual       | Ninguna (valor predeterminado)                        |
-   | Revise la configuración y seleccione Agregar. |                                               |                                       |
-   |                                      |                                               |                                       |
+   **Resumen de red virtual remota**
 
-   >**Nota**: Si no tienes una suscripción de MOC, usa la suscripción que has estado usando anteriormente.
+   | **Opción**                                    | **Valor**                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | Nombre del vínculo de emparejamiento    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | Red virtual | ManufacturingVnet |
 
+    **Configuración de emparejamiento de red virtual remota**
+   
+   | **Opción**                                    | **Valor**                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | Permitir que "ManufacturingVnet" acceda a "CoreServicesVnet" | habilitado |
+   |"ManufacturingVnet" recibirá tráfico reenviado desde "CoreServicesVnet" | habilitado |
+ 
+    **Resumen de red virtual local**
+
+    | **Opción**                                    | **Valor**                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | Nombre del vínculo de emparejamiento | `CoreServicesVnet-to-ManufacturingVnet` |
+ 
+    **Configuración de emparejamiento de red virtual remota**
+   
+    | **Opción**                                    | **Valor**                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | Permitir que "CoreServicesVnet" acceda a "ManufacturingVnet" | habilitado
+    | Permitir que "CoreServicesVnet" reciba tráfico reenviado desde "ManufacturingVnet" | habilitado |
+ 
 1. En CoreServicesVnet \| Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**.
 
 1. En Redes virtuales, seleccione **ManufacturingVnet** y compruebe que el emparejamiento **ManufacturingVnet-to-CoreServicesVnet** aparece en la lista.
