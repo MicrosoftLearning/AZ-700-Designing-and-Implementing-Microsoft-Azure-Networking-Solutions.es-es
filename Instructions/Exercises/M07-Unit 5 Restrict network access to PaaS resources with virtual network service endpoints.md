@@ -250,13 +250,13 @@ De forma predeterminada, las cuentas de almacenamiento aceptan conexiones de red
 Para probar el acceso de la red a una cuenta de almacenamiento, implemente una máquina virtual en cada subred.
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **VMs.json** y **VMs.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M07**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **VMs.json** y **VMs.parameters.json** en el directorio principal de Cloud Shell uno a uno desde la carpeta de origen **F:\Allfiles\Exercises\M07**.
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 

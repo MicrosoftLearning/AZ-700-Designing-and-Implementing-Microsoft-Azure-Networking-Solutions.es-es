@@ -47,7 +47,7 @@ En este ejercicio, aprenderá a:
 
 ## Tarea 2: Vinculación de la subred para el registro automático
 
-1. En Contoso.com, en **Configuración**, seleccione **Vínculos de red virtual**.
+1. En Contoso.com, en **Administración de DNS**, selecciona **Vínculos de red virtual**.
 
 1. En Contoso.com \| Vínculos de red virtual, seleccione **+ Agregar**.
 
@@ -100,13 +100,13 @@ En este ejercicio, aprenderá a:
 En esta sección, creará dos máquinas virtuales de prueba para probar la configuración de la zona DNS privada.
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json**en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M01**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** en el directorio principal de Cloud Shell uno a uno desde la carpeta de origen **F:\Allfiles\Exercises\M01**.
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
     >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 

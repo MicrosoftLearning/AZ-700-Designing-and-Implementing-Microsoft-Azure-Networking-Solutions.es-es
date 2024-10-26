@@ -181,11 +181,11 @@ Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye
 En esta sección, creará tres máquinas virtuales para el grupo de back-end del equilibrador de carga, las agregará al grupo de back-end y, después, instalará IIS en las tres máquinas virtuales para probar el equilibrador de carga.
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json**en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M08**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** en el directorio principal de Cloud Shell uno a uno desde la carpeta de origen **F:\Allfiles\Exercises\M08**.
 
 1. Implementa las siguientes plantillas de ARM para crear la red virtual, las subredes y las máquinas virtuales necesarias para este ejercicio:
 

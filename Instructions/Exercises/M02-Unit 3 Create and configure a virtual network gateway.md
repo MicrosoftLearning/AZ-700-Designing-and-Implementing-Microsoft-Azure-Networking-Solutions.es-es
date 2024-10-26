@@ -9,11 +9,11 @@ Exercise:
 
 ## Escenario del ejercicio
 
-En este ejercicio, configurará una puerta de enlace de red virtual para conectar la red virtual de Contoso Core Services y la red virtual Manufacturing.
+En este ejercicio, configurarás una puerta de enlace de red virtual para conectar la red virtual de Contoso Core Services y la red virtual Manufacturing.
 
 ![Diagrama de puerta de enlace de red virtual.](../media/3-exercise-create-configure-local-network-gateway.png)
 
-En este ejercicio, aprenderá a:
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de CoreServicesVnet y ManufacturingVnet
 + Tarea 2: Creación de CoreServicesVM
@@ -27,18 +27,18 @@ En este ejercicio, aprenderá a:
 + Tarea 10: Comprobación de las conexiones
 + Tarea 11: Prueba de la conexión entre las máquinas virtuales
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 70 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
 ## Tarea 1: Creación de CoreServicesVnet y ManufacturingVnet
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json**en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** de uno en uno en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**
 
 1. Implementa las siguientes plantillas de ARM para crear la red virtual y las subredes necesarias para este ejercicio:
 
@@ -49,17 +49,17 @@ En este ejercicio, aprenderá a:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
- > **Nota:** Actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación.
+ > **Nota:** actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación.
 
 ## Tarea 2: Creación de CoreServicesVM
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **CoreServicesVMazuredeploy.json** y **CoreServicesVMazuredeploy.parameters.json**en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **CoreServicesVMazuredeploy.json** y **CoreServicesVMazuredeploy.parameters.json** de uno en uno en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**.
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
-   >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+   >**Nota**: se te pedirá que proporciones una contraseña de administrador.
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -67,19 +67,19 @@ En este ejercicio, aprenderá a:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile CoreServicesVMazuredeploy.json -TemplateParameterFile CoreServicesVMazuredeploy.parameters.json
    ```
   
-1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
+1. Cuando la implementación esté completa, ve a la página principal de Azure Portal y, luego, selecciona **Máquinas virtuales**.
 
-1. Compruebe que se ha creado la máquina virtual.
+1. Comprueba que se ha creado la máquina virtual.
 
 ## Tarea 3: Creación de ManufacturingVM
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **ManufacturingVMazuredeploy.json** y **ManufacturingVMazuredeploy.parameters.json** en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **ManufacturingVMazuredeploy.json** y **ManufacturingVMazuredeploy.parameters.json** de uno en uno en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**.
 
-1. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
-   >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+   >**Nota**: se te pedirá que proporciones una contraseña de administrador.
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -87,17 +87,17 @@ En este ejercicio, aprenderá a:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile ManufacturingVMazuredeploy.json -TemplateParameterFile ManufacturingVMazuredeploy.parameters.json
    ```
   
-1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
+1. Cuando la implementación esté completa, ve a la página principal de Azure Portal y, luego, selecciona **Máquinas virtuales**.
 
-1. Compruebe que se ha creado la máquina virtual.
+1. Comprueba que se ha creado la máquina virtual.
 
 ## Tarea 4: Conexión a las máquinas virtuales mediante RDP
 
 1. En la página principal de Azure Portal, selecciona **Máquinas virtuales**.
-1. Seleccione **ManufacturingVM**.
+1. Selecciona **ManufacturingVM**.
 1. En **ManufacturingVM**, selecciona **Conectar &gt; RDP**.
 1. En **ManufacturingTestVM | Conectar**, selecciona **Descargar archivo RDP**.
-1. Guarde el archivo RDP en el escritorio.
+1. Guarda el archivo RDP en el escritorio.
 1. Conéctate a **ManufacturingVM** con el archivo RDP y el nombre de usuario **TestUser** y la contraseña que has proporcionado durante la implementación. Después de conectarte, minimiza la sesión de RDP.
 1. En la página principal de Azure Portal, selecciona **Máquinas virtuales**.
 1. Selecciona **CoreServicesVM**.
@@ -126,7 +126,7 @@ En este ejercicio, aprenderá a:
 
 ## Tarea 6: Creación de la puerta de enlace CoreServicesVnet
 
-1. En **Buscar recursos, servicios y documentos (G+/)**, escriba **Puerta de enlace de red virtual** y, después, seleccione **Puertas de enlace de red virtual** en los resultados.
+1. En **Buscar recursos, servicios y documentos (G+/)**, escribe **Puerta de enlace de red virtual** y, después, selecciona **Puertas de enlace de red virtual** en los resultados.
    ![Búsqueda de la puerta de enlace de red virtual en Azure Portal.](../media/virtual-network-gateway-search.png)
 
 1. En Puertas de enlace de red virtual, seleccione **+ Crear**.
@@ -150,26 +150,43 @@ En este ejercicio, aprenderá a:
    |                 |                   | Nombre de la dirección IP pública                      | CoreServicesVnetGateway-ip   |
    |                 |                   | Habilitación del modo activo/activo                   | Disabled                     |
    |                 |                   | Configuración de BGP                               | Deshabilitada                     |
-   | Revisar y crear |                   | Compruebe la configuración y seleccione **Crear**. |                              |
+   | Revisar y crear |                   | Comprueba la configuración y selecciona **Crear**. |                              |
 
    > [!NOTE]
    >
-   > El proceso de creación de una puerta de enlace de red virtual puede tardar hasta 45 minutos.
+   > El proceso de creación de una puerta de enlace de red virtual puede tardar entre 15 y 30 minutos. No es necesario esperar la implementación para completar. Continúa con la creación de la puerta de enlace siguiente. 
 
 ## Tarea 7: Creación de la puerta de enlace ManufacturingVnet
 
-1. En **Buscar recursos, servicios y documentos (G+/)**, escriba **Puerta de enlace de red virtual** y, después, seleccione **Puertas de enlace de red virtual** en los resultados.
+### Crea GatewaySubnet
 
-1. En Puertas de enlace de red virtual, seleccione **+ Crear**.
+**Nota:** la plantilla creó GatewaySubnet para CoreServicesVnet. Aquí crearás la subred manualmente. 
 
-1. Use la información de la tabla siguiente para crear la puerta de enlace de red virtual:
+1. Busca y selecciona **ManufacturingVnet**.
+
+1. En la hoja **Configuración**, selecciona **Subredes** y, a continuación **, + Subred**. 
+
+    | Parámetro | Valor |
+    | --------------- | ----------------- | 
+    | Propósito de subred | **Puerta de enlace de red virtual** |
+    | Size | **/27 (32 direcciones)** |
+
+1. Selecciona **Agregar**. 
+
+### Creación de la puerta de enlace de red virtual
+
+1. En **Buscar recursos, servicios y documentos (G+/)**, escribe **Puerta de enlace de red virtual** y, después, selecciona **Puertas de enlace de red virtual** en los resultados.
+
+1. En Puertas de enlace de red virtual, selecciona **+ Crear**.
+
+1. Usa la información y la pestaña **Configuración** para crear la puerta de enlace de red virtual. 
 
    | **Tabulación**         | **Sección**       | **Opción**                                  | **Valor**                    |
    | --------------- | ----------------- | ------------------------------------------- | ---------------------------- |
    | Aspectos básicos          | Detalles del proyecto   | Suscripción                                | No se necesitan cambios          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
-   |                 | Detalles de la instancia  | NOMBRE                                        | ManufacturingVnetGateway     |
-   |                 |                   | Region                                      | Norte de Europa                  |
+   |                 | Detalles de la instancia  | Nombre                                        | ManufacturingVnetGateway     |
+   |                 |                   | Región                                      | Norte de Europa                  |
    |                 |                   | Tipo de puerta de enlace                                | VPN                          |
    |                 |                   | Tipo de VPN                                    | basada en rutas                  |
    |                 |                   | SKU                                         | VpnGw1                       |
@@ -181,30 +198,32 @@ En este ejercicio, aprenderá a:
    |                 |                   | Nombre de la dirección IP pública                      | ManufacturingVnetGateway-ip  |
    |                 |                   | Habilitación del modo activo/activo                   | Disabled                     |
    |                 |                   | Configuración de BGP                               | Deshabilitada                     |
-   | Revisar y crear |                   | Compruebe la configuración y seleccione **Crear**. |                              |
+   | Revisar y crear |                   | Comprueba la configuración y selecciona **Crear**. |                              |
 
    > [!NOTE]
    >
-   > El proceso de creación de una puerta de enlace de red virtual puede tardar hasta 45 minutos.
+   > El proceso de creación de una puerta de enlace de red virtual puede entre 15 y 30 minutos.
 
 ## Tarea 8: Conexión de CoreServicesVnet a ManufacturingVnet
 
-1. En **Buscar recursos, servicios y documentos (G+/)**, escriba **Puerta de enlace de red virtual** y, después, seleccione **Puertas de enlace de red virtual** en los resultados.
+1. En **Buscar recursos, servicios y documentos (G+/)**, escribe **Puerta de enlace de red virtual** y, después, selecciona **Puertas de enlace de red virtual** en los resultados.
 
-1. En Puertas de enlace de red virtual, seleccione **CoreServicesVnetGateway**.
+1. En Puertas de enlace de red virtual, selecciona **CoreServicesVnetGateway**.
 
-1. En CoreServicesGateway, seleccione **Conexiones** y después **+ Agregar**.
+1. En CoreServicesGateway, selecciona **Conexiones** y después **+ Agregar**.
 
    > [!NOTE]
    >
-   >  No podrá completar esta configuración hasta que las puertas de enlace de red virtual estén completamente implementadas.
+   >  No podrás completar esta configuración hasta que las puertas de enlace de red virtual estén completamente implementadas.
 
-1. Use la información de la tabla siguiente para crear la conexión:
+1. Usa la información y la pestaña **Configuración** para crear la puerta de enlace de red virtual. 
+
 
    | **Opción**                     | **Valor**                         |
    | ------------------------------ | --------------------------------- |
    | Nombre                           | CoreServicesGW-to-ManufacturingGW |
    | Tipo de conexión                | De red virtual a red virtual                      |
+   | Region                         | Este de EE. UU.                           |
    | Primera puerta de enlace de red virtual  | CoreServicesVnetGateway           |
    | Segunda puerta de enlace de red virtual | ManufacturingVnetGateway          |
    | Clave compartida (PSK)               | abc123                            |
@@ -212,25 +231,26 @@ En este ejercicio, aprenderá a:
    | Habilitar BGP                     | No seleccionado                      |
    | Protocolo IKE                   | IKEv2                             |
    | Suscripción                   | No se necesitan cambios               |
-   | Resource group                 | No se necesitan cambios               |
-   | Location                       | Este de EE. UU.                           |
+   | Grupo de recursos                 | No se necesitan cambios               |
 
-1. Selecciona **Aceptar** para crear la conexión.
+
+1. Selecciona **Revisar y crear** y, a continuación, selecciona **Crear** para crear la conexión.
 
 ## Tarea 9: Conexión de ManufacturingVnet a CoreServicesVnet
 
-1. En **Buscar recursos, servicios y documentos (G+/)**, escriba **Puerta de enlace de red virtual** y, después, seleccione **Puertas de enlace de red virtual** en los resultados.
+1. En **Buscar recursos, servicios y documentos (G+/)**, escribe **Puerta de enlace de red virtual** y, después, selecciona **Puertas de enlace de red virtual** en los resultados.
 
-1. En Puertas de enlace de red virtual, seleccione **ManufacturingVnetGateway**.
+1. En Puertas de enlace de red virtual, selecciona **ManufacturingVnetGateway**.
 
-1. En CoreServicesGateway, seleccione **Conexiones** y después **+ Agregar**.
+1. En CoreServicesGateway, selecciona **Conexiones** y después **+ Agregar**.
 
-1. Use la información de la tabla siguiente para crear la conexión:
+1. Usa la información de la tabla siguiente para crear la conexión:
 
    | **Opción**                     | **Valor**                         |
    | ------------------------------ | --------------------------------- |
    | Nombre                           | ManufacturingGW-to-CoreServicesGW |
    | Tipo de conexión                | De red virtual a red virtual                      |
+   | Ubicación                       | Oeste de Europa                       |
    | Primera puerta de enlace de red virtual  | ManufacturingVnetGateway          |
    | Segunda puerta de enlace de red virtual | CoreServicesVnetGateway           |
    | Clave compartida (PSK)               | abc123                            |
@@ -238,16 +258,16 @@ En este ejercicio, aprenderá a:
    | Habilitar BGP                     | No seleccionado                      |
    | Protocolo IKE                   | IKEv2                             |
    | Suscripción                   | No se necesitan cambios               |
-   | Resource group                 | No se necesitan cambios               |
-   | Location                       | Oeste de Europa                       |
+   | Grupo de recursos                 | No se necesitan cambios               |
 
-1. Selecciona **Aceptar** para crear la conexión.
+
+1. Selecciona **Revisar y crear** y, a continuación, selecciona **Crear** para crear la conexión.
 
 ## Tarea 10: Comprobación de las conexiones
 
 1. En **Buscar recursos, servicios y documentos (G+/)**, escribe **vpn** y, después, selecciona **conexiones** en los resultados.
 
-1. Espere hasta que el estado de las dos conexiones sea **Conectado**. Es posible que tenga que actualizar la pantalla.
+1. Espera hasta que el estado de las dos conexiones sea **Conectado**. Es posible que tengas que actualizar la pantalla.
 
    ![Conexiones de VPN Gateway creadas correctamente.](../media/connections-status-connected.png)
 
@@ -267,4 +287,4 @@ En este ejercicio, aprenderá a:
 
 1. Cierra la ventana de conexión de escritorio remoto.
 
-¡Enhorabuena! Ha configurado una conexión de red virtual a red virtual mediante una puerta de enlace de red virtual.
+¡Enhorabuena! Has configurado una conexión de red virtual a red virtual mediante una puerta de enlace de red virtual.

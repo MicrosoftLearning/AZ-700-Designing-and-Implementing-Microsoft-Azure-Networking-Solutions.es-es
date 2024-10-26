@@ -31,7 +31,7 @@ Se pueden crear puntos de conexión privados para distintos tipos de servicios d
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **template.json** y **parameters.json** en el directorio principal de Cloud Shell uno por uno.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga uno a uno los siguientes archivos **template.json** y **parameters.json** en el directorio principal de Cloud Shell.
 
 Si decide instalar y usar PowerShell de forma local, para realizar los pasos de este ejemplo necesita la versión 5.4.1 del módulo de Azure PowerShell o cualquier versión posterior. Ejecute ```Get-Module -ListAvailable Az``` para buscar la versión instalada. Si necesita actualizarla, consulte [Instalación del módulo de Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si PowerShell se ejecuta localmente, también debe ejecutar ```Connect-AzAccount``` para crear una conexión con Azure.
 
