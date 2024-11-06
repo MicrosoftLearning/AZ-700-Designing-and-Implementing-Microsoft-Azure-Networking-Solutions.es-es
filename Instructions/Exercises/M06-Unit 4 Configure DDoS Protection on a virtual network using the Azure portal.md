@@ -21,9 +21,9 @@ En este ejercicio, aprenderá a:
 + Tarea 5: Configurar registros de diagnóstico de DDoS
 + Tarea 6: Configurar alertas de DDoS
 + Tarea 7: Prueba con asociados de simulación
-+ Tarea 8: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 40 minutos.
 
@@ -228,9 +228,9 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
    ![Métricas que muestra el recurso bajo ataque DDoS](../media/metrics-showing-resource-under-attack.png)
 
-## Tarea 8: Limpieza de recursos
+## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -240,4 +240,26 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Qué son los ataques DDoS? ¿Cómo se clasifican los ataques DDoS y hay estrategias de mitigación?
++ Proporciona una tabla que resuma los dos niveles diferentes de Azure DDoS Protection.
++ ¿Qué recursos de Azure se pueden proteger mediante protección contra DDoS?
+
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure DDoS Protection](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/). En este módulo, evaluarás Azure DDoS Protection, sus características y las opciones de arquitectura.
++ [Diseño e implementación de la seguridad de red](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/). En este módulo, obtendrás información sobre Azure DDoS Protection y la implementarás.
+
+  
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Un ataque DDoS es un intento malicioso de sobrecargar los recursos de una aplicación haciendo que esta no esté disponible para los usuarios legítimos. 
++ Azure DDoS Protection defiende contra ataques DDoS. Se ajusta automáticamente para proteger los recursos específicos de Azure de una red virtual. 
++ Las características de Azure DDoS Protection incluyen: supervisión del tráfico Always On, ajuste adaptable en tiempo real y telemetría y alertas.  
++ Azure DDoS Protection admite dos tipos de niveles de servicio: Protección de IP contra DDoS y Protección de red contra DDoS.

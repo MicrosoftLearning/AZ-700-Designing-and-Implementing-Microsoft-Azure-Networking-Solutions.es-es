@@ -41,7 +41,7 @@ En este ejercicio, aprenderá a:
 
    | **Configuración**         | **Valor**                                    |
    | ------------------- | -------------------------------------------- |
-   | Suscripción        | Seleccione su suscripción.                    |
+   | Suscripción        | Selecciona tu suscripción.                    |
    | Resource group      | Seleccione Crear nuevo ContosoResourceGroup.       |
    | Application Gateway | ContosoAppGateway                            |
    | Region              | Seleccione **Este de EE. UU**.                           |
@@ -151,7 +151,7 @@ En este ejercicio, aprenderá a:
 
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
->**Nota**: Se le pedirá que proporcione una contraseña de administrador. 
+>**Nota**: se te pedirá que proporciones una contraseña de administrador. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -223,5 +223,37 @@ No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, per
 
 1. Actualice el explorador varias veces y, después, debería ver las conexiones a BackendVM1 y BackendVM2.
 
+## Limpieza de recursos
 
-Felicidades. Ha configurado y probado una instancia de Azure Application Gateway.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+
+1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
+
+1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
+
+   ```powershell
+   Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
+   ```
+
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cómo enruta Azure Application Gateway las solicitudes?
++ ¿Qué características de seguridad incluye Azure Application Gateway?
++ Compara Azure Application Gateway con Azure Load Balancer. Proporciona ejemplos de cuándo usar cada producto.
+
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Application Gateway](https://learn.microsoft.com/training/modules/intro-to-azure-application-gateway/). En este módulo se explica qué hace Azure Application Gateway, cómo funciona y cuándo debe usar Application Gateway como solución para satisfacer las necesidades de su organización.
++ [Equilibrio de carga del tráfico de servicio web con Application Gateway](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). En este módulo, aprenderás a crear y configurar una puerta de enlace de aplicación con enrutamiento basado en ruta de acceso de dirección URL.
++ [Equilibrar la carga del tráfico HTTP(S) en Azure](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). En este módulo, aprenderás cómo diseñar e implementar Azure Application Gateway.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Azure Application Gateway es un equilibrador de carga de tráfico web (OSI capa 7) que permite administrar el tráfico a las aplicaciones web.
++ Application Gateway puede tomar decisiones de enrutamiento basadas en atributos adicionales de una solicitud HTTP, por ejemplo los encabezados de host o la ruta de acceso del URI.
++ Usa Application Gateway para la aplicación hospedada en una sola región y cuando necesites enrutamiento basado en dirección URL. 
