@@ -17,9 +17,9 @@ En este ejercicio, aprenderá a:
 + Tarea 1: Creación de una instancia de Virtual WAN
 + Tarea 2: creación de un centro de conectividad mediante Azure Portal
 + Tarea 3: Conexión de una red virtual al centro de conectividad virtual
-+ Tarea 4: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
@@ -101,11 +101,9 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
 
 1. Seleccione **Crear**.
 
-Felicidades. Ha creado una red WAN virtual y un centro de red WAN virtual, y ha conectado ResearchVNet al centro.
+## Limpieza de recursos
 
-## Tarea 4: Limpieza de recursos
-
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -115,4 +113,34 @@ Felicidades. Ha creado una red WAN virtual y un centro de red WAN virtual, y ha 
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Qué tipo de arquitectura de red usa Azure VWAN?
++ ¿Qué diferencia hay entre los tipos Azure VWAN básico y estándar? Provisión de ejemplos.
++ ¿Se puede crear una instancia de Azure VWAN con herramientas de scripting?
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Virtual WAN](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/). En este módulo, obtendrás información sobre la funcionalidad y las características de Azure Virtual WAN. 
++ [Diseño e implementación de redes híbridas](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure Virtual WAN.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
+
++ Azure Virtual WAN es un servicio de red que aporta muchas funciones de red, seguridad y enrutamiento para proporcionar una única interfaz operativa
++ La arquitectura de Virtual WAN es de tipo radial con escala y rendimiento integrados en las ramas, los usuarios, los circuitos de ExpressRoute y las redes virtuales.
++ Hay tres casos de uso principales para Virtual WAN: sitio a sitio, punto a sitio y ExpressRoute. 
++ Existen dos tipos de Virtual WAN: básica (VPN de sitio a sitio solo) y estándar.
+
+
+
+
+
+
+
+
+

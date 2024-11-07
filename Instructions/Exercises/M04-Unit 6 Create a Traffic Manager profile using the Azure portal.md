@@ -28,7 +28,6 @@ En el diagrama siguiente se muestra el entorno aproximado que se va a implementa
 + Tarea 2: Creación de un perfil de Traffic Manager
 + Tarea 3: Adición de puntos de conexión de Traffic Manager
 + Tarea 4: Prueba del perfil de Traffic Manager
-+ Tarea 5: Limpieza de recursos
 
 ## Tarea 1: Creación de las aplicaciones web
 
@@ -171,9 +170,9 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
 1. Compruebe que la aplicación web sigue respondiendo. Como el punto de conexión principal no estaba disponible, el tráfico se enrutó en su lugar al punto de conexión de conmutación por error para permitir que el sitio web siguiese funcionando.
 
-## Tarea 5: Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -186,4 +185,23 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuáles son los pasos de alto nivel para configurar Azure Traffic Manager?
++ Compara y contrasta cuándo usar Azure Load Balancer y Azure Traffic Manager.
++ Explica los perfiles de enrutamiento de Traffic Manager y cuándo se deben usar.
+
+## Más información con el aprendizaje autodirigido
+
++ [Mejora de la disponibilidad de servicios y la localización de los datos con Azure Traffic Manager](https://learn.microsoft.com/training/modules/distribute-load-with-traffic-manager/). En este módulo, obtendrás información sobre el uso de Traffic Manager para distribuir dinámicamente el tráfico de red.
++ [Equilibrio de la carga del tráfico no HTTP(S) en Azure](https://learn.microsoft.com/training/modules/load-balancing-non-https-traffic-azure/). En este módulo, obtendrás información sobre Azure Traffic Manager y la implementación de métodos de enrutamiento. 
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Azure Traffic Manager es un equilibrador de carga de tráfico basado en DNS. Este servicio permite distribuir el tráfico a las aplicaciones orientadas al público en las regiones globales de Azure.
++ Traffic Manager dispone de seis métodos de enrutamiento del tráfico que te permiten controlar el modo en que se elige el punto de conexión que debe recibir tráfico de cada usuario final. ¿Cuántos puedes nombrar?
++ Puede anidar perfiles de Traffic Manager para combinar las ventajas de más de un método de enrutamiento del tráfico. Los perfiles anidados permiten invalidar el comportamiento predeterminado de Traffic Manager para admitir implementaciones de aplicaciones más grandes y complejas.
