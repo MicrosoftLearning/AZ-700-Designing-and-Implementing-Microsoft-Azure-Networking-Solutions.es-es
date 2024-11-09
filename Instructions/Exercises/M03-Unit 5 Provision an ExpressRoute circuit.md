@@ -20,7 +20,7 @@ En este ejercicio, aprenderá a:
 + Tarea 1: Creación y aprovisionamiento de un circuito ExpressRoute
 + Tarea 2: Recuperación de la clave de servicio
 + Tarea 3: Desaprovisionamiento de un circuito ExpressRoute
-+ Tarea 4: Limpieza de recursos
+
 
 ## Tarea 1: Creación y aprovisionamiento de un circuito ExpressRoute
 
@@ -110,13 +110,13 @@ Si el estado de aprovisionamiento del proveedor de servicios del circuito Expres
 >
 > Si el proveedor de servicios ha desaprovisionado el circuito (el estado de aprovisionamiento del proveedor de servicios está establecido en No aprovisionado), puede eliminar el circuito. Esto detiene la facturación del circuito.
 
-## Tarea 4: Limpieza de recursos
+## Limpieza de recursos
 
 Para eliminar el circuito ExpressRoute, puede seleccionar el icono **Eliminar**. Antes de proceder, asegúrese de que el estado del proveedor sea No aprovisionado.
 
 ![Azure Portal: eliminación de un circuito ExpressRoute](../media/expressroute-circuit-delete.png)
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -127,4 +127,23 @@ Para eliminar el circuito ExpressRoute, puede seleccionar el icono **Eliminar**.
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
-   >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Qué proveedores de servicios están disponibles para Azure ExpressRoute?
++ ¿Cuáles son los problemas de configuración más comunes de Azure ExpressRoute? ¿Qué debo hacer si tengo ese problema?
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). En este módulo, obtendrás información sobre qué es Azure ExpressRoute y la funcionalidad que proporciona.
++ [Diseño e implementación de ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure ExpressRoute, Global Reach de ExpressRoute y FastPath de ExpressRoute.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Azure ExpressRoute permite que una organización conecte sus redes locales directamente a las nubes de Microsoft Azure y Microsoft 365. Azure ExpressRoute usa una conexión dedicada de ancho de banda alto proporcionada por un asociado de Microsoft.
++ Microsoft garantiza una disponibilidad mínima del 99,95 % para las conexiones ExpressRoute dedicadas. La conexión es privada y viaja a través de una línea dedicada, los terceros no pueden interceptar el tráfico.
++ Puede crear una conexión entre su red local y la nube de Microsoft de cuatro maneras diferentes: colocalización de CloudExchange, conexión Ethernet de punto a punto, conexión universal (IPVPN) y ExpressRoute Direct.
++ Las características de ExpressRoute se determinan mediante la SKU: Local, Estándar y Premium. 

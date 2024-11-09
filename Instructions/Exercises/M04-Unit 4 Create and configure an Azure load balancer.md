@@ -75,7 +75,7 @@ En esta sección, creará una red virtual y una subred.
 En esta sección, creará tres máquinas virtuales, que estarán en el mismo conjunto de disponibilidad, para el grupo de back-end del equilibrador de carga, las agregará al grupo de back-end y, después, instalará IIS en las tres máquinas virtuales para probar el equilibrador de carga.
 
 1. En Azure Portal, selecciona el icono Cloud Shell (parte superior derecha). Si es necesario, configura el shell.  
-    + Seleccione **PowerShell**.
+    + Selecciona **PowerShell**.
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
@@ -276,7 +276,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 ## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -286,4 +286,25 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿En qué se diferencian los equilibradores de carga públicos y privados de Azure? Proporciona escenarios de ejemplo para cada tipo.
++ Proporciona una tabla que compare las SKU básicas y estándar de Azure Load Balancer.
++ ¿Cómo decide Azure Load Balancer procesar las solicitudes entrantes?
+
+
+## Más información con el aprendizaje autodirigido
++ [Introducción a Azure Load Balancer](https://learn.microsoft.com/training/modules/intro-to-azure-load-balancer/). En este módulo se explica qué hace Azure Load Balancer, cómo funciona y cuándo debe usarlo como solución para satisfacer las necesidades de su organización.
++ [Solución de problemas de conectividad de red entrante para Azure Load Balancer](https://learn.microsoft.com/en-us/training/modules/troubleshoot-inbound-connectivity-azure-load-balancer/). En este módulo, identificarás y solucionarás problemas comunes de conectividad entrante de Azure Load Balancer.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ El equilibrio de carga se refiere a distribuir eficientemente el tráfico de red entrante entre un grupo de servidores o recursos backend.
++ Azure Load Balancer distribuye flujos de entrada del front-end del equilibrador de carga a instancias del grupo de back-end. Estos flujos se distribuyen según las reglas de equilibrio de carga configuradas y los sondeos de estado. Las instancias del grupo de back-end pueden ser máquinas virtuales (VM) de Azure o conjuntos de escalado de máquinas virtuales.
++ Azure ofrece equilibradores de carga públicos y privados. Los equilibradores de carga públicos son ideales para aplicaciones accesibles desde Internet, conexiones salientes y aplicaciones web. Los equilibradores de carga privados son mejores para aplicaciones internas, servicios back-end y escenarios híbridos.
+
+

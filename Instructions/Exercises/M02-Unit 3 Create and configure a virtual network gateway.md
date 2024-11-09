@@ -287,4 +287,26 @@ En este ejercicio, aprenderás a:
 
 1. Cierra la ventana de conexión de escritorio remoto.
 
-¡Enhorabuena! Has configurado una conexión de red virtual a red virtual mediante una puerta de enlace de red virtual.
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuáles son los principales tipos de puertas de enlace de VPN de Azure y por qué usarías cada tipo?
++ ¿Qué factores debo tener en cuenta al seleccionar la SKU de Azure VPN Gateway? Proporciona ejemplos.
++ ¿Hay costes asociados con las puertas de enlace de VPN de Azure?
+
+
+## Más información con el aprendizaje autodirigido
+
++ [Conexión de la red local a Azure con puerta de enlace de VPN](https://learn.microsoft.com/training/modules/connect-on-premises-network-with-vpn-gateway/). En este módulo, aprenderás a usar CLI para aprovisionar puertas de enlace de VPN.
++ [Solución de problemas de puertas de enlace de VPN en Microsoft Azure](https://learn.microsoft.com/training/modules/troubleshoot-vpn-gateways/). En este módulo, obtendrás información sobre cómo supervisar y solucionar problemas de VPN de sitio a sitio y de punto a sitio.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
+
++ Azure VPN Gateway es un servicio que proporciona conectividad segura entre las redes locales y las redes virtuales de Azure.
++ Las conexiones de sitio a sitio (S2S) conectan la red local a una red virtual de Azure mediante túneles VPN de IPsec/IKE. Ideal para escenarios de nube híbrida.
++ Las conexiones de punto a sitio (P2S) conectan clientes individuales a una red virtual de Azure desde ubicaciones remotas. Los protocolos de VPN incluyen OpenVPN, IKEv2 o SSTP. Útil para trabajadores remotos.
++ Las conexiones de red virtual a red virtual conectan dos o más redes virtuales de Azure mediante túneles VPN de IPsec/IKE. Adecuada para implementaciones de varias regiones o de varias redes virtuales.
++ Las distintas SKU de puerta de enlace de VPN ofrecen distintos niveles de rendimiento, capacidad de proceso y características. 
+

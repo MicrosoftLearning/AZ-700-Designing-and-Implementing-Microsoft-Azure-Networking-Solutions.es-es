@@ -108,7 +108,7 @@ En esta sección, creará dos máquinas virtuales de prueba para probar la confi
 
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
-    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+    >**Nota**: se te pedirá que proporciones una contraseña de administrador.
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -164,4 +164,22 @@ En esta sección, creará dos máquinas virtuales de prueba para probar la confi
 
 1. Como alternativa, puede escribir el comando nslookup TestVM2.contoso.com y comprobar que recibe un registro de resolución de nombres correcto para VM2
 
-Felicidades. Ha creado una zona DNS privada, ha agregado un vínculo de resolución de nombres y registro automático y ha probado la resolución de nombres en la configuración.
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuál es la diferencia entre Azure DNS y DNS privado de Azure? Proporciona ejemplos de cuándo usar DNS privado de Azure.
++ ¿Cuál es el propósito del registro automático al crear una zona de Azure DNS?
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/). En este módulo se explica Azure DNS, cómo funciona y cuándo debe elegir usar Azure DNS como solución para satisfacer las necesidades de su organización.
++ [Hospede el dominio en Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). En este módulo, crearás una zona DNS y registros DNS para asignar el dominio a una dirección IP. Además, comprueba para tener la certeza de que el nombre de dominio se resuelve en tu servidor web.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
+
++ Azure DNS es un servicio en la nube que permite hospedar y administrar dominios de sistema de nombres de dominio (DNS), también conocidos como zonas DNS. 
++ Los datos de las zonas de nombres de dominio de host de zona pública de Azure DNS para los registros que pretende que resuelva cualquier host de Internet.
++ Las zonas de DNS privado de Azure te permiten configurar un espacio de nombres de zona DNS privada para recursos privados de Azure.
++ Una zona DNS es una colección de registros DNS. Los registros DNS proporcionan información sobre el dominio.

@@ -19,9 +19,9 @@ En este ejercicio, aprenderá a:
 + Tarea 1: Creación de dos instancias de una aplicación web
 + Tarea 2: Creación de una instancia de Front Door para una aplicación
 + Tarea 3: Visualización de Front Door en acción
-+ Tarea 4: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 30 minutos
 
@@ -39,7 +39,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 
    | **Configuración**      | **Valor**                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | Suscripción     | Seleccione su suscripción.                                    |
+   | Suscripción     | Selecciona tu suscripción.                                    |
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-1. |
    | Publicar          | Seleccione **Código**.                                             |
@@ -60,7 +60,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 
    | **Configuración**      | **Valor**                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | Suscripción     | Seleccione su suscripción.                                    |
+   | Suscripción     | Selecciona tu suscripción.                                    |
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-2. |
    | Publicar          | Seleccione **Código**.                                             |
@@ -87,7 +87,7 @@ Configure Azure Front Door para dirigir el tráfico del usuario en función de l
 
    | **Configuración**             | **Valor**                                    |
    | ----------------------- | -------------------------------------------- |
-   | Suscripción            | Seleccione su suscripción.                    |
+   | Suscripción            | Selecciona tu suscripción.                    |
    | Resource group          | Seleccione ContosoResourceGroup.                  |
    | Ubicación del grupo de recursos | Acepta la configuración predeterminada                       |
    | Nombre                    | Escribe un nombre único en esta suscripción, como FrontDoor(yourinitials)   |
@@ -131,9 +131,9 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
    ¡Enhorabuena! Ha configurado y probado una instancia de Azure Front Door.
 
-## Tarea 4: Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -145,4 +145,24 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuál es la diferencia entre Azure Application Gateway y Azure Front Door? Proporciona ejemplos en los que se usaría cada producto.
++ Proporciona una lista de comprobación de cosas que se deben hacer al configurar Azure Front Door.
++ ¿Qué es un origen en Azure Front Door y en qué se diferencia de un punto de conexión?
+
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Front Door](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/). En este módulo, aprenderás cómo Azure Front Door puede proteger tus aplicaciones.
++ [Equilibrar la carga del tráfico del servicio Web con Front Door](https://learn.microsoft.com/training/modules/create-first-azure-front-door/). En este módulo, aprenderás a crear y configurar Azure Front Door. 
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Azure Front Door es un servicio basado en la nube que proporciona tus aplicaciones en cualquier parte del mundo. 
++ Azure Front Door usa el equilibrio de carga de nivel 7 para distribuir el tráfico entre varias regiones y puntos de conexión.
++ Azure Front Door admite diferentes métodos de enrutamiento del tráfico para determinar cómo debe distribuirse tu tráfico HTTP/HTTPS. Los métodos de enrutamiento son: latencia, prioridad, ponderado y afinidad de sesión. 

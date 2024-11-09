@@ -24,9 +24,9 @@ En este ejercicio, aprenderá a:
 + Tarea 8: Configurar una regla de NAT de destino (DNAT)
 + Tarea 9: Cambiar la dirección DNS primaria y secundaria para la interfaz de red del servidor
 + Tarea 10: Probar el firewall
-+ Tarea 11: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 60 minutos.
 
@@ -109,7 +109,7 @@ En esta tarea, creará la máquina virtual de carga de trabajo y la colocará en
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile firewall.json -TemplateParameterFile firewall.parameters.json
    ```
   
-1. Cuando la implementación esté completa, vaya a la página principal de Azure Portal y, luego, seleccione **Máquinas virtuales**.
+1. Cuando la implementación esté completa, ve a la página principal de Azure Portal y, luego, selecciona **Máquinas virtuales**.
 
 1. Compruebe que se ha creado la máquina virtual.
 
@@ -364,9 +364,9 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
 
     ![Sesión de RDP en el servidor Srv-work, explorador bloqueado en microsoft.com](../media/remote-desktop-connection-3.png)
 
-## Tarea 11: Limpieza de recursos
+## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -376,4 +376,24 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ Proporciona tres escenarios de uso comunes para firewalls. 
++ Proporciona una tabla que compare las características de las SKU de Azure Firewall.
++ Describe los tres tipos de reglas que puedes crear para una instancia de Azure Firewall.
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Firewall](https://learn.microsoft.com/training/modules/introduction-azure-firewall/). En este módulo, aprenderás cómo Azure Firewall protege los recursos de red virtual de Azure, incluidas las características, las reglas y las opciones de implementación.
++ [Introducción a Azure Firewall Manager](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/). En este módulo, aprenderás cómo Azure Firewall Manager proporciona una directiva de seguridad central y administración de rutas para perímetros de seguridad basados en la nube
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
++ Un firewall es una característica de seguridad de red que se sitúa entre una red de confianza y otra que no es de confianza, como Internet. El trabajo del firewall consiste en analizar y, a continuación, permitir o denegar el tráfico de red.
++ Azure Firewall es un servicio de firewall basado en la nube. En la mayoría de las configuraciones, Azure Firewall se aprovisiona dentro de una red virtual de concentrador. El tráfico hacia y desde las redes virtuales de radio y la red local se dirige al firewall.
++ Las reglas de firewall evalúan el tráfico de red. Azure Firewall tiene tres tipos de reglas: aplicación, red y NAT. 
++ Azure Firewall se ofrece en tres SKU: Estándar, Prémium y Básico.
