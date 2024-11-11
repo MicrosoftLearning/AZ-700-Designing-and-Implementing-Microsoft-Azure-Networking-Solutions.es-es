@@ -167,8 +167,8 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 
 ## Más información con el aprendizaje autodirigido
 
-+ [Diseño de un esquema de direccionamiento IP para la implementación de Azure](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/). En este módulo, identificarás las funcionalidades de direcciones IP públicas y privadas de redes virtuales de Azure.
-+ [Introducción a las redes virtuales de Azure](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/). En este módulo, descubrirás cómo diseñar e implementar servicios de red de Azure. Obtendrás información sobre redes virtuales, direcciones IP públicas y privadas, DNS, emparejamiento de redes virtuales, enrutamiento y Azure Virtual NAT.
++ [Diseño de un esquema de direccionamiento IP para la implementación de Azure](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). En este módulo, identificarás las funcionalidades de direcciones IP públicas y privadas de redes virtuales de Azure.
++ [Introducción a las redes virtuales de Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). En este módulo, descubrirás cómo diseñar e implementar servicios de red de Azure. Obtendrás información sobre redes virtuales, direcciones IP públicas y privadas, DNS, emparejamiento de redes virtuales, enrutamiento y Azure Virtual NAT.
 
 ## Puntos clave
 

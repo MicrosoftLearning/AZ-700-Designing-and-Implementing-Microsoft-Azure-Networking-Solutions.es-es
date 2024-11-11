@@ -24,9 +24,9 @@ En este ejercicio, aprenderá a:
 + Tarea 8: Restricción del acceso de la red a una subred
 + Tarea 9: Creación de máquinas virtuales
 + Tarea 10: Confirmación del acceso a la cuenta de almacenamiento
-+ Tarea 11: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 35 minutos
 
@@ -329,9 +329,9 @@ Dado que el grupo de seguridad de red asociado a la subred Private no permite el
 
 Resultados: Ha completado este laboratorio.
 
-## Tarea 11: Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -341,4 +341,21 @@ Resultados: Ha completado este laboratorio.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
-    >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuál es la diferencia entre puntos de conexión de servicio de Azure y puntos de conexión privados?
++ ¿Qué servicios de Azure pueden usar los puntos de conexión de servicio?
++ ¿Cuáles son los pasos para restringir el acceso a Azure Storage mediante puntos de conexión de servicio?
+
+## Más información con el aprendizaje autodirigido
+
++ [Proteja y aísle el acceso a recursos de Azure mediante grupos de seguridad de red y puntos de conexión de servicio](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). En este módulo, aprenderás cómo utilizar puntos de conexión de servicio de red virtual para controlar el tráfico de red hacia y desde los servicios de Azure.
+
+## Puntos clave
++ Los puntos de conexión de servicio de red virtual amplían tu espacio de direcciones privadas en Azure al proporcionar una conexión directa a tus servicios de Azure.
++ Los puntos de conexión de servicio solo permiten proteger los recursos de Azure en la rede virtual. El tráfico del servicio permanecerá en la red troncal de Azure y no pasa a Internet.
++ Los puntos de conexión de servicio de Azure están disponibles para muchos servicios, como Azure Storage, Azure SQL Database y Azure Cosmos DB.
++ De forma predeterminada, los puntos de conexión de servicio de red virtual no son accesibles desde redes locales. Para acceder a los recursos desde una red local, use direcciones IP de NAT.

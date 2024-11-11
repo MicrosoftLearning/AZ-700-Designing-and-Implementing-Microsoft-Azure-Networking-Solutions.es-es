@@ -43,7 +43,6 @@ En este ejercicio, aprenderá a:
 - Tarea 4: Creación de un punto de conexión privado
 - Tarea 5: Configuración de la zona DNS privada
 - Tarea 6: Prueba de la conectividad con el punto de conexión privado
-- Tarea 7: Limpieza de recursos
 
 ## Tarea 1: Creación de un grupo de recursos e implementación de la aplicación web de requisitos previos
 
@@ -401,13 +400,29 @@ Se devuelve la dirección IP privada **10.0.0.5** para el nombre de la aplicaci�
 
 1. En la conexión bastión a **myVM**, abra Internet Explorer.
 1. Escribe la dirección URL de la aplicación web, **https://&lt;nombre-aplicación-web&gt;.azurewebsites.net**
-1. Recibirás la página de aplicación web predeterminada si la aplicación no se ha implementado: ![captura de pantalla de la página en Azure que indica que un servicio de aplicaciones está en funcionamiento.](../media/web-app-default-page.png)
+1. Recibirás la página de la aplicación web predeterminada si tu aplicación no se ha implementado: ![captura de pantalla de la página en Azure que indica que un App Service está en funcionamiento](../media/web-app-default-page.png)
 1. Cierre la conexión con **myVM**.
 
-## Tarea 7: Limpieza de recursos
+## Limpieza de recursos
 
 Cuando haya terminado con el punto de conexión privado y la máquina virtual, use [Remove-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azresourcegroup) para quitar el grupo de recursos y todos los recursos que contiene:
 
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
+
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ Proporciona un ejemplo de cuándo usar un punto de conexión privado en lugar de un punto de conexión de servicio.
++ ¿Cómo puedo solucionar problemas de conectividad del punto de conexión privado?
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Private Link](https://learn.microsoft.com/training/modules/introduction-azure-private-link/). En este módulo, aprenderás cómo Azure Private Link habilita la conectividad privada con los servicios de Azure, incluidas sus características, su modo de funcionamiento y casos de uso.
++ [Diseño e implementación de acceso privado en los servicios de Azure](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/). En este módulo, aprenderás a diseñar e implementar acceso privado en los servicios de Azure con Azure Private Link y puntos de conexión de servicio de red virtual.
+
+## Puntos clave
+
++ Azure Private Link le permite acceder a los servicios PaaS de Azure (por ejemplo, Azure Storage y SQL Database) y a los servicios hospedados en Azure que son propiedad de los clientes, o a los servicios de los asociados, a través de un punto de conexión privado de la red virtual.
++ Un punto de conexión privado es una interfaz de red que usa una dirección IP privada de la red virtual. Esta interfaz de red le conecta de forma privada y segura a un servicio con la tecnología de Azure Private Link. 

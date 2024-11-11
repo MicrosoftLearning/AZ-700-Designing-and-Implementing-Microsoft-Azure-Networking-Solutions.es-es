@@ -29,9 +29,9 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 11: Visualización de métricas detalladas
 + Tarea 12: Visualización del estado de los recursos
 + Tarea 13: Configuración de las opciones de diagnóstico
-+ Tarea 14: Limpieza de recursos
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+
+**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 > [!Note]  
 > Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
@@ -397,7 +397,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
    ![Página de configuración de diagnóstico para el equilibrador de carga](../media/diagnostic-settings-2.png)
 
-## Tarea 14: Limpieza de recursos
+## Limpieza de recursos
 
    >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
@@ -409,4 +409,26 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+>**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ Resume las herramientas de Azure que están disponibles para la supervisión de redes virtuales.
++ ¿Qué herramientas de supervisión de Azure Network Watcher están disponibles?
+
+## Más información con el aprendizaje autodirigido
+
++ [Introducción a Azure Monitor](https://learn.microsoft.com/training/modules/intro-to-azure-monitor/). En este módulos, aprenderás a usar Azure Monitor para proporcionar información sobre el rendimiento y las operaciones de los recursos de Azure.
++ [Supervisión y solución de problemas de la infraestructura de red de Azure de un extremo a otro mediante herramientas de supervisión de red](https://learn.microsoft.com/training/modules/troubleshoot-azure-network-infrastructure/). En este módulo, aprederás a utilizar herramientas, diagnósticos y registros de Azure Network Watcher para encontrar y corregir incidencias de red en la infraestructura de Azure.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
+
++ Azure Monitor proporciona características y herramientas para recopilar, administrar y analizar datos de TI de todos los recursos de Azure, otras nubes y locales.
++ Las métricas son medidas cuantitativas que muestran instantáneas del rendimiento de las aplicaciones o recursos. Las métricas suelen ser valores numéricos que se pueden medir con el tiempo.
++ Los registros son registros textuales de eventos, acciones y mensajes que se producen en un recurso o aplicación. 
++ La información, las visualizaciones y los paneles de Azure Monitor pueden consumir y transmitir información de supervisión sobre tus aplicaciones.
++ Las alertas le avisan de condiciones críticas y pueden tomar medidas correctivas. Las reglas de alerta se pueden basar en datos de métricas o de registro.+ 
+    
