@@ -31,7 +31,7 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 13: Configuración de las opciones de diagnóstico
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 > [!Note]  
 > Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
@@ -54,7 +54,7 @@ En esta sección, creará una red virtual y una subred.
 
    | **Configuración**    | **Valor**                                           |
    | -------------- | --------------------------------------------------- |
-   | Suscripción   | Seleccione la suscripción.                            |
+   | Suscripción   | Selecciona la suscripción                            |
    | Resource group | Seleccione **Crear nuevo**.<br /><br />Nombre: **IntLB-RG** |
    | NOMBRE           | **IntLB-VNet**                                      |
    | Region         | **(EE. UU.) Oeste de EE. UU.**                                    |
@@ -88,13 +88,15 @@ En esta sección, creará una red virtual y una subred.
 En esta sección, creará un equilibrador de carga de SKU estándar interno. La razón por la que en este ejercicio se va a crear un equilibrador de carga de SKU Estándar, en lugar de uno de SKU Básica, es que en ejercicios posteriores se necesitará una versión de SKU Estándar del equilibrador de carga.
 
 1. En la página principal de Azure, en el cuadro de búsqueda, escriba **Load Balancer**.
+
 1. Seleccione **Crear equilibrador de carga**.
+
 1. En la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el equilibrador de carga.
 
    | **Configuración**           | **Valor**                |
    | --------------------- | ------------------------ |
    | Pestaña Datos básicos            |                          |
-   | Suscripción          | Seleccione la suscripción. |
+   | Suscripción          | Selecciona la suscripción |
    | Resource group        | **IntLB-RG**             |
    | Nombre                  | **myIntLoadBalancer**    |
    | Region                | **(EE. UU.) Oeste de EE. UU.**         |
@@ -221,8 +223,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 ### Creación de la máquina virtual de prueba
 
-> [!Note]  
-> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
+   >**Nota**: puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
 
 1. En la página principal de Azure, en la búsqueda global, escribe **Máquinas virtuales** y selecciona máquinas virtuales en servicios.
 
@@ -230,13 +231,14 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
    | **Configuración**          | **Valor**                                    |
    | -------------------- | -------------------------------------------- |
-   | Suscripción         | Seleccione la suscripción.                     |
+   | Suscripción         | Selecciona la suscripción                     |
    | Resource group       | **IntLB-RG**                                 |
    | Nombre de la máquina virtual | **myTestVM**                                 |
    | Region               | **(EE. UU.) Oeste de EE. UU.**                             |
    | Opciones de disponibilidad | **No se requiere redundancia de la infraestructura**    |
-   | Imagen                | **Windows Server 2019 Datacenter - Gen 1**   |
-   | Size                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria** |
+   | Tipo de seguridad        | **Estándar**                                 |
+   | Imagen                | **Ver todas las imágenes** --> **Datacenter para Windows Server 2019**  |
+   | Tamaño                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria** |
    | Nombre de usuario             | **TestUser**                                 |
    | Contraseña             | **Proporcione una contraseña segura**                |
    | Confirmar contraseña     | **Proporcione una contraseña segura**                |
@@ -303,7 +305,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
    | **Configuración**    | **Valor**                |
    | -------------- | ------------------------ |
-   | Suscripción   | Seleccione la suscripción. |
+   | Suscripción   | Selecciona la suscripción |
    | Resource group | **IntLB-RG**             |
    | NOMBRE           | **myLAworkspace**        |
    | Region         | **Oeste de EE. UU.**              |
@@ -399,7 +401,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 ## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
