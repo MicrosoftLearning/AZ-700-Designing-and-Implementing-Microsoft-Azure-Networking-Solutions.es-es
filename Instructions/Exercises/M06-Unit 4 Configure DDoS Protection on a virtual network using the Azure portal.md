@@ -23,7 +23,7 @@ En este ejercicio, aprenderá a:
 + Tarea 7: Prueba con asociados de simulación
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 40 minutos.
 
@@ -149,7 +149,7 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
    | **Configuración**           | **Valor**                                                    |
    | --------------------- | ------------------------------------------------------------ |
-   | Suscripción          | Seleccione la suscripción.                                     |
+   | Suscripción          | Selecciona la suscripción                                     |
    | Resource group        | **MyResourceGroup**                                          |
    | Nombre de la máquina virtual  | **MyVirtualMachine**                                         |
    | Region                | Su región                                                  |
@@ -230,7 +230,7 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -240,7 +240,7 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

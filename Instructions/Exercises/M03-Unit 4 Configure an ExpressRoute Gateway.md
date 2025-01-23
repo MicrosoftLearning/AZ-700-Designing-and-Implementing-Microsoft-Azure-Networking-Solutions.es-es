@@ -11,7 +11,7 @@ Exercise:
 
 Para conectar una red virtual de Azure y una red local a través de ExpressRoute, primero debe crear una puerta de enlace de red virtual. Una puerta de enlace de red virtual tiene dos propósitos: intercambiar las rutas de IP entre las redes y enrutar el tráfico de red.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
@@ -62,7 +62,7 @@ En este ejercicio, aprenderá a:
 
 1. Confirme que la red virtual supera la validación y, después, seleccione **Crear**.
 
->**Nota:** si usas una red virtual de doble pila y tienes previsto usar el emparejamiento privado basado en IPv6 a través de ExpressRoute, selecciona Agregar un espacio de direcciones IPv6 e indica los valores del intervalo de direcciones IPv6.
+   >**Nota:** si usas una red virtual de doble pila y tienes previsto usar el emparejamiento privado basado en IPv6 a través de ExpressRoute, selecciona Agregar un espacio de direcciones IPv6 e indica los valores del intervalo de direcciones IPv6.
 
 ## Tarea 2: Creación de la puerta de enlace de red virtual
 
@@ -93,7 +93,7 @@ En este ejercicio, aprenderá a:
 
 1. Cuando la implementación se complete, seleccione **Ir al recurso**.
 
->**Nota:** una puerta de enlace puede tardar hasta 45 minutos en implementarse.
+   >**Nota:** una puerta de enlace puede tardar hasta 45 minutos en implementarse.
 
 
 ## Ampliar el aprendizaje con Copilot

@@ -26,7 +26,7 @@ En este ejercicio, aprenderá a:
 + Tarea 10: Probar el firewall
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 60 minutos.
 
@@ -111,9 +111,7 @@ En esta tarea, creará la máquina virtual de carga de trabajo y la colocará en
   
 1. Cuando la implementación esté completa, ve a la página principal de Azure Portal y, luego, selecciona **Máquinas virtuales**.
 
-1. Compruebe que se ha creado la máquina virtual.
-
-1. Cuando finalice la implementación de la máquina virtual, haga clic en **Ir al recurso**.
+1. Comprueba que se ha creado la máquina virtual.
 
 1. En la página **Información general** de **Srv-Work**, a la derecha de la página, en **Redes**, anote la **Dirección IP privada** de esta VM (por ejemplo, **10.0.2.4**).
 
@@ -129,12 +127,12 @@ En esta tarea, implementará el firewall en la red virtual con una directiva de 
 
    | **Configuración**          | **Valor**                                                    |
    | -------------------- | ------------------------------------------------------------ |
-   | Suscripción         | Seleccione la suscripción.                                     |
+   | Suscripción         | Selecciona la suscripción                                     |
    | Resource group       | **Test-FW-RG**                                               |
    | Nombre del firewall        | **Test-FW01**                                                |
    | Region               | Su región                                                  |
    | SKU del firewall        | **Estándar**                                                 |
-   | Administración del firewall  | **Usar una directiva de firewall para administrar este firewall**            |
+   | Administración del firewall  | **Uso de una directiva de firewall para administrar este firewall**            |
    | Directiva de firewall      | Seleccione **Agregar nuevo**.<br />Nombre: **fw-test-pol**<br />Región: **su región** |
 
    ![Creación de una directiva de firewall](../media/create-firewall-policy.png)
@@ -146,13 +144,15 @@ En esta tarea, implementará el firewall en la red virtual con una directiva de 
 
    ![Agregar una IP pública al firewall](../media/assign-public-ip-to-firewall.png)
 
-1. Revise toda la configuración para asegurarse de que coincide con la captura de pantalla siguiente.
+1. No vamos a usar el Firewall Manager así que desactiva la casilla de **Habilitar NIC de administración de firewall**. 
+
+1. Revise la configuración. 
 
    ![Creación de un firewall: revisión de la configuración](../media/review-all-configurations-for-firewall.png)
 
-1. Seleccione **Revisar + crear**.
+1. Procede a **Revisar + crear** y después a **Crear**.
 
-1. Seleccione **Crear** y espere hasta que se complete la implementación del firewall.
+1. Espera a que la implementación del firewall se complete.
 
 1. Cuando finalice la implementación del firewall, seleccione **Ir al recurso**.
 
@@ -174,7 +174,7 @@ En esta tarea, en la subred Workload-SN, configurará la ruta predeterminada de 
 
    | **Configuración**              | **Valor**                |
    | ------------------------ | ------------------------ |
-   | Suscripción             | Seleccione la suscripción. |
+   | Suscripción             | Selecciona la suscripción |
    | Resource group           | **Test-FW-RG**           |
    | Region                   | Su región              |
    | Nombre                     | **Firewall-route**       |
@@ -292,7 +292,7 @@ En esta tarea, agregará una regla DNAT que le permita conectar un escritorio re
    | **Sección Reglas**     |                                                              |
    | Nombre                  | **rdp-nat**                                                  |
    | Tipo de origen           | **Dirección IP**                                               |
-   | Source                | *                                                            |
+   | Origen                | *                                                            |
    | Protocolo              | **TCP**                                                      |
    | Puertos de destino     | **3389**                                                     |
    | Tipo de destino      | **Dirección IP**                                               |
@@ -366,7 +366,7 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -376,7 +376,7 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

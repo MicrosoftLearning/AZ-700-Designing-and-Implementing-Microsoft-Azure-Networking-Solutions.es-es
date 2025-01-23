@@ -12,7 +12,7 @@ Ahora está listo para implementar redes virtuales en Azure Portal.
 
 Considere la organización ficticia Contoso Ltd, que está en proceso de migrar la infraestructura y las aplicaciones a Azure. Como ingeniero de red, debe planear e implementar tres redes virtuales y subredes para admitir recursos en esas redes virtuales.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 20 minutos
 
@@ -77,6 +77,7 @@ En este ejercicio, aprenderá a:
 1. En la página principal de Azure Portal, vaya a la barra Búsqueda global, busque **Redes virtuales** y seleccione Redes virtuales en servicios.  ![Resultados de la barra Búsqueda global de la página principal de Azure Portal para red virtual.](../media/global-search-bar.PNG)
 
 1. En la página Redes virtuales, seleccione **Crear**.  ![Asistente para la creación de una red virtual.](../media/create-virtual-network.png)
+   
 1. Use la información de la tabla siguiente para crear la red virtual CoreServicesVnet.  
    Quitar o sobrescribir el espacio de direcciones IP predeterminado. ![Configuración de dirección IP para la implementación de red virtual de Azure ](../media/default-vnet-ip-address-range-annotated.png)
 
@@ -173,7 +174,7 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 ## Puntos clave
 
 + Azure Virtual Network es un servicio que proporciona el bloque de compilación fundamental para su red privada en Azure. Una instancia del servicio (una red virtual) permite que muchos tipos de recursos de Azure se comuniquen de forma segura entre sí, Internet y redes locales. Asegúrese de que los espacios de direcciones no se superpongan. Asegúrese de que el espacio de direcciones de su red virtual (bloque CIDR) no se solape con otros intervalos de red de su organización.
-+ Todos los recursos de Azure en una red virtual se implementan en una subred de la red virtual. Las subredes te permiten segmentar la red virtual en una o varias subredes y asignar una parte del espacio de direcciones de la red virtual a cada subred. Las subredes no deberían cubrir el espacio de direcciones completo de la red virtual. Planee con antelación y reserve algún espacio de direcciones para el futuro.
++ Todos los recursos de Azure en una red virtual se implementan en subredes de la red virtual. Las subredes te permiten segmentar la red virtual en una o varias subredes y asignar una parte del espacio de direcciones de la red virtual a cada subred. Las subredes no deberían cubrir el espacio de direcciones completo de la red virtual. Planee con antelación y reserve algún espacio de direcciones para el futuro.
 
 
 

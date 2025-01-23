@@ -19,7 +19,7 @@ En este ejercicio, aprenderá a:
 + Tarea 3: Conexión de una red virtual al centro de conectividad virtual
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
@@ -54,23 +54,31 @@ En este ejercicio, aprenderá a:
 Un centro de conectividad contiene puertas de enlace para las funcionalidades de sitio a sitio, ExpressRoute o de punto a sitio. La creación de la puerta de enlace de VPN de sitio a sitio en el centro de conectividad virtual tarda 30 minutos. Debe crear una red WAN virtual para poder crear un centro.
 
 1. Ubique la red WAN virtual que ha creado.
+   
 1. En la página Red WAN virtual, en **Conectividad**, seleccione **Centros**.
+
 1. En la página Centros, seleccione **+Nuevo centro de conectividad** para abrir la página Crear centro de conectividad virtual.
    ![Crear centro virtual, pestaña Datos básicos.](../media/create-vwan-hub.png)
+
 1. En la página Crear centro de conectividad virtual, en la pestaña **Aspectos básicos** rellene los siguientes campos:
    + **Región:** Oeste de EE. UU.
    + **Nombre:** ContosoVirtualWANHub-WestUS
    + **Espacio de direcciones privadas del centro de conectividad:**  10.60.0.0/24
    + **Capacidad del centro virtual:** 2 unidades de infraestructura de enrutamiento
    + **Preferencia de enrutamiento del centro de conectividad**: deja por defecto
+
 1. Seleccione **Siguiente: De sitio a sitio**.
+
 1. En la pestaña **De sitio a sitio**, rellene los siguientes campos:
    + **¿Quiere crear una instancia de sitio a sitio (puerta de enlace de VPN)?:** Sí
    + El campo **Número AS** no se puede modificar.
    + **Unidades de escalado de puerta de enlace:** 1 unidad de escalado = 500 Mbps x 2
    + **Preferencia de enrutamiento**: deja por defecto
+
 1. Seleccione **Revisar y crear** para validar.
+
 1. Seleccione **Crear** para crear un centro de conectividad.
+
 1. Pasados 30 minutos haga clic en **Actualizar** para ver el centro de conectividad en la página Centros.
 
 ## Tarea 3: Conexión de una red virtual al centro de conectividad virtual
@@ -103,7 +111,7 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -113,7 +121,7 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

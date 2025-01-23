@@ -9,7 +9,7 @@ Exercise:
 
 Este ejercicio, creará un circuito ExpressRoute mediante Azure Portal y el modelo de implementación de Azure Resource Manager.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 15 minutos
 
@@ -26,9 +26,7 @@ En este ejercicio, aprenderá a:
 
 1. Desde un explorador, navegue al [Portal de Azure](https://portal.azure.com/) e inicie sesión con su cuenta de Azure.
 
-   > [!Important]
-   >
-   > El circuito ExpressRoute se factura a partir del momento en que se emite una clave de servicio. Asegúrese de realizar esta operación cuando el proveedor de conectividad esté listo para aprovisionar el circuito.
+   >**Importante**: tu circuito de ExpressRoute se factura a partir del momento en el que se emita una clave de servicio. Asegúrese de realizar esta operación cuando el proveedor de conectividad esté listo para aprovisionar el circuito.
 
 1. En el menú de Azure Portal, seleccione **+ Crear un recurso**. Seleccione **Redes** y después **ExpressRoute**, como se muestra en la imagen siguiente. Si ExpressRoute no aparece en la lista, use **Buscar en Marketplace** para buscarlo:
 
@@ -55,9 +53,7 @@ En este ejercicio, aprenderá a:
 
 + **SKU** determina si está habilitado un complemento local, estándar o premium de ExpressRoute. Puede especificar **Local** para obtener la SKU local, **Estándar** para obtener la SKU estándar o **Premium** si quiere el complemento Premium. Puede cambiar la SKU para habilitar el complemento premium.
 
-> [!Important]
->
-> No se puede cambiar la SKU de Estándar o Premium a Local.
+   >**Importante**: no puedes cambiar el SKU de Estándar/Premium a Local.
 
 + **Modelo de facturación** determina el tipo de facturación. Puede especificar **Metered** (Limitado) para un plan de datos limitado y **Unlimited** (Ilimitado) para un plan de datos ilimitado. Puede cambiar el tipo de facturación de **Uso medido** a **Ilimitado**.
 
@@ -104,11 +100,7 @@ En este ejercicio, aprenderá a:
 
 Si el estado de aprovisionamiento del proveedor de servicios del circuito ExpressRoute es **Aprovisionando** o **Aprovisionado**, tendrá que colaborar con el proveedor de servicios para que desaprovisione el circuito. Microsoft puede seguir reservando recursos y facturarlos hasta que el proveedor de servicios complete el desaprovisionamiento del circuito y nos lo notifique.
 
-> [!Note]
->
-> Debe desvincular todas las redes virtuales del circuito ExpressRoute antes del desaprovisionamiento. Si se produce un error en esta operación, compruebe si hay alguna red virtual vinculada al circuito.
->
-> Si el proveedor de servicios ha desaprovisionado el circuito (el estado de aprovisionamiento del proveedor de servicios está establecido en No aprovisionado), puede eliminar el circuito. Esto detiene la facturación del circuito.
+   >**Nota**: debes desvincular todas las redes virtuales del circuito ExpressRoute antes del desaprovisionamiento. Si se produce un error en esta operación, compruebe si hay alguna red virtual vinculada al circuito. Si el proveedor de servicios ha desaprovisionado el circuito (el estado de aprovisionamiento del proveedor de servicios está establecido en No aprovisionado), puede eliminar el circuito. Esto detiene la facturación del circuito.
 
 ## Limpieza de recursos
 
@@ -116,7 +108,7 @@ Para eliminar el circuito ExpressRoute, puede seleccionar el icono **Eliminar**.
 
 ![Azure Portal: eliminación de un circuito ExpressRoute](../media/expressroute-circuit-delete.png)
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -127,7 +119,7 @@ Para eliminar el circuito ExpressRoute, puede seleccionar el icono **Eliminar**.
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

@@ -10,7 +10,7 @@ Exercise:
 
 En este ejercicio, creará un perfil de Traffic Manager para ofrecer alta disponibilidad para la aplicación web ficticia de la organización Contoso Ltd.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 35 minutos
 
@@ -39,7 +39,7 @@ En esta sección, creará dos instancias de una aplicación web implementada en 
 
    | **Configuración**      | **Valor**                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | Suscripción     | Seleccione la suscripción.                                     |
+   | Suscripción     | Selecciona la suscripción                                     |
    | Resource group   | Seleccione **Crear nuevo**  Nombre: **Contoso-RG-TM1**             |
    | Nombre             | **ContosoWebAppEastUSxx** (donde xx son las iniciales para que el nombre sea único) |
    | Publicar          | **Código**                                                     |
@@ -92,7 +92,7 @@ Ahora creará un perfil de Traffic Manager que dirija el tráfico de los usuario
    | ----------------------- | ------------------------ |
    | Nombre                    | **Contoso-TMProfilexx** (donde xx son las iniciales para que el nombre sea único) |
    | Método de enrutamiento          | **Prioridad**             |
-   | Suscripción            | Seleccione la suscripción. |
+   | Suscripción            | Selecciona la suscripción |
    | Resource group          | **Contoso-RG-TM1**       |
    | Ubicación del grupo de recursos | **Este de EE. UU.**              |
 
@@ -172,7 +172,7 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -185,7 +185,7 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

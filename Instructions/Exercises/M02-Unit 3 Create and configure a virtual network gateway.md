@@ -11,6 +11,8 @@ Exercise:
 
 En este ejercicio, configurarás una puerta de enlace de red virtual para conectar la red virtual de Contoso Core Services y la red virtual Manufacturing.
 
+   >**Importante**: Mire detenidamente este diseño. ¿Ha observado que CoreServicesSubnet se superpone con GatewaySubnet? Como procedimiento recomendado, estas subredes deben segregarse para evitar posibles problemas de conectividad. 
+
 ![Diagrama de puerta de enlace de red virtual.](../media/3-exercise-create-configure-local-network-gateway.png)
 
 En este ejercicio, aprenderás a:
@@ -27,7 +29,7 @@ En este ejercicio, aprenderás a:
 + Tarea 10: Comprobación de las conexiones
 + Tarea 11: Prueba de la conexión entre las máquinas virtuales
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+>**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 70 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
@@ -49,7 +51,7 @@ En este ejercicio, aprenderás a:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
- > **Nota:** actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación.
+   >**Nota:** actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación.
 
 ## Tarea 2: Creación de CoreServicesVM
 
@@ -94,20 +96,35 @@ En este ejercicio, aprenderás a:
 ## Tarea 4: Conexión a las máquinas virtuales mediante RDP
 
 1. En la página principal de Azure Portal, selecciona **Máquinas virtuales**.
+
 1. Selecciona **ManufacturingVM**.
-1. En **ManufacturingVM**, selecciona **Conectar &gt; RDP**.
-1. En **ManufacturingTestVM | Conectar**, selecciona **Descargar archivo RDP**.
+
+1. En **ManufacturingVM**, selecciona **Conectar** y después **RDP**.
+
+1. Seleccione **Descargar archivo RDP**.
+
 1. Guarda el archivo RDP en el escritorio.
+
 1. Conéctate a **ManufacturingVM** con el archivo RDP y el nombre de usuario **TestUser** y la contraseña que has proporcionado durante la implementación. Después de conectarte, minimiza la sesión de RDP.
+
 1. En la página principal de Azure Portal, selecciona **Máquinas virtuales**.
+
 1. Selecciona **CoreServicesVM**.
-1. En **CoreServicesTestVM**, selecciona **Conectar &gt; RDP**.
-1. En **CoreServicesTestVM | Conectar**, selecciona **Descargar archivo RDP**.
+
+1. En **CoreServicesVM**, selecciona **Conectar** y luego **RDP**.
+
+1. Seleccione **Descargar archivo RDP**.
+
 1. Guarde el archivo RDP en el escritorio.
+
 1. Conéctate a **CoreServicesVM** mediante el archivo RDP y el nombre de usuario **TestUser** y la contraseña que has proporcionado durante la implementación.
+
 1. En las dos máquinas virtuales, en **Elegir la configuración de privacidad para el dispositivo**, seleccione **Aceptar**.
+
 1. En las dos máquinas virtuales, en **Redes**, seleccione **Sí**.
+
 1. En **CoreServicesVM**, abre PowerShell y ejecuta el siguiente comando: ipconfig.
+
 1. Anote la dirección IPv4.
 
 ## Tarea 5: Prueba de la conexión entre las máquinas virtuales
@@ -152,15 +169,13 @@ En este ejercicio, aprenderás a:
    |                 |                   | Configuración de BGP                               | Deshabilitada                     |
    | Revisar y crear |                   | Comprueba la configuración y selecciona **Crear**. |                              |
 
-   > [!NOTE]
-   >
-   > El proceso de creación de una puerta de enlace de red virtual puede tardar entre 15 y 30 minutos. No es necesario esperar la implementación para completar. Continúa con la creación de la puerta de enlace siguiente. 
+   >**Nota**: la creación de una puerta de enlace de red virtual puede tardar entre 15 y 30 minutos. No es necesario esperar la implementación para completar. Continúa con la creación de la puerta de enlace siguiente. 
 
 ## Tarea 7: Creación de la puerta de enlace ManufacturingVnet
 
 ### Crea GatewaySubnet
 
-**Nota:** la plantilla creó GatewaySubnet para CoreServicesVnet. Aquí crearás la subred manualmente. 
+   >**Nota:** la plantilla creó GatewaySubnet para CoreServicesVnet. Aquí crearás la subred manualmente. 
 
 1. Busca y selecciona **ManufacturingVnet**.
 
@@ -169,7 +184,7 @@ En este ejercicio, aprenderás a:
     | Parámetro | Valor |
     | --------------- | ----------------- | 
     | Propósito de subred | **Puerta de enlace de red virtual** |
-    | Size | **/27 (32 direcciones)** |
+    | Tamaño | **/27 (32 direcciones)** |
 
 1. Selecciona **Agregar**. 
 
@@ -200,9 +215,7 @@ En este ejercicio, aprenderás a:
    |                 |                   | Configuración de BGP                               | Deshabilitada                     |
    | Revisar y crear |                   | Comprueba la configuración y selecciona **Crear**. |                              |
 
-   > [!NOTE]
-   >
-   > El proceso de creación de una puerta de enlace de red virtual puede entre 15 y 30 minutos.
+   >**Nota**: la creación de una puerta de enlace de red virtual puede tardar entre 15 y 30 minutos.
 
 ## Tarea 8: Conexión de CoreServicesVnet a ManufacturingVnet
 
@@ -212,9 +225,7 @@ En este ejercicio, aprenderás a:
 
 1. En CoreServicesGateway, selecciona **Conexiones** y después **+ Agregar**.
 
-   > [!NOTE]
-   >
-   >  No podrás completar esta configuración hasta que las puertas de enlace de red virtual estén completamente implementadas.
+   >**Nota**: no podrás completar esta configuración hasta que las puertas de enlace de red virtual estén completamente implementadas.
 
 1. Usa la información y la pestaña **Configuración** para crear la puerta de enlace de red virtual. 
 

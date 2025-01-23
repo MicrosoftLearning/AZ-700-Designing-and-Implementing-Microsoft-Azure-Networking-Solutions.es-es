@@ -26,7 +26,7 @@ En este ejercicio, aprenderá a:
 + Tarea 10: Confirmación del acceso a la cuenta de almacenamiento
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 35 minutos
 
@@ -42,7 +42,7 @@ En este ejercicio, aprenderá a:
 
    | **Configuración**    | **Valor**                                     |
    | -------------- | --------------------------------------------- |
-   | Suscripción   | Seleccione la suscripción.                      |
+   | Suscripción   | Selecciona la suscripción                      |
    | Resource group | (Nuevo) myResourceGroup                         |
    | Nombre           | CoreServicesVNet                              |
    | Location       | Seleccione **Este de EE. UU**.                            |
@@ -99,7 +99,7 @@ De forma predeterminada, todas las máquinas virtuales de una subred pueden comu
 
    | **Configuración**    | **Valor**                                                    |
    | -------------- | ------------------------------------------------------------ |
-   | Suscripción   | Seleccione la suscripción.                                     |
+   | Suscripción   | Selecciona la suscripción                                     |
    | Resource group | myResourceGroup                                              |
    | Nombre           | ContosoPrivateNSG                                            |
    | Location       | Seleccione **Este de EE. UU**.                                           |
@@ -200,7 +200,7 @@ Los pasos que deben seguirse para restringir el acceso de la red a los recursos 
 
    | **Configuración**    | **Valor**                                                    |
    | -------------- | ------------------------------------------------------------ |
-   | Suscripción   | Seleccione la suscripción.                                     |
+   | Suscripción   | Selecciona la suscripción                                     |
    | Resource group | myResourceGroup                                              |
    | Nombre           | Escribe contosostoragewestxx (donde xx son tus iniciales para que sea único). |
    | Rendimiento    | Standard StorageV2 (uso general v2)                      |
@@ -325,7 +325,7 @@ Dado que el grupo de seguridad de red asociado a la subred Private no permite el
 
  El acceso se deniega porque el equipo no se encuentra en la subred Private de la red virtual CoreServicesVNet.
 
-> **Advertencia**: Antes de continuar, debes quitar todos los recursos usados para este laboratorio. Para ello, en Azure Portal, selecciona Grupos de recursos. Seleccione los grupos de recursos que haya creado. En el panel del grupo de recursos, seleccione Eliminar grupo de recursos, escriba el nombre del grupo de recursos y seleccione Eliminar. Repita el proceso para los grupos de recursos adicionales que es posible que haya creado. Si no lo hace, pueden producirse problemas con otros laboratorios.
+   >**Advertencia**: Antes de continuar, debes quitar todos los recursos usados para este laboratorio. Para ello, en Azure Portal, selecciona Grupos de recursos. Seleccione los grupos de recursos que haya creado. En el panel del grupo de recursos, seleccione Eliminar grupo de recursos, escriba el nombre del grupo de recursos y seleccione Eliminar. Repita el proceso para los grupos de recursos adicionales que es posible que haya creado. Si no lo hace, pueden producirse problemas con otros laboratorios.
 
 Resultados: Ha completado este laboratorio.
 
@@ -341,7 +341,7 @@ Resultados: Ha completado este laboratorio.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 
@@ -352,7 +352,7 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 
 ## Más información con el aprendizaje autodirigido
 
-+ [Proteja y aísle el acceso a recursos de Azure mediante grupos de seguridad de red y puntos de conexión de servicio](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). En este módulo, aprenderás cómo utilizar puntos de conexión de servicio de red virtual para controlar el tráfico de red hacia y desde los servicios de Azure.
++ [Protegerás y aislarás el acceso a recursos de Azure mediante grupos de seguridad de red y puntos de conexión de servicio](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). En este módulo, aprenderás cómo utilizar puntos de conexión de servicio de red virtual para controlar el tráfico de red hacia y desde los servicios de Azure.
 
 ## Puntos clave
 + Los puntos de conexión de servicio de red virtual amplían tu espacio de direcciones privadas en Azure al proporcionar una conexión directa a tus servicios de Azure.
