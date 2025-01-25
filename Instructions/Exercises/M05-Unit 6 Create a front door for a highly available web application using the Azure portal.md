@@ -21,7 +21,7 @@ En este ejercicio, aprenderá a:
 + Tarea 3: Visualización de Front Door en acción
 
 
-**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 30 minutos
 
@@ -73,7 +73,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 1. Seleccione **Revisar y crear**, revise el resumen y, después, seleccione **Crear**.
    ‎La implementación puede tardar varios minutos en completarse.
 
-**Nota:** si se produce un error de implementación, lee atentamente la notificación. Si el error implica la disponibilidad de la región debido a cuotas, intenta cambiar a otra región. 
+   >**Nota:** si se produce un error de implementación, lee atentamente la notificación. Si el error implica la disponibilidad de la región debido a cuotas, intenta cambiar a otra región. 
 
 ## Tarea 2: Creación de una instancia de Front Door para una aplicación
 
@@ -99,7 +99,9 @@ Configure Azure Front Door para dirigir el tráfico del usuario en función de l
 1. Seleccione **Revisar y Crear** y, luego seleccione **Crear**.
 
 1. Espera a que se implementen los recursos y después selecciona **Ir al recurso**.
+
 1. En el recurso de Front Door de la hoja Información general, busca los **Grupos de origen**, selecciona el grupo de origen creado.
+
 1. Para actualizar el grupo de origen, selecciona el nombre **default-origin-group** de la lista. Selecciona **Agregar un origen** y agrega la segunda aplicación web. Selecciona Agregar y luego Actualizar.
 
 ## Tarea 3: Visualización de Front Door en acción
@@ -133,7 +135,7 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -145,7 +147,7 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

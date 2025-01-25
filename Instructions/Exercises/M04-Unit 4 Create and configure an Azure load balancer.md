@@ -9,7 +9,7 @@ Exercise:
 
 En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
@@ -39,7 +39,7 @@ En esta sección, creará una red virtual y una subred.
 
    | **Configuración**    | **Valor**                                  |
    | -------------- | ------------------------------------------ |
-   | Suscripción   | Seleccione la suscripción.                   |
+   | Suscripción   | Selecciona la suscripción                   |
    | Resource group | Seleccione **Crear nuevo** Nombre: **IntLB-RG** |
    | Nombre           | **IntLB-VNet**                             |
    | Region         | **(EE. UU.) Este de EE. UU.**                           |
@@ -83,7 +83,7 @@ En esta sección, creará tres máquinas virtuales, que estarán en el mismo con
 
 3. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
->**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+   >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    $RGName = "IntLB-RG"
@@ -109,7 +109,7 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
 
    | **Configuración**           | **Valor**                |
    | --------------------- | ------------------------ |
-   | Suscripción          | Seleccione la suscripción. |
+   | Suscripción          | Selecciona la suscripción |
    | Resource group        | **IntLB-RG**             |
    | Nombre                  | **myIntLoadBalancer**    |
    | Region                | **(EE. UU.) Este de EE. UU.**         |
@@ -118,7 +118,9 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    | Nivel                  | **Regional**             |
 
 1. Selecciona **Siguiente: Configuraciones de direcciones IP de front-end**.
+   
 1. Selecciona Agregar una IP de front-end.
+
 1. En el panel **Agregar dirección IP de front-end**, escribe la información de la tabla siguiente y selecciona **Agregar**.
 
    | **Configuración**     | **Valor**                |
@@ -214,7 +216,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
    | **Configuración**          | **Valor**                                    |
    | -------------------- | -------------------------------------------- |
-   | Suscripción         | Seleccione la suscripción.                     |
+   | Suscripción         | Selecciona la suscripción                     |
    | Resource group       | **IntLB-RG**                                 |
    | Nombre de la máquina virtual | **myTestVM**                                 |
    | Region               | **(EE. UU.) Este de EE. UU.**                             |
@@ -276,7 +278,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -286,7 +288,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
->**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 ## Ampliar el aprendizaje con Copilot
 

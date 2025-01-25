@@ -13,7 +13,7 @@ En este ejercicio, usará Azure Portal para crear una puerta de enlace de aplica
 ![Diagrama de la arquitectura de puerta de enlace de aplicación.](../media/4-exercise-deploy-azure-application-gateway.png)
 
 
->**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 25 minutos
 
@@ -151,14 +151,14 @@ En este ejercicio, aprenderá a:
 
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
->**Nota**: se te pedirá que proporciones una contraseña de administrador. 
+   >**Nota**: se te pedirá que proporciones una contraseña de administrador. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
->**Nota**: Dedica tiempo a revisar el archivo **backend.json**. Hay dos máquinas virtuales que se implementan. Esta operación puede tardar unos minutos. 
+   >**Nota**: Dedica tiempo a revisar el archivo **backend.json**. Hay dos máquinas virtuales que se implementan. Esta operación puede tardar unos minutos. 
 
 1. El comando debe completarse correctamente y enumerar **BackendVM1** y **BackendVM2**.
 
@@ -172,14 +172,14 @@ En este ejercicio, aprenderá a:
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
 
->**Nota**: mientras esperas, revisa el script de PowerShell. Ten en cuenta que la página principal de IIS se está personalizando para proporcionar el nombre de la máquina virtual.
+   >**Nota**: mientras esperas, revisa el script de PowerShell. Ten en cuenta que la página principal de IIS se está personalizando para proporcionar el nombre de la máquina virtual.
 
 1. Vuelve a ejecutar el comando, esta vez para **BackendVM2**.
 
    ```powershell
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
->**Nota:** el comando tardará un par de minutos en completarse.
+   >**Nota:** el comando tardará un par de minutos en completarse.
 
 ## Tarea 3: Agregar servidores backend al grupo de back-end
 
@@ -225,7 +225,7 @@ No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, per
 
 ## Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verás cargos inesperados.
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 

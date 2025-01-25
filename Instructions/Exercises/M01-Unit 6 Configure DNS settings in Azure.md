@@ -19,7 +19,7 @@ En este ejercicio, aprenderá a:
 + Tarea 3: Creación de máquinas virtuales para probar la configuración
 + Tarea 4: Comprobación de que existen registros en la zona DNS
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ### Tiempo estimado: 25 minutos
 
@@ -108,7 +108,7 @@ En esta sección, creará dos máquinas virtuales de prueba para probar la confi
 
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
-    >**Nota**: se te pedirá que proporciones una contraseña de administrador.
+   >**Nota**: se te pedirá que proporciones una contraseña de administrador.
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -172,8 +172,8 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 
 ## Más información con el aprendizaje autodirigido
 
-+ [Introducción a Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/). En este módulo se explica Azure DNS, cómo funciona y cuándo debe elegir usar Azure DNS como solución para satisfacer las necesidades de su organización.
-+ [Hospede el dominio en Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). En este módulo, crearás una zona DNS y registros DNS para asignar el dominio a una dirección IP. Además, comprueba para tener la certeza de que el nombre de dominio se resuelve en tu servidor web.
++ [Introducción a Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/). En este módulo se explica Azure DNS, cómo funciona y cuándo debes elegir usar Azure DNS como solución para satisfacer las necesidades de tu organización.
++ [Hospeda el dominio en Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). En este módulo, crearás una zona DNS y registros DNS para asignar el dominio a una dirección IP. Además, comprueba para tener la certeza de que el nombre de dominio se resuelve en tu servidor web.
 
 ## Puntos clave
 

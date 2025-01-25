@@ -14,7 +14,7 @@ En este ejercicio, creará la red virtual de radio y un centro virtual protegido
 ![Diagrama de la arquitectura de red virtual con un centro de conectividad seguro.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ## Creación de una arquitectura en estrella tipo hub-and-spoke
 
@@ -40,19 +40,32 @@ En este ejercicio, aprenderá a:
 En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales con una subred que hospedará los servidores de carga de trabajo.
 
 1. En la página de inicio de Azure Portal, en el cuadro de búsqueda, escribe **red virtual** y selecciona **Red virtual**cuando aparezca.
-2. Seleccione **Crear**.
-3. En **Grupo de recursos**, seleccione **Crear nuevo**, escriba **fw-manager-rg** como el nombre y seleccione **Aceptar**.
-4. En **Nombre**, escriba **Spoke-01**.
-5. En **Región**, seleccione su región.
-6. Seleccione **Siguiente: Direcciones IP**.
-7. En **Espacio de direcciones IPv4**, escriba **10.0.0.0/16**.
-8. **Elimine** cualquier otro espacio de direcciones que aparezca aquí, como **10.1.0.0/16**.
-9. En **Nombre de subred**, seleccione la palabra **predeterminada**.
-10. En el cuadro de diálogo **Editar subred**, cambie el nombre a **Workload-01-SN**.
-11. Cambie el **Intervalo de direcciones de subred** a **10.0.1.0/24**.
-12. Seleccione **Guardar**.
-13. Seleccione **Revisar + crear**.
-14. Seleccione **Crear**.
+
+1. Seleccione **Crear**.
+
+1. En **Grupo de recursos**, seleccione **Crear nuevo**, escriba **fw-manager-rg** como el nombre y seleccione **Aceptar**.
+
+1. En **Nombre**, escriba **Spoke-01**.
+
+1. En **Región**, seleccione su región.
+
+1. Seleccione **Siguiente: Direcciones IP**.
+
+1. En **Espacio de direcciones IPv4**, escriba **10.0.0.0/16**.
+
+1. **Elimine** cualquier otro espacio de direcciones que aparezca aquí, como **10.1.0.0/16**.
+
+1. En **Nombre de subred**, seleccione la palabra **predeterminada**.
+
+1. En el cuadro de diálogo **Editar subred**, cambie el nombre a **Workload-01-SN**.
+
+1. Cambie el **Intervalo de direcciones de subred** a **10.0.1.0/24**.
+
+1. Seleccione **Guardar**.
+
+1. Seleccione **Revisar + crear**.
+
+1. Seleccione **Crear**.
 
 Repita los pasos 1 a 14 anteriores para crear otra red virtual y subred similares con la información siguiente:
 
@@ -68,32 +81,32 @@ En esta tarea, creará el centro virtual protegido con Firewall Manager.
 
 1. En la página principal de Azure Portal, seleccione **Todos los servicios**.
 
-2. En el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
+1. En el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
 
-3. En la página **Firewall Manager**, selecciona **Ver los concentradores virtuales protegidos**.
+1. En la página **Firewall Manager**, selecciona **Ver los concentradores virtuales protegidos**.
 
-4. En la página **Centros virtuales**, seleccione **Crear un nuevo centro virtual protegido**.
+1. En la página **Centros virtuales**, seleccione **Crear un nuevo centro virtual protegido**.
 
-5. En **Grupo de recursos**, seleccione **fw-manager-rg**.
+1. En **Grupo de recursos**, seleccione **fw-manager-rg**.
 
-6. En **Región**, seleccione su región.
+1. En **Región**, seleccione su región.
 
-7. Para el **nombre del centro virtual protegido**, escribe **Hub-01**.
+1. Para el **nombre del centro virtual protegido**, escribe **Hub-01**.
 
-8. En **Espacio de direcciones del centro**, escriba **10.2.0.0/16**.
+1. En **Espacio de direcciones del centro**, escriba **10.2.0.0/16**.
 
-9. Elija **Nueva vWAN**.
+1. Elija **Nueva vWAN**.
 
-10. En **Nombre de la instancia de Virtual WAN**, escriba **Vwan-01**.
+1. En **Nombre de la instancia de Virtual WAN**, escriba **Vwan-01**.
 
-11. Seleccione **Siguiente: Azure Firewall**.
+1. Seleccione **Siguiente: Azure Firewall**.
     ![Crear un centro virtual protegido nuevo: pestaña Aspectos básicos](../media/create-new-secured-virtual-hub-1.png)
 
-12. Seleccione **Siguiente: Proveedores de seguridad asociados**.
+1. Seleccione **Siguiente: Proveedores de seguridad asociados**.
 
-13. Seleccione **Siguiente: Review + create** (Revisar y crear).
+1. Seleccione **Siguiente: Review + create** (Revisar y crear).
 
-14. Seleccione **Crear**.
+1. Seleccione **Crear**.
 
     > **[!NOTE]**
     >
@@ -103,35 +116,44 @@ En esta tarea, creará el centro virtual protegido con Firewall Manager.
 
     ![Crear un centro virtual protegido nuevo: pestaña Revisar y crear](../media/create-new-secured-virtual-hub-2.png)
 
-15. Una vez que se complete la implementación, seleccione **Todos los servicios** de la página principal de Azure Portal.
+1. Una vez que se complete la implementación, seleccione **Todos los servicios** de la página principal de Azure Portal.
 
-16. En el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
+1. En el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
 
-17. En la página **Firewall Manager**, seleccione **Centros virtuales**.
+1. En la página **Firewall Manager**, seleccione **Centros virtuales**.
 
-18. Seleccione **Hub-01**.
+1. Seleccione **Hub-01**.
 
-19. Seleccione **Configuración de IP pública**.
+1. Seleccione **Configuración de IP pública**.
 
-20. Anote la IP pública (por ejemplo, **51.143.226.18**); la usará más adelante.
+1. Anota la dirección IP pública (por ejemplo, **51.143.226.18**), que usarás más adelante.
 
 ## Tarea 3: Conectar las redes virtuales en estrella tipo hub-and-spoke
 
 En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Esto suele conocerse como "emparejamiento".
 
 1. En la página principal de Azure Portal, seleccione **Grupos de recursos**.
-2. Seleccione el grupo de recursos **fw-manager.rg** y, después, seleccione la WAN virtual **Vwan-01**.
-3. En **Conectividad**, seleccione **Conexiones de red virtual**.
-4. Seleccione **Agregar conexión**.
-5. En **Nombre de la conexión**, escriba **hub-spoke-01**.
-6. En **Centros**, seleccione **Hub-01**.
-7. En **Grupo de recursos**, seleccione **fw-manager-rg**.
-8. En **Red virtual**, seleccione **Spoke-01**.
-9. Seleccione **Crear**.
-   ![Agregar conexión en estrella tipo hub-and-spoke a la red Virtual WAN - Spoke 1](../media/connect-hub-spoke-vnet-1.png)
-10. Repita los pasos 4 a 9 anteriores para crear otra conexión similar con el nombre de conexión **hub-spoke-02** a fin de conectar la red virtual **Spoke-02**.
 
-![Agregar conexión en estrella tipo hub-and-spoke a la red Virtual WAN - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
+1. Seleccione el grupo de recursos **fw-manager.rg** y, después, seleccione la WAN virtual **Vwan-01**.
+
+1. En **Conectividad**, seleccione **Conexiones de red virtual**.
+
+1. Seleccione **Agregar conexión**.
+
+1. En **Nombre de la conexión**, escriba **hub-spoke-01**.
+
+1. En **Centros**, seleccione **Hub-01**.
+
+1. En **Grupo de recursos**, seleccione **fw-manager-rg**.
+
+1. En **Red virtual**, seleccione **Spoke-01**.
+
+1. Seleccione **Crear**.
+   ![Agregar conexión en estrella tipo hub-and-spoke a la red Virtual WAN - Spoke 1](../media/connect-hub-spoke-vnet-1.png)
+
+1. Repita los pasos 4 a 9 anteriores para crear otra conexión similar con el nombre de conexión **hub-spoke-02** a fin de conectar la red virtual **Spoke-02**.
+
+    ![Agregar conexión en estrella tipo hub-and-spoke a la red Virtual WAN - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
 
 ## Tarea 4: Implementar los servidores
 
@@ -277,11 +299,17 @@ En esta tarea, asociará la directiva de firewall con el centro virtual.
 
 1. En la página principal de Azure Portal, seleccione **Firewall Manager**.
    + Si el icono de Firewall Manager no aparece en la página principal, seleccione **Todos los servicios**. Luego, en el cuadro de búsqueda, escriba **firewall manager** y seleccione **Firewall Manager** cuando aparezca.
+
 1. En **Firewall Manager**, en **Seguridad**, selecciona **Directivas de Azure Firewall**.
+
 1. Active la casilla correspondiente a **Policy-01**.
+
 1. Seleccione **Administrar asociaciones&gt;Asociar centros**.
+
 1. Active la casilla correspondiente a **Hub-01**.
+
 1. Seleccione **Agregar**.
+
 1. Una vez que se adjunte la directiva, seleccione **Actualizar**. Debe aparecer la asociación.
 
 ![Mostrar directiva de firewall asociada en el centro de conectividad](../media/associate-firewall-policy-with-hub-end.png)
@@ -375,4 +403,4 @@ En esta tarea, probará la regla de aplicación para confirmar que funciona seg�
    Remove-AzResourceGroup -Name 'fw-manager-rg' -Force -AsJob
    ```
 
-    >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+   >**Nota**: el comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrás ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
