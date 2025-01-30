@@ -26,7 +26,7 @@ En esta unidad, aprenderás a:
 
 ## Tarea 1: Creación de una máquina virtual para probar la configuración
 
-En esta sección, crearás una máquina virtual de prueba en ManufacturingVNet para probar si, desde ella, puedes acceder a los recursos que contiene otra red virtual de Azure.
+En esta sección, crearás una máquina virtual de prueba en VNet para probar si, desde ella, puedes acceder a los recursos que contiene otra red virtual de Azure.
 
 ### Creación de ManufacturingVM
 
@@ -112,7 +112,7 @@ En esta sección, crearás una máquina virtual de prueba en ManufacturingVNet p
 
    | **Opción**                                    | **Valor**                             |
    | ------------------------------------ | --------------------------------------------- | 
-   | Nombre del vínculo de emparejamiento    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | Nombre del vínculo de emparejamiento    | `ManufacturingVnet-to-CoreServicesVnet` |
    | Red virtual | ManufacturingVnet |
 
     **Configuración de emparejamiento de red virtual remota**

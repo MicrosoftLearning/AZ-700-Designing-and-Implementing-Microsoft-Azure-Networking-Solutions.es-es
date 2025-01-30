@@ -11,8 +11,6 @@ Exercise:
 
 En este ejercicio, configurarás una puerta de enlace de red virtual para conectar la red virtual de Contoso Core Services y la red virtual Manufacturing.
 
-   >**Importante**: Mire detenidamente este diseño. ¿Ha observado que CoreServicesSubnet se superpone con GatewaySubnet? Como procedimiento recomendado, estas subredes deben segregarse para evitar posibles problemas de conectividad. 
-
 ![Diagrama de puerta de enlace de red virtual.](../media/3-exercise-create-configure-local-network-gateway.png)
 
 En este ejercicio, aprenderás a:
@@ -50,9 +48,7 @@ En este ejercicio, aprenderás a:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-
-   >**Nota:** actualmente, hay un problema en curso en la región Oeste de Europa que afecta a las implementaciones de puerta de enlace. Como solución alternativa, la región ManufacturingVnet se ha cambiado a Norte de Europa para esta implementación.
-
+   
 ## Tarea 2: Creación de CoreServicesVM
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
@@ -157,7 +153,6 @@ En este ejercicio, aprenderás a:
    |                 | Detalles de la instancia  | NOMBRE                                        | CoreServicesVnetGateway      |
    |                 |                   | Region                                      | Este de EE. UU.                      |
    |                 |                   | Tipo de puerta de enlace                                | VPN                          |
-   |                 |                   | Tipo de VPN                                    | basada en rutas                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generación 1                  |
    |                 |                   | Virtual network                             | CoreServicesVnet             |
@@ -201,9 +196,8 @@ En este ejercicio, aprenderás a:
    | Aspectos básicos          | Detalles del proyecto   | Suscripción                                | No se necesitan cambios          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Detalles de la instancia  | Nombre                                        | ManufacturingVnetGateway     |
-   |                 |                   | Región                                      | Norte de Europa                  |
+   |                 |                   | Región                                      | Norte de Europa                 |
    |                 |                   | Tipo de puerta de enlace                                | VPN                          |
-   |                 |                   | Tipo de VPN                                    | basada en rutas                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generación 1                  |
    |                 |                   | Virtual network                             | ManufacturingVnet            |
@@ -261,7 +255,7 @@ En este ejercicio, aprenderás a:
    | ------------------------------ | --------------------------------- |
    | Nombre                           | ManufacturingGW-to-CoreServicesGW |
    | Tipo de conexión                | De red virtual a red virtual                      |
-   | Ubicación                       | Oeste de Europa                       |
+   | Location                       | Norte de Europa                      |
    | Primera puerta de enlace de red virtual  | ManufacturingVnetGateway          |
    | Segunda puerta de enlace de red virtual | CoreServicesVnetGateway           |
    | Clave compartida (PSK)               | abc123                            |

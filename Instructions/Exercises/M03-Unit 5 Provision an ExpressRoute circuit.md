@@ -32,9 +32,9 @@ En este ejercicio, aprenderá a:
 
    ![Azure Portal: menú Crear circuito ExpressRoute](../media/create-expressroute-circuit-menu.png)
 
-1. En la página **Crear ExpressRoute**, proporcione el **Grupo de recursos**, la **Región** y el **Nombre** del circuito con lo siguiente: ExpressRouteResourceGroup, Este de EE. UU. 2, TestERCircuit. Después, seleccione **Siguiente: Configuración &gt;**.
+1. En la página **Crear ExpressRoute**, proporciona el **grupo de recursos** como ExpressRouteResourceGroup. A continuación, selecciona **Resistencia estándar** para **Resistencia**
 
-1. Cuando rellenes los valores de esta página, para este ejemplo, asegúrate de especificar  el modelo de facturación de medición de datos **Estándar** del nivel de SKU correcto (**Medido**) (proveedor **Equinix**) Ubicación de emparejamiento (**Seattle**) y ancho de banda (**50 Mbps**).
+1. Para ***Detalles del circuito**, asegúrate de especificar la región correcta (**Este de EE. UU. 2**), nombre del circuito (**TestERCircuit**), ubicación de emparejamiento (**Seattle**), proveedor (**Equinix**), ancho de banda (**50 Mbps**), nivel de SKU (**Estándar**) y modelo de facturación de medición de datos (**Medido**).
 
 1. Seleccione **Revisar + crear**.
 

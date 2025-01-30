@@ -92,16 +92,17 @@ En este ejercicio, aprenderá a:
 
 1. Para empezar a crear cada subred, seleccione **+ Agregar subred**. Para terminar de crear cada subred, seleccione **Agregar**.
 
-   | **Subred**             | **Opción**           | **Valor**              |
-   | ---------------------- | -------------------- | ---------------------- |
-   | GatewaySubnet          | Nombre de subred          | GatewaySubnet          |
-   |                        | Intervalo de direcciones de subred | 10.20.0.0/27           |
-   | SharedServicesSubnet   | Nombre de subred          | SharedServicesSubnet   |
-   |                        | Intervalo de direcciones de subred | 10.20.10.0/24          |
-   | DatabaseSubnet         | Nombre de subred          | DatabaseSubnet         |
-   |                        | Intervalo de direcciones de subred | 10.20.20.0/24          |
-   | PublicWebServiceSubnet | Nombre de subred          | PublicWebServiceSubnet |
-   |                        | Intervalo de direcciones de subred | 10.20.30.0/24          |
+   | **Subred**             | **Opción**           | **Valor**               |
+   | ---------------------- | -------------------- | ----------------------- |
+   | GatewaySubnet          | Propósito de subred       | Puerta de enlace de red virtual |
+   |                        | Nombre de subred          | GatewaySubnet           |
+   |                        | Intervalo de direcciones de subred | 10.20.0.0/27            |
+   | SharedServicesSubnet   | Nombre de subred          | SharedServicesSubnet    |
+   |                        | Intervalo de direcciones de subred | 10.20.10.0/24           |
+   | DatabaseSubnet         | Nombre de subred          | DatabaseSubnet          |
+   |                        | Intervalo de direcciones de subred | 10.20.20.0/24           |
+   | PublicWebServiceSubnet | Nombre de subred          | PublicWebServiceSubnet  |
+   |                        | Intervalo de direcciones de subred | 10.20.30.0/24           |
 
 1. Para terminar de crear la red virtual CoreServicesVnet y las subredes asociadas, seleccione **Revisar y crear**.
 
