@@ -49,10 +49,12 @@ En este ejercicio, aprenderá a:
 
 1. En el panel Agregar subred, use la información de la tabla siguiente para crear la subred:
 
-   | **Configuración**                  | **Valor**     |
-   | ---------------------------- | ------------- |
-   | Nombre de la subred de puerta de enlace          | GatewaySubnet |
-   | Espacio de direcciones de la subred de puerta de enlace | 10.20.0.0/27  |
+   | **Configuración**                  | **Valor**               |
+   | ---------------------------- | ----------------------- |
+   | Propósito de subred               | Puerta de enlace de red virtual |
+   | Espacio de direcciones de la subred de puerta de enlace | 10.20.0.0/27            |
+
+Ten en cuenta que el nombre de la subred se rellenará automáticamente.
 
 1. Después, seleccione **Agregar**.
 
