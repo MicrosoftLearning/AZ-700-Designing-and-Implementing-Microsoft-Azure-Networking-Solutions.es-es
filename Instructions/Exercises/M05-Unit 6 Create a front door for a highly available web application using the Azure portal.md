@@ -43,7 +43,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-1. |
    | Publicar          | Seleccione **Código**.                                             |
-   | Pila en tiempo de ejecución    | Seleccione **.NET 6 (LTS)**.                                     |
+   | Pila en tiempo de ejecución    | Selecciona **.NET 8 (LTS)**.                                     |
    | Sistema operativo | Seleccione **Windows**.                                          |
    | Region           | Seleccione **Centro de EE. UU.**                                       |
    | Plan de Windows     | Seleccione **Crear nuevo** y escriba myAppServicePlanCentralUS en el cuadro de texto. |
@@ -64,7 +64,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-2. |
    | Publicar          | Seleccione **Código**.                                             |
-   | Pila en tiempo de ejecución    | Seleccione **.NET 6 (LTS)**.                                     |
+   | Pila en tiempo de ejecución    | Selecciona **.NET 8 (LTS)**.                                     |
    | Sistema operativo | Seleccione **Windows**.                                          |
    | Region           | Seleccione **Este de EE. UU**.                                          |
    | Plan de Windows     | Seleccione **Crear** y escriba myAppServicePlanEastUS en el cuadro de texto. |
@@ -157,7 +157,7 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 + ¿Qué es un origen en Azure Front Door y en qué se diferencia de un punto de conexión?
 
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Front Door](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/). En este módulo, aprenderás cómo Azure Front Door puede proteger tus aplicaciones.
 + [Equilibrar la carga del tráfico del servicio Web con Front Door](https://learn.microsoft.com/training/modules/create-first-azure-front-door/). En este módulo, aprenderás a crear y configurar Azure Front Door. 
