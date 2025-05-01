@@ -214,19 +214,9 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
 ## Tarea 7: Prueba con asociados de simulación
 
-1. Revisa [Directiva de pruebas de simulación de Azure DDoS](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
+1. Revisa la página [Directiva de pruebas de simulación de Azure DDoS](https://learn.microsoft.com/en-us/azure/ddos-protection/test-through-simulations#configure-a-ddos-attack-simulation). 
 
-1. Configura un ataque de prueba de DDoS mediante un asociado de prueba aprobado. Si usas BreakingPoint Cloud para probar, usa la configuración que se muestra en la captura de pantalla siguiente (es posible que debas seleccionar el tamaño de prueba de 100 000 pps con la cuenta de prueba), pero especificando la dirección IP de tu propio recurso **MyPublicIPAddress** en el cuadro **Dirección IP de destino** (por ejemplo, **51.140.137.219**) ![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)
-
-1. En la página principal de Azure Portal, seleccione **Todos los recursos**.
-
-1. En la lista de recursos, seleccione el recurso **MyPublicIPAddress** y, luego, en **Supervisión**, seleccione **Métricas**.
-
-1. En el cuadro **Métrica**, seleccione **Under DDoS attack or not** (Bajo ataque DDoS o no) en la lista.
-
-1. Aquí puedes ver el ataque DDoS mientras se produce. Tenga en cuenta que puede tardar 10 minutos en ver los resultados.
-
-   ![Métricas que muestra el recurso bajo ataque DDoS](../media/metrics-showing-resource-under-attack.png)
+1. Observa que hay varios asociados de prueba. Como tienes tiempo, configura una simulación de ataque DDoS. Para BreakingPoint Cloud, primero debe crear una cuenta de BreakingPoint Cloud.
 
 ## Limpieza de recursos
 
@@ -244,13 +234,13 @@ En este paso creará una máquina virtual, le asignará una IP pública y, luego
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Qué son los ataques DDoS? ¿Cómo se clasifican los ataques DDoS y hay estrategias de mitigación?
 + Proporciona una tabla que resuma los dos niveles diferentes de Azure DDoS Protection.
 + ¿Qué recursos de Azure se pueden proteger mediante protección contra DDoS?
 
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure DDoS Protection](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/). En este módulo, evaluarás Azure DDoS Protection, sus características y las opciones de arquitectura.
 + [Diseño e implementación de la seguridad de red](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/). En este módulo, obtendrás información sobre Azure DDoS Protection y la implementarás.

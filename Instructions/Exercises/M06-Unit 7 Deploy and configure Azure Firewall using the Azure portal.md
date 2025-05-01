@@ -218,7 +218,7 @@ En esta tarea, agregará una regla de aplicación que permita el acceso saliente
 
 1. En la lista de recursos, seleccione la directiva de firewall, **fw-test-pol**.
 
-1. En **Configuración**, haga clic en **Reglas de aplicación**.
+1. En **Reglas**, selecciona **Reglas de aplicación**.
 
 1. Seleccione **Agregar una colección de reglas**.
 
@@ -247,7 +247,7 @@ En esta tarea, agregará una regla de aplicación que permita el acceso saliente
 
 En esta tarea, agregará una regla de red que permita el acceso saliente a dos direcciones IP en el puerto 53 (DNS).
 
-1. En la página **fw-test-pol**, en **Configuración**, seleccione **Reglas de red**.
+1. En la página **fw-test-pol**, en **Reglas**, selecciona **Reglas de red**.
 
 1. Seleccione **Agregar una colección de reglas**.
 
@@ -277,7 +277,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
 
 En esta tarea, agregará una regla DNAT que le permita conectar un escritorio remoto a la máquina virtual Srv-Work a través del firewall.
 
-1. En la página **fw-test-pol**, en **Configuración**, seleccione **Reglas DNAT**.
+1. En la página **fw-test-pol**, en **Reglas**, selecciona **Reglas DNAT**.
 
 1. Seleccione **Agregar una colección de reglas**.
 
@@ -380,12 +380,12 @@ En esta tarea final, probará el firewall para comprobar que las reglas están c
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + Proporciona tres escenarios de uso comunes para firewalls. 
 + Proporciona una tabla que compare las características de las SKU de Azure Firewall.
 + Describe los tres tipos de reglas que puedes crear para una instancia de Azure Firewall.
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Firewall](https://learn.microsoft.com/training/modules/introduction-azure-firewall/). En este módulo, aprenderás cómo Azure Firewall protege los recursos de red virtual de Azure, incluidas las características, las reglas y las opciones de implementación.
 + [Introducción a Azure Firewall Manager](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/). En este módulo, aprenderás cómo Azure Firewall Manager proporciona una directiva de seguridad central y administración de rutas para perímetros de seguridad basados en la nube
