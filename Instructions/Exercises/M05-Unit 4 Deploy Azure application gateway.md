@@ -41,7 +41,7 @@ En este ejercicio, aprenderá a:
 
    | **Configuración**         | **Valor**                                    |
    | ------------------- | -------------------------------------------- |
-   | Suscripción        | Selecciona tu suscripción.                    |
+   | Suscripción        | Seleccione su suscripción.                    |
    | Resource group      | Seleccione Crear nuevo ContosoResourceGroup.       |
    | Application Gateway | ContosoAppGateway                            |
    | Region              | Seleccione **Este de EE. UU**.                           |
@@ -95,7 +95,7 @@ En este ejercicio, aprenderá a:
     | **Configuración**   | **Valor**         |
     | ------------- | ----------------- |
     | Nombre del cliente de escucha | Agente de escucha          |
-    | Dirección IP de front-end   | Selecciona **IPv4 público** |
+    | IP de front-end   | Selecciona **IPv4 público** |
 
 1. Acepte los valores predeterminados de las demás opciones en la pestaña **Agente de escucha**.
 
@@ -147,7 +147,9 @@ En este ejercicio, aprenderá a:
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud.
       
-1. En la barra de herramientas del panel Cloud Shell, selecciona **Administrar archivos** y después **Cargar**. Carga los siguientes archivos: **backend.json**, **backend.parameters.json**, y **install-iis.ps1**. Los archivos están disponibles para su descarga desde el repositorio, carpeta **\Allfiles\Exercises\M05**.
+1. En la barra de herramientas del panel Cloud Shell, selecciona **Administrar archivos** y después **Cargar**. Carga los siguientes archivos: **backend.json**, **backend.parameters.json**, y **install-iis.ps1**.
+
+    >**Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
 
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
@@ -239,13 +241,13 @@ No es necesario instalar IIS para crear la puerta de enlace de aplicaciones, per
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Cómo enruta Azure Application Gateway las solicitudes?
 + ¿Qué características de seguridad incluye Azure Application Gateway?
 + Compara Azure Application Gateway con Azure Load Balancer. Proporciona ejemplos de cuándo usar cada producto.
 
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Application Gateway](https://learn.microsoft.com/training/modules/intro-to-azure-application-gateway/). En este módulo se explica qué hace Azure Application Gateway, cómo funciona y cuándo debe usar Application Gateway como solución para satisfacer las necesidades de su organización.
 + [Equilibrio de carga del tráfico de servicio web con Application Gateway](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). En este módulo, aprenderás a crear y configurar una puerta de enlace de aplicación con enrutamiento basado en ruta de acceso de dirección URL.
