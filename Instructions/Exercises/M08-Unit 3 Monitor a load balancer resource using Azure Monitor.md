@@ -187,7 +187,9 @@ En esta sección, creará tres máquinas virtuales para el grupo de back-end del
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** en el directorio principal de Cloud Shell uno a uno desde la carpeta de origen **F:\Allfiles\Exercises\M08**.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** en el directorio particular de Cloud Shell.
+
+    > **Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
 
 1. Implementa las siguientes plantillas de ARM para crear la red virtual, las subredes y las máquinas virtuales necesarias para este ejercicio:
 
@@ -415,11 +417,11 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
     
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + Resume las herramientas de Azure que están disponibles para la supervisión de redes virtuales.
 + ¿Qué herramientas de supervisión de Azure Network Watcher están disponibles?
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Monitor](https://learn.microsoft.com/training/modules/intro-to-azure-monitor/). En este módulos, aprenderás a usar Azure Monitor para proporcionar información sobre el rendimiento y las operaciones de los recursos de Azure.
 + [Supervisión y solución de problemas de la infraestructura de red de Azure de un extremo a otro mediante herramientas de supervisión de red](https://learn.microsoft.com/training/modules/troubleshoot-azure-network-infrastructure/). En este módulo, aprederás a utilizar herramientas, diagnósticos y registros de Azure Network Watcher para encontrar y corregir incidencias de red en la infraestructura de Azure.

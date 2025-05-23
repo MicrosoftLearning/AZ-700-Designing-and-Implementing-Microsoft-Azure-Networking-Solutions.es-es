@@ -38,7 +38,9 @@ En este ejercicio, aprenderás a:
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**; en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** de uno en uno en el directorio principal de Cloud Shell desde la carpeta de origen **F:\Allfiles\Exercises\M02**
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **azuredeploy.json** y **azuredeploy.parameters.json** en el directorio particular de Cloud Shell.
+
+        Note:: If you are working in your own subscription the [template files](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) are available in the GitHub lab repository.
 
 1. Implementa las siguientes plantillas de ARM para crear la red virtual y las subredes necesarias para este ejercicio:
 
@@ -178,7 +180,7 @@ En este ejercicio, aprenderás a:
 
     | Parámetro | Valor |
     | --------------- | ----------------- | 
-    | Propósito de subred | **Puerta de enlace de red virtual** |
+    | Propósito de la subred | **Puerta de enlace de red virtual** |
     | Tamaño | **/27 (32 direcciones)** |
 
 1. Selecciona **Agregar**. 
@@ -294,7 +296,7 @@ En este ejercicio, aprenderás a:
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Cuáles son los principales tipos de puertas de enlace de VPN de Azure y por qué usarías cada tipo?
 + ¿Qué factores debo tener en cuenta al seleccionar la SKU de Azure VPN Gateway? Proporciona ejemplos.
 + ¿Hay costes asociados con las puertas de enlace de VPN de Azure?

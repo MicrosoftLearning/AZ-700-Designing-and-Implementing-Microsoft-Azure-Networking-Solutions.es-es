@@ -79,9 +79,11 @@ En esta sección, creará tres máquinas virtuales, que estarán en el mismo con
     + Selecciona **No se requiere cuenta de almacenamiento** y tu **Suscripción**, después, selecciona **Aplicar**.
     + Espera a que se cree el terminal y se muestre una solicitud. 
 
-2. En la barra de herramientas del panel de Cloud Shell, seleccione el icono **Cargar o descargar archivos**, en el menú desplegable, seleccione **Cargar** y cargue los siguientes archivos azuredeploy.json y azuredeploy.parameters.json en el directorio principal de Cloud Shell uno a uno.
+2. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Cargar/Descargar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos azuredeploy.json, y azuredeploy.parameters.json en el directorio de inicio de Cloud Shell.
 
-3. Implemente las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
+    > **Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
+
+4. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
@@ -219,7 +221,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
    | Suscripción         | Selecciona la suscripción                     |
    | Resource group       | **IntLB-RG**                                 |
    | Nombre de la máquina virtual | **myTestVM**                                 |
-   | Region               | **(EE. UU.) Este de EE. UU.**                             |
+   | Region               | **(EE. UU.) Este de EE. UU.**                             |
    | Opciones de disponibilidad | **No se requiere redundancia de la infraestructura**    |
    | Imagen                | **Windows Server 2019 Datacenter - Gen 2**   |
    | Size                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria**   |
@@ -292,7 +294,7 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿En qué se diferencian los equilibradores de carga públicos y privados de Azure? Proporciona escenarios de ejemplo para cada tipo.
 + Proporciona una tabla que compare las SKU básicas y estándar de Azure Load Balancer.
 + ¿Cómo decide Azure Load Balancer procesar las solicitudes entrantes?

@@ -31,7 +31,9 @@ Se pueden crear puntos de conexión privados para distintos tipos de servicios d
 
 1. En Azure Portal, abre la sesión de **PowerShell** en el panel **Cloud Shell**.
 
-1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga uno a uno los siguientes archivos **template.json** y **parameters.json** en el directorio principal de Cloud Shell.
+1. En la barra de herramientas del panel de Cloud Shell, selecciona el icono **Administrar archivos**, en el menú desplegable, selecciona **Cargar** y carga los siguientes archivos **template.json** y **parameters.json** en el directorio principal de Cloud Shell.
+
+    > **Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
 
 Si decide instalar y usar PowerShell de forma local, para realizar los pasos de este ejemplo necesita la versión 5.4.1 del módulo de Azure PowerShell o cualquier versión posterior. Ejecute ```Get-Module -ListAvailable Az``` para buscar la versión instalada. Si necesita actualizarla, consulte [Instalación del módulo de Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si PowerShell se ejecuta localmente, también debe ejecutar ```Connect-AzAccount``` para crear una conexión con Azure.
 
@@ -414,11 +416,11 @@ Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + Proporciona un ejemplo de cuándo usar un punto de conexión privado en lugar de un punto de conexión de servicio.
 + ¿Cómo puedo solucionar problemas de conectividad del punto de conexión privado?
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Private Link](https://learn.microsoft.com/training/modules/introduction-azure-private-link/). En este módulo, aprenderás cómo Azure Private Link habilita la conectividad privada con los servicios de Azure, incluidas sus características, su modo de funcionamiento y casos de uso.
 + [Diseño e implementación de acceso privado en los servicios de Azure](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/). En este módulo, aprenderás a diseñar e implementar acceso privado en los servicios de Azure con Azure Private Link y puntos de conexión de servicio de red virtual.
