@@ -11,7 +11,9 @@ Exercise:
 
 Para conectar una red virtual de Azure y una red local a través de ExpressRoute, primero debe crear una puerta de enlace de red virtual. Una puerta de enlace de red virtual tiene dos propósitos: intercambiar las rutas de IP entre las redes y enrutar el tráfico de red.
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
@@ -24,7 +26,9 @@ Al crear una puerta de enlace de red virtual, debe especificar varios valores de
 
 Cada red virtual tiene una única puerta de enlace de red virtual por cada tipo de puerta de enlace. Por ejemplo, puede tener una puerta de enlace de una red virtual en la que se use -GatewayType VPN y otra en la que se use -GatewayType ExpressRoute.
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 - Tarea 1: Creación de la red virtual y la subred de puerta de enlace
 - Tarea 2: Creación de la puerta de enlace de red virtual
@@ -51,7 +55,7 @@ En este ejercicio, aprenderá a:
 
    | **Configuración**                  | **Valor**               |
    | ---------------------------- | ----------------------- |
-   | Propósito de subred               | Puerta de enlace de red virtual |
+   | Propósito de la subred               | Puerta de enlace de red virtual |
    | Espacio de direcciones de la subred de puerta de enlace | 10.20.0.0/27            |
 
 Ten en cuenta que el nombre de la subred se rellenará automáticamente.
@@ -100,12 +104,12 @@ Ten en cuenta que el nombre de la subred se rellenará automáticamente.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿En qué se diferencia Azure ExpressRoute de Virtual WAN? ¿Podrías usar las tecnologías juntas? Provisión de ejemplos.
 + ¿Qué debo tener en cuenta al elegir entre un modelo de proveedor de ExpressRoute y ExpressRoute Direct?
 + Crea una tabla que resuma la SKU de Azure ExpressRoute y sus características.
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). En este módulo, obtendrás información sobre qué es Azure ExpressRoute y la funcionalidad que proporciona.
 + [Diseño e implementación de ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure ExpressRoute, Global Reach de ExpressRoute y FastPath de ExpressRoute.

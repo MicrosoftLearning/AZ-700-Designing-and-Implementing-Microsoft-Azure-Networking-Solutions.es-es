@@ -12,7 +12,9 @@ Al formar parte del equipo de seguridad de red de Contoso, la tarea siguiente co
 
 ![Diagrama de red virtual con arquitectura de Azure Firewall.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de un grupo de recursos
 + Tarea 2: Crear una red virtual y subredes
@@ -25,8 +27,9 @@ En este ejercicio, aprenderá a:
 + Tarea 9: Cambiar la dirección DNS primaria y secundaria para la interfaz de red del servidor
 + Tarea 10: Probar el firewall
 
+### Simulaciones de laboratorio interactivas
 
-   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 60 minutos.
 

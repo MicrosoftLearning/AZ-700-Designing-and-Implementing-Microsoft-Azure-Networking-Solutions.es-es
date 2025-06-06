@@ -14,7 +14,9 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 
 ![Diagrama en el que se ilustra la arquitectura del equilibrador de carga que se creará en el ejercicio: incluye el equilibrador de carga, la red virtual, subred, la subred de Bastion y las máquinas virtuales](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
- En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+ En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de la red virtual
 + Tarea 2: Creación del equilibrador de carga
@@ -30,11 +32,9 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 12: Visualización del estado de los recursos
 + Tarea 13: Configuración de las opciones de diagnóstico
 
+### Simulaciones de laboratorio interactivas
 
-   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
-
-> [!Note]  
-> Puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 55 minutos
 

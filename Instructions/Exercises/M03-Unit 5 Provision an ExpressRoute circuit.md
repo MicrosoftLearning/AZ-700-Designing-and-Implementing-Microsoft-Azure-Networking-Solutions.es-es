@@ -9,13 +9,17 @@ Exercise:
 
 Este ejercicio, creará un circuito ExpressRoute mediante Azure Portal y el modelo de implementación de Azure Resource Manager.
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 15 minutos
 
 ![Diagrama del diseño del circuito ExpressRoute para el ejercicio](../media/5-exercise-provision-expressroute-circuit.png)
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación y aprovisionamiento de un circuito ExpressRoute
 + Tarea 2: Recuperación de la clave de servicio
@@ -28,11 +32,9 @@ En este ejercicio, aprenderá a:
 
    >**Importante**: tu circuito de ExpressRoute se factura a partir del momento en el que se emita una clave de servicio. Asegúrese de realizar esta operación cuando el proveedor de conectividad esté listo para aprovisionar el circuito.
 
-1. En el menú de Azure Portal, seleccione **+ Crear un recurso**. Seleccione **Redes** y después **ExpressRoute**, como se muestra en la imagen siguiente. Si ExpressRoute no aparece en la lista, use **Buscar en Marketplace** para buscarlo:
+1. En el menú de Azure Portal, busca y selecciona **Circuitos ExpressRoute**.
 
-   ![Azure Portal: menú Crear circuito ExpressRoute](../media/create-expressroute-circuit-menu.png)
-
-1. En la página **Crear ExpressRoute**, proporciona el **grupo de recursos** como ExpressRouteResourceGroup. A continuación, selecciona **Resistencia estándar** para **Resistencia**
+1. En la página **Crear ExpressRoute**, proporciona el **Grupo de recursos** como `ExpressRouteResourceGroup`. A continuación, selecciona **Resistencia estándar** para **Resistencia**
 
 1. Para ***Detalles del circuito**, asegúrate de especificar la región correcta (**Este de EE. UU. 2**), nombre del circuito (**TestERCircuit**), ubicación de emparejamiento (**Seattle**), proveedor (**Equinix**), ancho de banda (**50 Mbps**), nivel de SKU (**Estándar**) y modelo de facturación de medición de datos (**Medido**).
 
@@ -123,11 +125,11 @@ Para eliminar el circuito ExpressRoute, puede seleccionar el icono **Eliminar**.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Qué proveedores de servicios están disponibles para Azure ExpressRoute?
 + ¿Cuáles son los problemas de configuración más comunes de Azure ExpressRoute? ¿Qué debo hacer si tengo ese problema?
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). En este módulo, obtendrás información sobre qué es Azure ExpressRoute y la funcionalidad que proporciona.
 + [Diseño e implementación de ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure ExpressRoute, Global Reach de ExpressRoute y FastPath de ExpressRoute.

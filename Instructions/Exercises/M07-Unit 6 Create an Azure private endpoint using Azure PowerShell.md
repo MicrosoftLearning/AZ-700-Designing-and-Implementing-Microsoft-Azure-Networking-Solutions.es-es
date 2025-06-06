@@ -12,8 +12,9 @@ Comience a trabajar con Azure Private Link usando un punto de conexión privado 
 
 ![Diagrama de la arquitectura de un punto de conexión privado.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
+### Simulaciones de laboratorio interactivas
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 45 minutos
 
@@ -35,9 +36,11 @@ Se pueden crear puntos de conexión privados para distintos tipos de servicios d
 
     > **Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
 
-Si decide instalar y usar PowerShell de forma local, para realizar los pasos de este ejemplo necesita la versión 5.4.1 del módulo de Azure PowerShell o cualquier versión posterior. Ejecute ```Get-Module -ListAvailable Az``` para buscar la versión instalada. Si necesita actualizarla, consulte [Instalación del módulo de Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si PowerShell se ejecuta localmente, también debe ejecutar ```Connect-AzAccount``` para crear una conexión con Azure.
+Si decide instalar y usar PowerShell de forma local, para realizar los pasos de este ejemplo necesita la versión 5.4.1 del módulo de Azure PowerShell o cualquier versión posterior. Ejecute ```Get-Module -ListAvailable Az``` para buscar la versión instalada. Si necesita actualizarla, consulte [Instalación del módulo de Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si ejecuta PowerShell localmente, también debe ejecutar ```Connect-AzAccount``` para crear una conexión con Azure.
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 - Tarea 1: Creación de un grupo de recursos
 - Tarea 2: Creación de una red virtual y un host bastión
