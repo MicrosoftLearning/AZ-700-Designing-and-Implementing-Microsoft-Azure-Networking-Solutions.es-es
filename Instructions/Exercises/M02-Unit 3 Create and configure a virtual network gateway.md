@@ -13,6 +13,8 @@ En este ejercicio, configurarás una puerta de enlace de red virtual para conect
 
 ![Diagrama de puerta de enlace de red virtual.](../media/3-exercise-create-configure-local-network-gateway.png)
 
+### Aptitudes de trabajo
+
 En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de CoreServicesVnet y ManufacturingVnet
@@ -27,7 +29,9 @@ En este ejercicio, aprenderás a:
 + Tarea 10: Comprobación de las conexiones
 + Tarea 11: Prueba de la conexión entre las máquinas virtuales
 
->**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentres pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 70 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 

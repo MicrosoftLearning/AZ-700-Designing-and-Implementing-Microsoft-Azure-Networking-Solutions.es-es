@@ -14,14 +14,17 @@ En este ejercicio, configurará una opción de Azure Front Door que agrupa dos i
 
 ![Configuración de red para Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de dos instancias de una aplicación web
 + Tarea 2: Creación de una instancia de Front Door para una aplicación
 + Tarea 3: Visualización de Front Door en acción
 
+### Simulaciones de laboratorio interactivas
 
-   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 30 minutos
 
@@ -39,7 +42,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 
    | **Configuración**      | **Valor**                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | Suscripción     | Selecciona tu suscripción.                                    |
+   | Suscripción     | Seleccione su suscripción.                                    |
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-1. |
    | Publicar          | Seleccione **Código**.                                             |
@@ -60,7 +63,7 @@ Este ejercicio requiere dos instancias de una aplicación web que se ejecuten en
 
    | **Configuración**      | **Valor**                                                    |
    | ---------------- | ------------------------------------------------------------ |
-   | Suscripción     | Selecciona tu suscripción.                                    |
+   | Suscripción     | Seleccione su suscripción.                                    |
    | Resource group   | Selecciona el grupo de recursos ContosoResourceGroup               |
    | Nombre             | Escriba un Nombre único para la aplicación web. En este ejemplo se usa WebAppContoso-2. |
    | Publicar          | Seleccione **Código**.                                             |
@@ -87,7 +90,7 @@ Configure Azure Front Door para dirigir el tráfico del usuario en función de l
 
    | **Configuración**             | **Valor**                                    |
    | ----------------------- | -------------------------------------------- |
-   | Suscripción            | Selecciona tu suscripción.                    |
+   | Suscripción            | Seleccione su suscripción.                    |
    | Resource group          | Seleccione ContosoResourceGroup.                  |
    | Ubicación del grupo de recursos | Acepta la configuración predeterminada                       |
    | Nombre                    | Escribe un nombre único en esta suscripción, como FrontDoor(yourinitials)   |
@@ -151,7 +154,7 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Cuál es la diferencia entre Azure Application Gateway y Azure Front Door? Proporciona ejemplos en los que se usaría cada producto.
 + Proporciona una lista de comprobación de cosas que se deben hacer al configurar Azure Front Door.
 + ¿Qué es un origen en Azure Front Door y en qué se diferencia de un punto de conexión?

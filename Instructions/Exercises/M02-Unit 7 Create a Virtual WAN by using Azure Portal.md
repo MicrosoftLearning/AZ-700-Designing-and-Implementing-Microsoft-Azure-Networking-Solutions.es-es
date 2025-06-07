@@ -12,15 +12,17 @@ En este ejercicio, creará una instancia de Virtual WAN para Contoso.
 
 ![Diagrama de la arquitectura WAN de red virtual.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
 
+### Aptitudes de trabajo
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de una instancia de Virtual WAN
 + Tarea 2: creación de un centro de conectividad mediante Azure Portal
 + Tarea 3: Conexión de una red virtual al centro de conectividad virtual
 
+### Simulaciones de laboratorio interactivas
 
-   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
-
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
+>
 ### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
 ## Tarea 1: Creación de una instancia de Virtual WAN
@@ -125,12 +127,12 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Qué tipo de arquitectura de red usa Azure VWAN?
 + ¿Qué diferencia hay entre los tipos Azure VWAN básico y estándar? Provisión de ejemplos.
 + ¿Se puede crear una instancia de Azure VWAN con herramientas de scripting?
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Virtual WAN](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/). En este módulo, obtendrás información sobre la funcionalidad y las características de Azure Virtual WAN. 
 + [Diseño e implementación de redes híbridas](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure Virtual WAN.

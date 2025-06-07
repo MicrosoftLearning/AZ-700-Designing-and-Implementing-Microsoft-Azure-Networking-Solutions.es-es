@@ -9,7 +9,9 @@ Exercise:
 
 En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd.
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
@@ -17,7 +19,9 @@ Los pasos para crear un equilibrador de carga interno son muy similares a los qu
 
 ![diagrama de equilibrador de carga estándar interno](../media/4-exercise-create-configure-azure-load-balancer.png)
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de la red virtual
 + Tarea 2: Creación de servidores backend
@@ -42,31 +46,30 @@ En esta sección, creará una red virtual y una subred.
    | Suscripción   | Selecciona la suscripción                   |
    | Resource group | Seleccione **Crear nuevo** Nombre: **IntLB-RG** |
    | Nombre           | **IntLB-VNet**                             |
-   | Region         | **(EE. UU.) Este de EE. UU.**                           |
+   | Region         | **(EE. UU.) Este de EE. UU.**                           |
 
-5. Seleccione **Siguiente: Direcciones IP**.
+5. Selecciona **Siguiente** (te llevará a la pestaña Seguridad).
 
-6. En la pestaña **Direcciones IP**, en el cuadro **Espacio de direcciones IPv4**, quita el valor predeterminado y escribe **10.1.0.0/16**.
+6. En **Azure Bastion**, selecciona **Habilitar Azure Bastion** y escribe la información de la tabla siguiente.
 
-7. En la pestaña **Direcciones IP**, selecciona **+ Agregar subred**.
+    | **Configuración**                   | **Valor**                                                    |
+    | ----------------------------- | ------------------------------------------------------------ |
+    | Nombre de host                     | **myBastionHost**                                            |
+    | Dirección IP pública             | Selecciona **Crear una dirección IP pública** Nombre: **myBastionIP** |
 
-8. En el panel **Añadir subred**, proporcione el nombre de subred **myBackendSubnet** y el intervalo de direcciones de subred **10.1.0.0/24**.
+7. Selecciona **Siguiente** (te lleva a la pestaña Direcciones IP).
 
-9. Seleccione **Agregar**.
+8. En la pestaña **Direcciones IP**, en el cuadro **Espacio de direcciones IPv4**, quita el valor predeterminado y escribe **10.1.0.0/16**.
 
-10. Selecciona **Agregar subred**, proporciona el nombre de subred **myFrontEndSubnet** y un intervalo de direcciones de subred **10.1.2.0/24**. Seleccione **Agregar**.
+9. En la pestaña **Direcciones IP**, selecciona **+ Agregar una subred**.
 
-11. Seleccione **Siguiente: Seguridad**.
+10. En el panel **Añadir subred**, proporcione el nombre de subred **myBackendSubnet** y el intervalo de direcciones de subred **10.1.0.0/24**. Seleccione **Agregar**.
 
-12. En **BastionHost**, seleccione **Habilitar** y escriba la información de la tabla siguiente.
+11. Selecciona **Agregar subred**, indica el nombre de subred **myFrontEndSubnet** y un intervalo de direcciones de subred **10.1.2.0/24**. Seleccione **Agregar**.
 
-    | **Configuración**                       | **Valor**                                     |
-    | --------------------------------- | --------------------------------------------- |
-    | Nombre del bastión                      | **myBastionHost**                             |
-    | Espacio de direcciones de AzureBastionSubnet | **10.1.1.0/26**                               |
-    | Dirección IP pública                 | Seleccione **Crear nuevo** Nombre: **myBastionIP** |
+12. En la notificación sobre Azure Bastion, selecciona **Agregar subred de Azure Bastion**
 
-13. Seleccione **Revisar + crear**.
+13. Selecciona **Revisar + crear.**
 
 14. Seleccione **Crear**.
 

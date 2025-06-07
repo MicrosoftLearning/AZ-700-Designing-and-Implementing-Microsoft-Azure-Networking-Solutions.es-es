@@ -12,6 +12,8 @@ Los puntos de conexión de servicio de red virtual permiten que el acceso de la 
 
 ![Diagrama de la arquitectura del punto de conexión de servicio.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
 
+### Aptitudes de trabajo
+
 En este ejercicio, aprenderá a:
 
 + Tarea 1: Creación de una red virtual
@@ -26,7 +28,9 @@ En este ejercicio, aprenderá a:
 + Tarea 10: Confirmación del acceso a la cuenta de almacenamiento
 
 
-   >**Nota:** hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** que te permite realizar tus propias selecciones a tu entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 35 minutos
 
@@ -345,12 +349,12 @@ Resultados: Ha completado este laboratorio.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Cuál es la diferencia entre puntos de conexión de servicio de Azure y puntos de conexión privados?
 + ¿Qué servicios de Azure pueden usar los puntos de conexión de servicio?
 + ¿Cuáles son los pasos para restringir el acceso a Azure Storage mediante puntos de conexión de servicio?
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Protegerás y aislarás el acceso a recursos de Azure mediante grupos de seguridad de red y puntos de conexión de servicio](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). En este módulo, aprenderás cómo utilizar puntos de conexión de servicio de red virtual para controlar el tráfico de red hacia y desde los servicios de Azure.
 

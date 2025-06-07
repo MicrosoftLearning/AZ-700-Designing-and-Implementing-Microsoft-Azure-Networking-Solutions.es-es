@@ -10,7 +10,9 @@ Exercise:
 
 En este ejercicio, creará un perfil de Traffic Manager para ofrecer alta disponibilidad para la aplicación web ficticia de la organización Contoso Ltd.
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
+
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ### Tiempo estimado: 35 minutos
 
@@ -21,6 +23,8 @@ A continuación, creará un perfil de Traffic Manager según la prioridad del pu
 En el diagrama siguiente se muestra el entorno aproximado que se va a implementar en este ejercicio.
 
  ![Imagen 14](../media/exercise-traffic-manager-environment-diagram.png)
+
+### Aptitudes de trabajo
 
  En este ejercicio, aprenderá a:
 
@@ -189,12 +193,12 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Cuáles son los pasos de alto nivel para configurar Azure Traffic Manager?
 + Compara y contrasta cuándo usar Azure Load Balancer y Azure Traffic Manager.
 + Explica los perfiles de enrutamiento de Traffic Manager y cuándo se deben usar.
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Mejora de la disponibilidad de servicios y la localización de los datos con Azure Traffic Manager](https://learn.microsoft.com/training/modules/distribute-load-with-traffic-manager/). En este módulo, obtendrás información sobre el uso de Traffic Manager para distribuir dinámicamente el tráfico de red.
 + [Equilibrio de la carga del tráfico no HTTP(S) en Azure](https://learn.microsoft.com/training/modules/load-balancing-non-https-traffic-azure/). En este módulo, obtendrás información sobre Azure Traffic Manager y la implementación de métodos de enrutamiento. 
