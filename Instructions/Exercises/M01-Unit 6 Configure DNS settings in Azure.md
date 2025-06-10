@@ -12,16 +12,19 @@ En esta unidad, configurará la resolución de nombres DNS para Contoso Ltd. Cre
 
 ![Diagrama de arquitectura de ISS.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
 
-En este ejercicio, aprenderá a:
+### Aptitudes de trabajo
+En este ejercicio, aprenderás a:
 
 + Tarea 1: Creación de una zona DNS privada
 + Tarea 2: Vinculación de la subred para el registro automático
 + Tarea 3: Creación de máquinas virtuales para probar la configuración
 + Tarea 4: Comprobación de que existen registros en la zona DNS
 
-   >**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+### Simulaciones de laboratorio interactivas
 
-### Tiempo estimado: 25 minutos
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
+
+### Tiempo estimado: 25 minutos
 
 **Importante:** este ejercicio requiere una red virtual del laboratorio anterior. Esta se puede instalar mediante un archivo de [plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json). Todas las redes virtuales se instalarán, pero solo se necesita CoreServicesVNet. 
 
