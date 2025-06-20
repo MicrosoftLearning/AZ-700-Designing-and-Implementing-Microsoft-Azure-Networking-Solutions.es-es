@@ -4,7 +4,9 @@ Exercise:
   module: Module 07 - Design and implement private access to Azure Services
 ---
 
-# M07: Unidad 6 Creación de un punto de conexión privado de Azure mediante Azure PowerShell
+# M07: Unidad 6 Creación de un punto de conexión privado de Azure mediante Azure PowerShell (opcional)
+
+> **Nota**: este laboratorio es opcional. El laboratorio anterior, *Restricción del acceso a la red a los recursos de PaaS mediante puntos de conexión de servicio de red virtual*, cubre esta funcionalidad. En el futuro, este laboratorio se retirará. 
 
 ## Escenario del ejercicio
 
@@ -144,6 +146,7 @@ $parameters3 = @{
 }
 
 New-AzBastion @parameters3
+
 ```
 
 ## Tarea 3: Creación de una máquina virtual de prueba
