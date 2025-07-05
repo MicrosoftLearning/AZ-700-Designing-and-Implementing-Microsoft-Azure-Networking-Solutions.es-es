@@ -134,7 +134,7 @@ En esta sección, crearás una máquina virtual de prueba en VNet para probar si
     | ------------------------------------ | --------------------------------------------- | 
     | Nombre del vínculo de emparejamiento | `CoreServicesVnet-to-ManufacturingVnet` |
  
-    **Configuración de emparejamiento de red virtual remota**
+    **Configuración de emparejamiento de red virtual local**
    
     | **Opción**                                    | **Valor**                             |
     | ------------------------------------ | --------------------------------------------- | 
