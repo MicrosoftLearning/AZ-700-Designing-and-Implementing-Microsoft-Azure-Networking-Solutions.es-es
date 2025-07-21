@@ -4,8 +4,6 @@ demo:
   module: Module 02 - Design and implement hybrid networking
 ---
 
-**Simulación:**[Creación y configuración de una puerta de enlace de red virtual](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)
-
 En esta demostración, se explorarán las puertas de enlace de red virtual.
 
 **Nota:** Esta demostración funciona mejor con dos redes virtuales con subredes.

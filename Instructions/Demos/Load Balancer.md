@@ -7,8 +7,6 @@ demo:
 
 En esta demostración aprenderá a crear un equilibrador de carga público. 
 
-**Simulación:**[Creación y configuración de una instancia de Azure Load Balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)
-
 **Referencia**: [Inicio rápido: Uso de Azure Portal para crear un equilibrador de carga público para equilibrar la carga de máquinas virtuales](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal).
 
 **Nota:**  Para esta demostración se necesita una red virtual con al menos una subred. 
