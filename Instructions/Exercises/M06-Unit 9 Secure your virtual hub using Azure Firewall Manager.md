@@ -15,7 +15,9 @@ En este ejercicio, creará la red virtual de radio y un centro virtual protegido
 
 ### Simulaciones de laboratorio interactivas
 
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
+**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
+
+
 ## Creación de una arquitectura en estrella tipo hub-and-spoke
 
 En esta parte del ejercicio, creará las redes virtuales de radio y las subredes en las que colocará los servidores de carga de trabajo. A continuación, creará el centro virtual protegido y conectará el centro y las redes virtuales de radio.
@@ -41,13 +43,13 @@ En este ejercicio, aprenderás a:
 
 En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales con una subred que hospedará los servidores de carga de trabajo.
 
-1. En la página de inicio de Azure Portal, en el cuadro de búsqueda, escribe **red virtual** y selecciona **Red virtual**cuando aparezca.
+1. En Azure Portal, busca y selecciona `Virtual Networks`.
 
 1. Seleccione **Crear**.
 
 1. En **Grupo de recursos**, selecciona **Crear nuevo**, escribe `fw-manager-rg` para el nombre y selecciona **Aceptar**.
 
-1. En **Nombre**, escriba `Spoke-01`.
+1. En **Nombre de la red virtual**, escriba `Spoke-01`.
 
 1. En **Región**, seleccione su región.
 
@@ -71,13 +73,13 @@ En esta tarea, creará las dos redes virtuales de radio, cada una de las cuales 
 
 1. Seleccione **Crear**.
 
-Repite los pasos 1 a 14 anteriores para crear otra red virtual y subred similares, pero usa la información siguiente. No es necesario esperar a que la primera red virtual termine de implementarse. 
+Repita los pasos 1 a 14 anteriores para crear otra red virtual y subred similares con la información siguiente. No es necesario esperar a que la primera red virtual termine de implementarse. 
 
 + Grupo de recursos: **fw-manager-rg** (seleccione el existente)
 + Nombre de la red virtual: `Spoke-02`
 + Espacio de direcciones: **10.1.0.0/16** (elimine cualquier otro espacio de direcciones que aparezcan)
 + Nombre de subred: `Workload-02-SN`
-+ Intervalo de direcciones de subred: **10.1.1.0/24**
++ Dirección inicial de la subred: `10.1.1.0`
 
 ## Tarea 2: Crear el centro virtual protegido
 
@@ -101,9 +103,9 @@ En esta tarea, creará el centro virtual protegido con Firewall Manager.
 
 1. En **Nombre de Virtual WAN**, escribe `Vwan-01`.
 
-1. Seleccione **Siguiente: Azure Firewall**.
+1. Seleccione **Siguiente: Azure Firewall**. Revisa el contenido, pero no realices ningún cambio. 
 
-1. Seleccione **Siguiente: Proveedores de seguridad asociados**.
+1. Seleccione **Siguiente: Proveedores de seguridad asociados**. Revisa el contenido, pero no realices ningún cambio. 
 
 1. Seleccione **Siguiente: Review + create** (Revisar y crear).
 
@@ -119,17 +121,15 @@ En esta tarea, creará el centro virtual protegido con Firewall Manager.
 
 1. Seleccione **Hub-01**.
 
-1. Seleccione **Configuración de IP pública**.
+1. Seleccione **Azure Firewall** y luego **Configuración de IP pública**.
 
-1. Anota la dirección IP pública (por ejemplo, **51.143.226.18**), que usarás más adelante.
+1. Anote la dirección IP pública (por ejemplo, **172.191.79.203**), que usará más adelante.
 
 ## Tarea 3: Conectar las redes virtuales en estrella tipo hub-and-spoke
 
 En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Esto suele conocerse como "emparejamiento".
 
-1. Seleccione **Ir al grupo de recursos**.
-2. 
-1. En el portal, busca y selecciona la WAN virtual **Vwan-01**.
+1. En el portal, busque y seleccione la WAN virtual `Vwan-01`.
 
 1. En **Conectividad**, seleccione **Conexiones de red virtual**.
 
@@ -147,7 +147,7 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 1. Repite los pasos 4 a 9 anteriores para crear otra conexión similar, pero usa el nombre de conexión de `hub-spoke-02` para conectar la red virtual **Spoke-02**.
 
-1. **Actualiza** la página de conexiones de red virtual y comprueba que tienes dos redes virtuales, Spoke-01 y Spoke-02.
+1. **Actualice** la página de conexiones de red virtual y compruebe que tiene dos redes virtuales, Spoke-01 y Spoke-02.
    
 ## Tarea 4: Implementar los servidores
 
@@ -162,7 +162,7 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 1. Implemente las plantillas de ARM siguientes a fin de crear la máquina virtual necesaria para este ejercicio:
 
-   >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+   >**Nota**: Se le pedirá que proporcione una contraseña de administrador. **Necesitará esta contraseña en un paso posterior.**
 
    ```powershell
    $RGName = "fw-manager-rg"
@@ -174,7 +174,7 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 1. En la página **Información general** de **Srv-workload-01**, en el panel de la derecha, en la sección **Redes**, anote la **Dirección IP privada** (por ejemplo, **10.0.1.4**).
 
-1. En la página **Información general** de **Srv-workload-02**, en el panel derecho, en la sección **Redes**, anota la **Dirección IP privada** (por ejemplo, **10.1.0.4**).
+1. En la página **Información general** de **Srv-workload-02**, en el panel de la derecha, en la sección **Redes**, anote la **Dirección IP privada** (por ejemplo, **10.1.1.4**).
 
 ## Tarea 5: Crear una directiva de firewall y proteger el centro de conectividad
 
@@ -288,31 +288,38 @@ En esta tarea, primero creará la directiva de firewall y, a continuación, prot
 
 En esta tarea, asociará la directiva de firewall con el centro virtual.
 
-1. En el portal, busca `firewall manager` y luego selecciona **Administrador de firewall de palabras clave de seguridad de red**.
+1. En el portal, busca y selecciona `Hub-01`.
 
-1. En **Firewall Manager**, en **Seguridad**, selecciona **Directivas de Azure Firewall**.
+1. En el panel **Configuración**, seleccione **Proveedores de seguridad**
 
-1. Active la casilla correspondiente a **Policy-01**.
+1. Active la casilla **Agregar directiva**.
 
-1. Seleccione **Administrar asociaciones&gt;Asociar centros**.
+1. Seleccione **Policy-01** y después **Guardar**.
 
 1. Active la casilla correspondiente a **Hub-01**.
 
 1. Seleccione **Agregar**.
 
-1. Una vez que se adjunte la directiva, seleccione **Actualizar**. Debe aparecer la asociación.
+1. Una vez que se haya asociado la directiva, seleccione **Actualizar**. Debe aparecer la asociación.
 
 ## Tarea 7: Enrutar el tráfico al centro de conectividad
 
 En esta tarea, se asegurará de que el tráfico se enruta a través del firewall.
 
-1. En **Firewall Manager**, selecciona **Centros virtuales**.
-1. Seleccione **Hub-01**.
-1. En **Ajustes**, seleccione **Configuración de seguridad**.
+1. En el portal, busque y seleccione **Vwan-01**.
+
+1. En el panel **Conectividad**, seleccione **Centros** y después **Hub-01**.
+   
+1. En el panel **Seguridad**, seleccione **Azure Firewall y Firewall Manager**, después **Hub-01** y, luego **Configuración de seguridad**.
+
 1. En **Tráfico de Internet**, selecciona **Azure Firewall**.
+
 1. En **Tráfico privado**, selecciona **Enviar a través de Azure Firewall**.
-1. Seleccione **Guardar**.
+
+1. Seleccione **Guardar** y haga clic en **Aceptar** para confirmar la selección.
+
 1. Esta operación tarda unos minutos en completarse.
+
 1. Una vez que se complete la configuración, asegúrese de que en **TRÁFICO DE INTERNET** y **TRÁFICO PRIVADO** diga **Protegido por Azure Firewall** para ambas conexiones en estrella tipo hub-and-spoke.
 
 ## Tarea 8: Probar la regla de aplicación
@@ -341,7 +348,7 @@ En esta tarea, probará la regla de aplicación para confirmar que funciona seg�
 
 1. Abra Internet Explorer y seleccione **Aceptar** en el cuadro de diálogo **Configurar Internet Explorer 11**.
 
-1. Vaya a **https://** **<www.microsoft.com>**.
+1. Vaya a `https://www.microsoft.com`.
 
 1. En el cuadro de diálogo **Alerta de seguridad**, selecciona **Aceptar**.
 
