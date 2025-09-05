@@ -140,6 +140,8 @@ En esta sección, crearás una máquina virtual de prueba en VNet para probar si
     | ------------------------------------ | --------------------------------------------- | 
     | Permitir que "CoreServicesVnet" acceda a "ManufacturingVnet" | Habilitado
     | Permitir que "CoreServicesVnet" reciba tráfico reenviado desde "ManufacturingVnet" | Habilitado |
+
+1. Active la casilla a la izquierda de **CoreServicesVnet-to-ManufacturingVnet** y seleccione **Sincronizar**.
  
 1. En CoreServicesVnet \| Emparejamientos, comprueba que el emparejamiento **CoreServicesVnet-to-ManufacturingVnet** está **Conectado**.
 
