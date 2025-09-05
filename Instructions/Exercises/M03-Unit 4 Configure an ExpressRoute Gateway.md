@@ -88,11 +88,8 @@ Ten en cuenta que el nombre de la subred se rellenará automáticamente.
    | Tipo de puerta de enlace              | ExpressRoute               |
    | SKU                       | Estándar                   |
    | Virtual network           | CoreServicesVNet           |
-   | **Dirección IP pública**     |                            |
-   | Dirección IP pública         | Crear nuevo                 |
-   | Nombre de la dirección IP pública    | CoreServicesVnetGateway-IP |
-   | Cesión                | no configurable           |
-
+   | Subred                    | GatewaySubnet              |
+   
 1. Seleccione **Revisar + crear**.
 
 1. Confirme que la configuración de puerta de enlace supera la validación y, después, **seleccione Crear**.
@@ -109,7 +106,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Qué debo tener en cuenta al elegir entre un modelo de proveedor de ExpressRoute y ExpressRoute Direct?
 + Crea una tabla que resuma la SKU de Azure ExpressRoute y sus características.
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). En este módulo, obtendrás información sobre qué es Azure ExpressRoute y la funcionalidad que proporciona.
 + [Diseño e implementación de ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure ExpressRoute, Global Reach de ExpressRoute y FastPath de ExpressRoute.
@@ -117,7 +114,8 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 ## Puntos clave
 
 Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
-+ Azure ExpressRoute permite que una organización conecte sus redes locales directamente a las nubes de Microsoft Azure y Microsoft 365. Azure ExpressRoute usa una conexión dedicada de ancho de banda alto proporcionada por un asociado de Microsoft.
-+ Microsoft garantiza una disponibilidad mínima del 99,95 % para las conexiones ExpressRoute dedicadas. La conexión es privada y viaja a través de una línea dedicada, los terceros no pueden interceptar el tráfico.
++ Azure ExpressRoute permite que una organización conecte sus redes locales directamente a las nubes de Microsoft Azure y Microsoft 365. Azure ExpressRoute usa una conexión dedicada de ancho de banda alto proporcionada por un asociado de Microsoft.
++ Microsoft garantiza una disponibilidad mínima del 99,95 % para las conexiones ExpressRoute dedicadas. La conexión es privada y viaja a través de una línea dedicada, los terceros no pueden interceptar el tráfico.
 + Puede crear una conexión entre su red local y la nube de Microsoft de cuatro maneras diferentes: colocalización de CloudExchange, conexión Ethernet de punto a punto, conexión universal (IPVPN) y ExpressRoute Direct.
 + Las características de ExpressRoute se determinan mediante la SKU: Local, Estándar y Premium. 
+
