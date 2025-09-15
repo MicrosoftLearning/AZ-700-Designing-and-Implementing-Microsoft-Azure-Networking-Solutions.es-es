@@ -59,19 +59,21 @@ En esta sección, creará una red virtual y una subred.
 
 7. Selecciona **Siguiente** (te lleva a la pestaña Direcciones IP).
 
-8. En la pestaña **Direcciones IP**, en el cuadro **Espacio de direcciones IPv4**, quita el valor predeterminado y escribe **10.1.0.0/16**.
+8. En la pestaña **Direcciones IP**, en el cuadro **Espacio de direcciones IPv4**, reemplace el espacio de direcciones IPv4 rellenado previamente por: **10.1.0.0/16**.
 
-9. En la pestaña **Direcciones IP**, selecciona **+ Agregar una subred**.
+9. En la pestaña **Direcciones IP**, en **Subredes**, elimine la subred **predeterminada**.
 
-10. En el panel **Añadir subred**, proporcione el nombre de subred **myBackendSubnet** y el intervalo de direcciones de subred **10.1.0.0/24**. Seleccione **Agregar**.
+10. En la pestaña **Direcciones IP**, selecciona **+ Agregar una subred**.
 
-11. Selecciona **Agregar subred**, indica el nombre de subred **myFrontEndSubnet** y un intervalo de direcciones de subred **10.1.2.0/24**. Seleccione **Agregar**.
+11. En el panel **Agregar subred**, proporcione un nombre de subred de **myBackendSubnet**y una dirección inicial de: **10.1.0.0/24**. Seleccione **Agregar**.
 
-12. En la notificación sobre Azure Bastion, selecciona **Agregar subred de Azure Bastion**
+12. Seleccione **+ Agregar una subred** de nuevo, proporcione un nombre de subred de **myFrontEndSubnet** y una dirección inicial de: **10.1.2.0/24**. Seleccione **Agregar**.
 
-13. Selecciona **Revisar + crear.**
+13. Compruebe que **AzureBastionSubnet** existe, agréguelo si fuera necesario.
 
-14. Seleccione **Crear**.
+14. Selecciona **Revisar + crear.**
+
+15. Seleccione **Crear**.
 
 ## Tarea 2: Creación de servidores backend
 
@@ -126,7 +128,7 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    
 1. Selecciona Agregar una IP de front-end.
 
-1. En el panel **Agregar dirección IP de front-end**, escribe la información de la tabla siguiente y selecciona **Agregar**.
+1. En el panel **Agregar dirección IP de front-end**, escriba la información de la tabla siguiente y seleccione **Guardar**.
 
    | **Configuración**     | **Valor**                |
    | --------------- | ------------------------ |
@@ -158,7 +160,7 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
    | Nombre            | **myBackendPool**    |
    | Virtual network | **IntLB-VNet**       |
 
-1. En **Máquinas virtuales**, selecciona **Agregar**.
+1. En **Máquinas virtuales**, seleccione **Guardar**.
 
 1. Activa las casillas de las tres máquinas virtuales (**myVM1**, **myVM2** y **myVM3**) y después selecciona **Agregar**.
 
