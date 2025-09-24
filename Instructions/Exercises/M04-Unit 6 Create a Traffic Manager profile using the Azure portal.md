@@ -100,7 +100,7 @@ Ahora creará un perfil de Traffic Manager que dirija el tráfico de los usuario
    | Resource group          | **Contoso-RG-TM1**       |
    | Ubicación del grupo de recursos | **Este de EE. UU.**              |
 
-1. Seleccione **Crear**.
+1. Selecciona **Revisar y crear** y, a continuación, **Crear**.
 
 ## Tarea 3: Adición de puntos de conexión de Traffic Manager
 
@@ -160,13 +160,13 @@ En esta sección, comprobará el nombre DNS del perfil de Traffic Manager y, a c
 
 1. Para probar que el punto de conexión de conmutación por error funciona correctamente, debe deshabilitar el sitio primario.
 
-1. En la página **Contoso-TMProfile**, en la pantalla de información general, seleccione **myPrimaryEndpoint**.
+1. En la página **Contoso-TMProfile**, en la pantalla de información general, seleccione el número **2** a la derecha de **Puntos de conexión:**.
 
-1. En la página **myPrimaryEndpoint**, en **Estado**, seleccione **Deshabilitado** y, a continuación, seleccione **Guardar**.
+1. Seleccione el botón Editar (icono de lápiz) para **myPrimaryEndpoint**.
 
-   ![Imagen 25](../media/disable-primary-endpoint-1.png)
+1. En la hoja **myPrimaryEndpoint**, en **Estado**, desactive la casilla **Habilitar punto de conexión** y, a continuación, seleccione **Guardar**.
 
-1. Cierre la página **myPrimaryEndpoint** (seleccione la **X** de la esquina superior derecha de la página).
+1. Si fuera necesario, cierre la hoja **myPrimaryEndpoint** (seleccione la **X** de la esquina superior derecha de la página).
 
 1. En la página **Contoso-TMProfile**, el valor de la **Supervisión del estado** para **myPrimaryEndpoint** ahora debe ser **Deshabilitado**.
 
@@ -198,7 +198,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + Compara y contrasta cuándo usar Azure Load Balancer y Azure Traffic Manager.
 + Explica los perfiles de enrutamiento de Traffic Manager y cuándo se deben usar.
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Mejora de la disponibilidad de servicios y la localización de los datos con Azure Traffic Manager](https://learn.microsoft.com/training/modules/distribute-load-with-traffic-manager/). En este módulo, obtendrás información sobre el uso de Traffic Manager para distribuir dinámicamente el tráfico de red.
 + [Equilibrio de la carga del tráfico no HTTP(S) en Azure](https://learn.microsoft.com/training/modules/load-balancing-non-https-traffic-azure/). En este módulo, obtendrás información sobre Azure Traffic Manager y la implementación de métodos de enrutamiento. 

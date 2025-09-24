@@ -126,7 +126,7 @@ Una vez que cree una instancia de Front Door, la configuración tardará unos mi
 
 1. Vuelva al explorador y seleccione Actualizar. Debería aparecer la misma página de información.
 
-**Puede haber un retraso mientras se detiene la aplicación web. Si recibe una página de error en el explorador, actualice la página**.
+    **Puede haber un retraso mientras se detiene la aplicación web. Si recibe una página de error en el explorador, actualice la página**.
 
 1. Vuelve a Azure Portal, busca la otra aplicación web y detenla.
 
@@ -160,7 +160,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Qué es un origen en Azure Front Door y en qué se diferencia de un punto de conexión?
 
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Front Door](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/). En este módulo, aprenderás cómo Azure Front Door puede proteger tus aplicaciones.
 + [Equilibrar la carga del tráfico del servicio Web con Front Door](https://learn.microsoft.com/training/modules/create-first-azure-front-door/). En este módulo, aprenderás a crear y configurar Azure Front Door. 

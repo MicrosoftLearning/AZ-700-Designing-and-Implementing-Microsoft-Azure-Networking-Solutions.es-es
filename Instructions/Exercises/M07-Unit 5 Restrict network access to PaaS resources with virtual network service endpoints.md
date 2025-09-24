@@ -354,7 +354,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Qué servicios de Azure pueden usar los puntos de conexión de servicio?
 + ¿Cuáles son los pasos para restringir el acceso a Azure Storage mediante puntos de conexión de servicio?
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Protegerás y aislarás el acceso a recursos de Azure mediante grupos de seguridad de red y puntos de conexión de servicio](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). En este módulo, aprenderás cómo utilizar puntos de conexión de servicio de red virtual para controlar el tráfico de red hacia y desde los servicios de Azure.
 
