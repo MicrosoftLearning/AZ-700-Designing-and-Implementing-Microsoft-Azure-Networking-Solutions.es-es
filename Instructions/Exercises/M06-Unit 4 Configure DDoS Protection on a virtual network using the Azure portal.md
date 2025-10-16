@@ -242,7 +242,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Qué recursos de Azure se pueden proteger mediante protección contra DDoS?
 
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure DDoS Protection](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/). En este módulo, evaluarás Azure DDoS Protection, sus características y las opciones de arquitectura.
 + [Diseño e implementación de la seguridad de red](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/). En este módulo, obtendrás información sobre Azure DDoS Protection y la implementarás.
