@@ -180,107 +180,98 @@ En esta tarea, conectará las redes virtuales en estrella tipo hub-and-spoke. Es
 
 En esta tarea, primero creará la directiva de firewall y, a continuación, protegerá el centro de conectividad. La directiva de firewall definirá colecciones de reglas para dirigir el tráfico en uno o varios centros virtuales protegidos.
 
-1. En el portal, busca `firewall manager` y luego selecciona **Administrador de firewall de palabras clave de seguridad de red**.
-
-1. En la hoja **Firewall Manager**, selecciona **Directivas de Azure Firewall**.
+1. En el portal, busca y selecciona `Firewall Policies`.
 
 1. Seleccione **Crear**.
 
-1. En **Grupo de recursos**, selecciona **fw-manager-rg**.
-
-5. En **Detalles de la directiva**, en **Nombre**, escribe `Policy-01`.
-
-1. En **Región**, selecciona tu región.
-
-1. En **Nivel de directiva**, selecciona **Estándar**.
+    | **Configuración**    | **Valor** |
+    | ---------- | --------------|
+    | Resource group | **fw-manager-rg** |
+    | Nombre    | `Policy-01` |
+    | Region     | Seleccionar la región |
+    | Nivel de directiva | **Estándar** |
 
 1. Seleccione **Siguiente: Configuración DNS**. Revisa el contenido, pero no realices ningún cambio. 
 
 1. Seleccione **Siguiente: Inspección de TLS**. Revisa el contenido, pero no realices ningún cambio. 
 
-1. Seleccione **Siguiente: Reglas**.
+**Agregar una colección de reglas y una regla para permitir el dominio de Microsoft**
 
-1. En la pestaña **Reglas**, seleccione **Agregar una colección de reglas**.
+1. Seleccione **Siguiente: Reglas**y, a continuación, seleccione **Agregar una colección de reglas**.
 
-1. En la página **Agregar una colección de reglas**, en **Nombre**, escribe `App-RC-01`.
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre        |  `App-RC-01` |
+   | Tipo de colección de reglas | **Aplicación** |
+   | Prioridad    | `100` |
+   | Acción de colección de reglas | **Permitir** |
 
-1. En **Tipo de colección de reglas**, seleccione **Aplicación**.
+1. En la sección **Reglas**.
 
-1. En **Prioridad**, escriba **100**.
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre |  `Allow-msft` |
+   | Tipo de origen | **Dirección IP** |
+   | Origen | `*` |
+   | Protocolo | `http,https` |
+   | Tipo de destino | **FQDN** |
+   | Destino | `*.microsoft.com` |
 
-1. Asegúrese de que el valor de **Rule collection action** (Acción de la colección de reglas) es **Permitir**.
+**Agregue una colección de reglas y una regla para permitir una conexión de Escritorio remoto a la máquina virtual Srv-workload-01.**
 
-1. En **Reglas**, en **Nombre**, escribe `Allow-msft`.
+1. Seleccione **Agregar una colección de reglas**.
 
-1. En el **Tipo de origen**, seleccione **Dirección IP**.
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre        |  `dnat-rdp` |
+   | Tipo de colección de reglas | **DNAT** |
+   | Prioridad    | `100` |
+   | Acción de colección de reglas | **Permitir** |
 
-1. En **Origen**, escribe *.
+1. En la sección **Reglas**.
 
-1. En **Protocolo**, escribe `http,https`.
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre |  `Allow-rdp` |
+   | Tipo de origen | **Dirección IP** |
+   | Origen | `*` |
+   | Protocolo | **TCP** |
+   | Puertos de destino | `3389` |
+   | Destino (dirección IP del firewall) | Escriba la dirección IP pública del centro virtual de firewall. |
+   | Tipo traducido | **Dirección IP** |
+   | Dirección traducida o FQDN | Escriba la dirección IP privada de la máquina virtual Srv-workload-01. |
+   | Puerto traducido | `3389` |
+   
+**Agregue una colección de reglas y una regla para permitir una conexión de Escritorio remoto a la máquina virtual Srv-workload-02.**
 
-1. Asegúrese de que **Tipo de destino** es **FQDN**.
+1. Seleccione **Agregar una colección de reglas**.
 
-1. En **Destino**, escribe `*.microsoft.com`.
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre        |  `vnet-rdp` |
+   | Tipo de colección de reglas | **Network** |
+   | Prioridad    | `100` |
+   | Acción de colección de reglas | **Permitir** |
 
-1. Seleccione **Agregar**.
+1. En la sección **Reglas**.
 
-1. Para agregar una regla DNAT que le permita conectar un escritorio remoto a la máquina virtual Srv-workload-01, seleccione **Agregar una colección de reglas**.
-
-1. En **Nombre**, escriba `dnat-rdp`.
-
-1. En **Tipo de colección de reglas**, seleccione **DNAT**.
-
-1. En **Prioridad**, escriba **100**.
-
-1. En **Reglas**, en **Nombre**, escribe `Allow-rdp`.
-
-1. En el **Tipo de origen**, seleccione **Dirección IP**.
-
-1. En **Origen**, escribe *.
-
-1. En **Protocolo**, seleccione **TCP**.
-
-1. En **Puertos de destino**, escribe `3389`.
-
-1. En **Dirección IP de destino**, escribe la dirección IP pública del centro virtual de firewall que anotó anteriormente (por ejemplo, **51.143.226.18**).
-
-1. En **Tipo traducido**, selecciona **Dirección IP**.
-
-1. En **Dirección traducida**, escriba la dirección IP privada de **Srv-workload-01** que anotó anteriormente (por ejemplo, **10.0.1.4**).
-
-1. En **Puerto traducido**, escriba **3389**.
-
-1. Seleccione **Agregar**.
-
-1. Para agregar una regla de red de modo que pueda conectar un escritorio remoto de la VM Srv-workload-01 a la VM Srv-workload-02, seleccione **Agregar una colección de reglas**.
-
-1. En **Nombre**, escriba `vnet-rdp`.
-
-1. En **Tipo de colección de reglas**, seleccione **Red**.
-
-1. En **Prioridad**, escriba **100**.
-
-1. En **Acción de recopilación de reglas**, seleccione **Denegar**.
-
-1. En **Reglas**, en **Nombre**, escribe `Allow-vnet`.
-
-1. En el **Tipo de origen**, seleccione **Dirección IP**.
-
-1. En **Origen**, escribe *.
-
-1. En **Protocolo**, seleccione **TCP**.
-
-1. En **Puertos de destino**, escriba **3389**.
-
-1. En **Tipo de destino**, seleccione **Dirección IP**.
-
-1. En **Destino**, escribe la dirección IP privada de **Srv-workload-02** que anotaste anteriormente (por ejemplo, **10.1.0.4**).
+   | **Configuración** | **Valor** |
+   | ---------- | --------------|
+   | Nombre |  `Allow-vnet` |
+   | Tipo de origen | **Dirección IP** |
+   | Origen | `*` |
+   | Protocolo | **TCP** |
+   | Puertos de destino | `3389` |
+   | Destino (dirección IP del firewall) | Escriba la dirección IP pública del centro virtual de firewall. |
+   | Tipo traducido | **Dirección IP** |
+   | Dirección traducida o FQDN | Escriba la dirección IP privada de la máquina virtual Srv-workload-02. |
+   | Puerto traducido | `3389` |
 
 1. Seleccione **Agregar**.
 
-1. Ahora debería ver tres colecciones de reglas.
+1. Compruebe que tiene tres colecciones de reglas.
 
-1. Seleccione **Revisar + crear**.
+1. Selecciona **Revisar + crear.**
 
 1. Seleccione **Crear**.
 

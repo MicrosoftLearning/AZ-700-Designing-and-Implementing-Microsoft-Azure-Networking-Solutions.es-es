@@ -36,7 +36,7 @@ En este ejercicio, aprenderás a:
 
 1. En la página **Crear ExpressRoute**, proporciona el **Grupo de recursos** como `ExpressRouteResourceGroup`. A continuación, selecciona **Resistencia estándar** para **Resistencia**
 
-1. Para ***Detalles del circuito**, asegúrate de especificar la región correcta (**Este de EE. UU. 2**), nombre del circuito (**TestERCircuit**), ubicación de emparejamiento (**Seattle**), proveedor (**Equinix**), ancho de banda (**50 Mbps**), nivel de SKU (**Estándar**) y modelo de facturación de medición de datos (**Medido**).
+1. Para **Detalles del circuito**, asegúrese de especificar la región correcta (**Este de EE. UU. 2**), el nombre del circuito (**TestERCircuit**), la ubicación de emparejamiento (**Seattle**), el proveedor (**Equinix**), el ancho de banda (**50 Mbps**), el nivel de SKU (**Estándar**) y el modelo de facturación de medición de datos (**Medido**).
 
 1. Seleccione **Revisar + crear**.
 
@@ -141,3 +141,4 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Microsoft garantiza una disponibilidad mínima del 99,95 % para las conexiones ExpressRoute dedicadas. La conexión es privada y viaja a través de una línea dedicada, los terceros no pueden interceptar el tráfico.
 + Puede crear una conexión entre su red local y la nube de Microsoft de cuatro maneras diferentes: colocalización de CloudExchange, conexión Ethernet de punto a punto, conexión universal (IPVPN) y ExpressRoute Direct.
 + Las características de ExpressRoute se determinan mediante la SKU: Local, Estándar y Premium. 
+
