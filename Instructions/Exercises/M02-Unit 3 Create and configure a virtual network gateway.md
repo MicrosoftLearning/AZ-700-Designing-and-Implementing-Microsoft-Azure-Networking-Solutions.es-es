@@ -202,7 +202,7 @@ En este ejercicio, aprenderás a:
    | Aspectos básicos          | Detalles del proyecto   | Suscripción                                | No se necesitan cambios          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Detalles de la instancia  | Nombre                                        | ManufacturingVnetGateway     |
-   |                 |                   | Región                                      | Norte de Europa                 |
+   |                 |                   | Region                                      | Oeste de Europa                  |
    |                 |                   | Tipo de puerta de enlace                                | VPN                          |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generación 1                  |
@@ -306,7 +306,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Hay costes asociados con las puertas de enlace de VPN de Azure?
 
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Conexión de la red local a Azure con puerta de enlace de VPN](https://learn.microsoft.com/training/modules/connect-on-premises-network-with-vpn-gateway/). En este módulo, aprenderás a usar CLI para aprovisionar puertas de enlace de VPN.
 + [Solución de problemas de puertas de enlace de VPN en Microsoft Azure](https://learn.microsoft.com/training/modules/troubleshoot-vpn-gateways/). En este módulo, obtendrás información sobre cómo supervisar y solucionar problemas de VPN de sitio a sitio y de punto a sitio.

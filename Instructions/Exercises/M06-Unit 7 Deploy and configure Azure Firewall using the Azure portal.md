@@ -390,7 +390,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + Proporciona una tabla que compare las características de las SKU de Azure Firewall.
 + Describe los tres tipos de reglas que puedes crear para una instancia de Azure Firewall.
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Firewall](https://learn.microsoft.com/training/modules/introduction-azure-firewall/). En este módulo, aprenderás cómo Azure Firewall protege los recursos de red virtual de Azure, incluidas las características, las reglas y las opciones de implementación.
 + [Introducción a Azure Firewall Manager](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/). En este módulo, aprenderás cómo Azure Firewall Manager proporciona una directiva de seguridad central y administración de rutas para perímetros de seguridad basados en la nube

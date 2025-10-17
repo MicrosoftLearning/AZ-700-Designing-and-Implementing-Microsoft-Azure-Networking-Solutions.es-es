@@ -129,10 +129,10 @@ Un centro de conectividad contiene puertas de enlace para las funcionalidades de
 
 Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 + ¿Qué tipo de arquitectura de red usa Azure VWAN?
-+ ¿Qué diferencia hay entre los tipos Azure VWAN básico y estándar? Provisión de ejemplos.
++ ¿Qué diferencia hay entre los tipos Azure VWAN básico y estándar? Proporcione ejemplos.
 + ¿Se puede crear una instancia de Azure VWAN con herramientas de scripting?
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Virtual WAN](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/). En este módulo, obtendrás información sobre la funcionalidad y las características de Azure Virtual WAN. 
 + [Diseño e implementación de redes híbridas](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/). En este módulo, obtendrás información sobre cómo diseñar e implementar Azure Virtual WAN.

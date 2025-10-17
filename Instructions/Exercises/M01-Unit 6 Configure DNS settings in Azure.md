@@ -86,7 +86,7 @@ En esta sección, creará dos máquinas virtuales de prueba para probar la confi
    
 1. Implementa las plantillas de ARM siguientes a fin de crear las máquinas virtuales necesarias para este ejercicio:
 
-   >**Nota**: se te pedirá que proporciones una contraseña de administrador. Necesitarás esta contraseña en un paso posterior. 
+   >**Nota**: Se le pedirá que proporcione una contraseña de administrador. Necesitará esta contraseña en un paso posterior. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
@@ -138,7 +138,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Cuál es la diferencia entre Azure DNS y DNS privado de Azure? Proporciona ejemplos de cuándo usar DNS privado de Azure.
 + ¿Cuál es el propósito del registro automático al crear una zona de Azure DNS?
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/). En este módulo se explica Azure DNS, cómo funciona y cuándo debes elegir usar Azure DNS como solución para satisfacer las necesidades de tu organización.
 + [Hospeda el dominio en Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). En este módulo, crearás una zona DNS y registros DNS para asignar el dominio a una dirección IP. Además, comprueba para tener la certeza de que el nombre de dominio se resuelve en tu servidor web.

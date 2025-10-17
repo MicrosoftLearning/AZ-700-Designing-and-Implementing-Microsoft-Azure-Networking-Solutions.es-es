@@ -98,7 +98,7 @@ En este ejercicio, aprenderás a:
 
    | **Subred**             | **Opción**           | **Valor**               |
    | ---------------------- | -------------------- | ----------------------- |
-   | GatewaySubnet          | Propósito de la subred       | Puerta de enlace de red virtual |
+   | GatewaySubnet          | Propósito de la subred       | Puerta de enlace de Virtual Network |
    |                        | Nombre de subred          | GatewaySubnet           |
    |                        | Intervalo de direcciones de subred | 10.20.0.0/27            |
    | SharedServicesSubnet   | Nombre de subred          | SharedServicesSubnet    |
@@ -171,7 +171,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Cuál es el comando de Azure PowerShell para crear una red virtual denominada CoreServicesVnet en la región Este (EE. UU.)? La red virtual debería utilizar el espacio de direcciones IP 10.20.0.0/16.
 + ¿Cuál es el comando de CLI de Azure para crear una red virtual denominada ManufacturingVnet en la región Oeste de Europa? La red virtual debería utilizar el espacio de direcciones IP 10.30.0.0/16.
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Diseño de un esquema de direccionamiento IP para la implementación de Azure](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). En este módulo, identificarás las funcionalidades de direcciones IP públicas y privadas de redes virtuales de Azure.
 + [Introducción a las redes virtuales de Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). En este módulo, descubrirás cómo diseñar e implementar servicios de red de Azure. Obtendrás información sobre redes virtuales, direcciones IP públicas y privadas, DNS, emparejamiento de redes virtuales, enrutamiento y Azure Virtual NAT.
@@ -179,7 +179,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 ## Puntos clave
 
 + Azure Virtual Network es un servicio que proporciona el bloque de compilación fundamental para su red privada en Azure. Una instancia del servicio (una red virtual) permite que muchos tipos de recursos de Azure se comuniquen de forma segura entre sí, Internet y redes locales. Asegúrese de que los espacios de direcciones no se superpongan. Asegúrese de que el espacio de direcciones de su red virtual (bloque CIDR) no se solape con otros intervalos de red de su organización.
-+ Todos los recursos de Azure en una red virtual se implementan en subredes de la red virtual. Las subredes te permiten segmentar la red virtual en una o varias subredes y asignar una parte del espacio de direcciones de la red virtual a cada subred. Las subredes no deberían cubrir el espacio de direcciones completo de la red virtual. Planea con antelación y reserva algún espacio de direcciones para el futuro.
++ Todos los recursos de Azure en una red virtual se implementan en subredes de la red virtual. Las subredes te permiten segmentar la red virtual en una o varias subredes y asignar una parte del espacio de direcciones de la red virtual a cada subred. Las subredes no deberían cubrir el espacio de direcciones completo de la red virtual. Planee con antelación y reserve algún espacio de direcciones para el futuro.
 
 
 

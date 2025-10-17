@@ -98,7 +98,7 @@ En este ejercicio, aprenderás a:
     | **Configuración**   | **Valor**         |
     | ------------- | ----------------- |
     | Nombre del cliente de escucha | Agente de escucha          |
-    | IP de front-end   | Selecciona **IPv4 público** |
+    | Dirección IP de front-end   | Selecciona **IPv4 público** |
 
 1. Acepte los valores predeterminados de las demás opciones en la pestaña **Agente de escucha**.
 
@@ -250,7 +250,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + Compara Azure Application Gateway con Azure Load Balancer. Proporciona ejemplos de cuándo usar cada producto.
 
 
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Introducción a Azure Application Gateway](https://learn.microsoft.com/training/modules/intro-to-azure-application-gateway/). En este módulo se explica qué hace Azure Application Gateway, cómo funciona y cuándo debe usar Application Gateway como solución para satisfacer las necesidades de su organización.
 + [Equilibrio de carga del tráfico de servicio web con Application Gateway](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). En este módulo, aprenderás a crear y configurar una puerta de enlace de aplicación con enrutamiento basado en ruta de acceso de dirección URL.
@@ -259,6 +259,6 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 ## Puntos clave
 
 Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
-+ Azure Application Gateway es un equilibrador de carga de tráfico web (OSI capa 7) que permite administrar el tráfico a las aplicaciones web.
++ Azure Application Gateway es un equilibrador de carga del tráfico web (OSI capa 7) que permite administrar el tráfico que se dirige a las aplicaciones web.
 + Application Gateway puede tomar decisiones de enrutamiento basadas en atributos adicionales de una solicitud HTTP, por ejemplo los encabezados de host o la ruta de acceso del URI.
 + Usa Application Gateway para la aplicación hospedada en una sola región y cuando necesites enrutamiento basado en dirección URL. 
