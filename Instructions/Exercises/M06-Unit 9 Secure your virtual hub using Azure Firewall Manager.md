@@ -13,11 +13,6 @@ En este ejercicio, creará la red virtual de radio y un centro virtual protegido
 
 ![Diagrama de la arquitectura de red virtual con un centro de conectividad seguro.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
-### Simulaciones de laboratorio interactivas
-
-**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
-
 ## Creación de una arquitectura en estrella tipo hub-and-spoke
 
 En esta parte del ejercicio, creará las redes virtuales de radio y las subredes en las que colocará los servidores de carga de trabajo. A continuación, creará el centro virtual protegido y conectará el centro y las redes virtuales de radio.

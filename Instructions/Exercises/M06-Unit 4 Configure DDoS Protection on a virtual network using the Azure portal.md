@@ -24,9 +24,6 @@ En este ejercicio, aprenderás a:
 + Tarea 6: Configurar alertas de DDoS
 + Tarea 7: Prueba con asociados de simulación
   
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 ### Tiempo estimado: 40 minutos.
 
 ## Tarea 1: Creación de un grupo de recursos

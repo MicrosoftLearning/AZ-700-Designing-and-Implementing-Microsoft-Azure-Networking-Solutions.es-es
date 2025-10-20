@@ -14,10 +14,6 @@ Comience a trabajar con Azure Private Link usando un punto de conexión privado 
 
 ![Diagrama de la arquitectura de un punto de conexión privado.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 45 minutos
 
 Creará un punto de conexión privado para una aplicación web de Azure e implementará una máquina virtual para probar la conexión privada.

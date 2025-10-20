@@ -32,10 +32,6 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 12: Visualización del estado de los recursos
 + Tarea 13: Configuración de las opciones de diagnóstico
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 55 minutos
 
 ## Tarea 1: Creación de la red virtual
