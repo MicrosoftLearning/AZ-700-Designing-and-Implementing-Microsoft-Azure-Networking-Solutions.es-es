@@ -22,10 +22,6 @@ En este ejercicio, aprenderás a:
 + Tarea 4: Creación de emparejamientos de VNet entre CoreServicesVnet y ManufacturingVnet
 + Tarea 5: Prueba de la conexión entre las máquinas virtuales
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 20 minutos
 
 ## Tarea 1: Creación de una máquina virtual para probar la configuración

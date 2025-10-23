@@ -9,10 +9,6 @@ Exercise:
 
 En este ejercicio, creará un equilibrador de carga interno para la organización ficticia Contoso Ltd.
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 60 minutos (incluye aproximadamente 45 minutos de tiempo de espera de implementación)
 
 Los pasos para crear un equilibrador de carga interno son muy similares a los que ya ha aprendido en este módulo para crear un equilibrador de carga público. La principal diferencia es que con un equilibrador de carga público se accede al front-end a través de una dirección IP pública y se prueba la conectividad desde un host que se encuentra fuera de la red virtual; mientras que, con un equilibrador de carga interno, el front-end es una dirección IP privada dentro de la red virtual y se prueba la conectividad desde un host dentro de la misma red.

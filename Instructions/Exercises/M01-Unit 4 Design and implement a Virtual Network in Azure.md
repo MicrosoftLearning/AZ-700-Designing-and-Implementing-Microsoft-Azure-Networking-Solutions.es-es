@@ -12,10 +12,6 @@ Ahora está listo para implementar redes virtuales en Azure Portal.
 
 Considere la organización ficticia Contoso Ltd, que está en proceso de migrar la infraestructura y las aplicaciones a Azure. Como ingeniero de red, debe planear e implementar tres redes virtuales y subredes para admitir recursos en esas redes virtuales.
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 20 minutos
 
 La red virtual **CoreServicesVnet** se implementa en la región **Este de EE. UU.**. Esta red virtual tendrá el mayor número de recursos. Tendrá conectividad con redes locales a través de una conexión VPN. Esta red tendrá servicios web, bases de datos y otros sistemas que son fundamentales para las operaciones de la empresa. Los servicios compartidos, como los controladores de dominio y DNS, también se ubicarán aquí. Se prevé una gran cantidad de crecimiento, por lo que se necesita un gran espacio de direcciones para esta red virtual.

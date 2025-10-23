@@ -22,10 +22,6 @@ En este ejercicio, aprenderás a:
 + Tarea 2: Creación de una instancia de Front Door para una aplicación
 + Tarea 3: Visualización de Front Door en acción
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 30 minutos
 
 ## Tarea 1: Creación de dos instancias de una aplicación web

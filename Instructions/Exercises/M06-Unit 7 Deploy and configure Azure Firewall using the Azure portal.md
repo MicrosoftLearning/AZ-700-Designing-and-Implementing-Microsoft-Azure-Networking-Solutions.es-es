@@ -27,10 +27,6 @@ En este ejercicio, aprenderás a:
 + Tarea 9: Cambiar la dirección DNS primaria y secundaria para la interfaz de red del servidor
 + Tarea 10: Probar el firewall
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 60 minutos.
 
 ## Tarea 1: Creación de un grupo de recursos
@@ -69,11 +65,11 @@ En esta tarea, creará una red virtual única con dos subredes.
 
 1. Seleccione **Siguiente: Direcciones IP**. Escribe el espacio de direcciones IPv4 10.0.0.0/16 si aún no existe de forma predeterminada.
 
-1. En **Nombre de subred**, seleccione la palabra **predeterminada**.
+1. Haga clic en el icono **Editar** situado junto a la subred **Predeterminada**.
 
-1. En el cuadro de diálogo **Editar subred**, cambie el nombre a **AzureFirewallSubnet**.
+1. En la lista desplegable **Propósito de subred** seleccione **Azure Firewall**. 
 
-1. Cambie el **Intervalo de direcciones de subred** a **10.0.1.0/26**.
+1. Cambie la **Dirección inicial** a **10.0.1.0/26**.
 
 1. Seleccione **Guardar**.
 

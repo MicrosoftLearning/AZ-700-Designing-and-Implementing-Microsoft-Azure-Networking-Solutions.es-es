@@ -20,10 +20,6 @@ En este ejercicio, aprenderás a:
 + Tarea 3: Creación de máquinas virtuales para probar la configuración
 + Tarea 4: Comprobación de que existen registros en la zona DNS
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 25 minutos
 
 **Importante:** este ejercicio requiere una red virtual del laboratorio anterior. Esta se puede instalar mediante un archivo de [plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json). Todas las redes virtuales se instalarán, pero solo se necesita CoreServicesVNet. 

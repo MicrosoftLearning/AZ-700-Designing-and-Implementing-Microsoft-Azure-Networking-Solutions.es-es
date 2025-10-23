@@ -32,10 +32,6 @@ En el diagrama siguiente se muestra el entorno que se va a implementar en este e
 + Tarea 12: Visualización del estado de los recursos
 + Tarea 13: Configuración de las opciones de diagnóstico
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 55 minutos
 
 ## Tarea 1: Creación de la red virtual
@@ -44,7 +40,7 @@ En esta sección, creará una red virtual y una subred.
 
 1. Inicie sesión en el Portal de Azure.
 
-1. En la página principal de Azure Portal, ve a la barra Búsqueda global, busca **Redes virtuales** y selecciona Redes virtuales en servicios.
+1. En Azure Portal, busque y seleccione **Redes virtuales**.
 
 1. Seleccione **+ Create** (+ Crear).
 
@@ -59,16 +55,6 @@ En esta sección, creará una red virtual y una subred.
    | NOMBRE           | **IntLB-VNet**                                      |
    | Region         | **(EE. UU.) Oeste de EE. UU.**                                    |
 
-1. Seleccione **Siguiente: Direcciones IP**.
-
-1. En la pestaña **Direcciones IP**, en el cuadro **Espacio de direcciones IPv4**, escribe **10.1.0.0/16**.
-
-1. Encima de **Nombre de subred**, selecciona **Agregar subred**.
-
-1. En el panel **Añadir subred**, proporciona el nombre de subred **myBackendSubnet** y el intervalo de direcciones de subred **10.1.0.0/24**.
-
-1. Seleccione **Agregar**.
-
 1. Seleccione **Siguiente: Seguridad**.
 
 1. En **BastionHost**, seleccione **Habilitar** y escriba la información de la tabla siguiente.
@@ -76,10 +62,19 @@ En esta sección, creará una red virtual y una subred.
     | **Configuración**                       | **Valor**                                              |
     | --------------------------------- | ------------------------------------------------------ |
     | Nombre del bastión                      | **myBastionHost**                                      |
-    | Espacio de direcciones de AzureBastionSubnet  | **10.1.1.0/24**                                        |
     | Dirección IP pública                 | Seleccione **Crear nuevo**.<br /><br />Nombre: **myBastionIP** |
 
-1. Seleccione **Revisar + crear**.
+1. Seleccione **Siguiente: Direcciones IP**.
+
+1. **Elimine la dirección IP** y, a continuación, el **espacio de direcciones IPv4**. Escriba **10.1.0.0/16**.
+
+1. Edite **AzureBastionSubnet** y cambie la **dirección de inicio** por **10.1.1.0**. **Guarde** el cambio. 
+
+1. Seleccione **+ Agregar subred**; el nombre de la subred es `myBackendSubnet` y el intervalo de direcciones de subred es `10.1.0.0/24`. Seleccione **Agregar**.
+
+1. Ahora debería tener una red virtual con dos subredes. 
+
+1. Selecciona **Revisar + crear.**
 
 1. Seleccione **Crear**.
 
@@ -87,9 +82,9 @@ En esta sección, creará una red virtual y una subred.
 
 En esta sección, creará un equilibrador de carga de SKU estándar interno. La razón por la que en este ejercicio se va a crear un equilibrador de carga de SKU Estándar, en lugar de uno de SKU Básica, es que en ejercicios posteriores se necesitará una versión de SKU Estándar del equilibrador de carga.
 
-1. En la página principal de Azure, en el cuadro de búsqueda, escriba **Load Balancer**.
+1. En Azure Portal, busque y seleccione **Equilibradores de carga**.
 
-1. Seleccione **Crear equilibrador de carga**.
+1. Seleccione **Crear** y, a continuación, **Standard Load Balancer**.
 
 1. En la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el equilibrador de carga.
 
@@ -102,21 +97,24 @@ En esta sección, creará un equilibrador de carga de SKU estándar interno. La 
    | Region                | **(EE. UU.) Oeste de EE. UU.**         |
    | SKU                   | **Estándar**             |
    | Tipo                  | **Interno**             |
-   | Pestaña Configuración de IP de front-end | + Agregar una configuración de IP de front-end |
-   | Nombre                  | **LoadBalancerFrontEnd** |
-   | Virtual network       | **IntLB-VNet**           |
-   | Subnet                | **myBackendSubnet**      |
+
+1. Vaya a la pestaña **Configuración de IP de front-end** y seleccione **+ Agregar una configuración de IP de front-end**.
+
+   | **Configuración**            | **Valor**            |
+   | Nombre                  | `LoadBalancerFrontEnd` |
+   | Red virtual       | **IntLB-VNet**           |
+   | Subred                | **myBackendSubnet**      |
    | Asignación de dirección IP | **Dinámica**              |
 
-1. Seleccione **Revisar + crear**.
+1. **Guarde** los cambios y seleccione **Revisar y crear**.
 
-1. Seleccione **Crear**.
+1. Después de una validación correcta, seleccione **Crear**.
 
 ## Tarea 3: Creación de un grupo de back-end
 
 Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas de interfaz de red virtuales conectadas al equilibrador de carga.
 
-1. En la página principal de Azure Portal, selecciona **Todos los recursos** y después selecciona **myIntLoadBalancer** en la lista de recursos.
+1. En Azure Portal, busque y seleccione el recurso **myIntLoadBalancer**.
 
 1. En **Configuración**, seleccione **Grupos de back-end** y después **Agregar**.
 
@@ -125,10 +123,10 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
    | **Configuración**     | **Valor**            |
    | --------------- | -------------------- |
    | Nombre            | **myBackendPool**    |
-   | Virtual network | **IntLB-VNet**       |
+   | Virtual network | IntLB-VNet    |
    | Configuración del grupo de back-end   | **NIC** |
 
-1. Seleccione **Agregar**.
+1. Seleccione **Guardar**.
 
    ![Grupo de back-end creado en el equilibrador de carga](../media/create-backendpool.png)
 
@@ -136,19 +134,19 @@ Un grupo de direcciones de back-end contiene las direcciones IP de las tarjetas 
 
 El equilibrador de carga supervisa el estado de la aplicación con un sondeo de estado. El sondeo de estado agrega o quita las máquinas virtuales del equilibrador de carga a partir de su respuesta a las comprobaciones de estado. Aquí creará un sondeo de estado para supervisar el estado de las máquinas virtuales.
 
-1. En la página **Grupos back-end** del equilibrador de carga, en **Configuración**, selecciona **Sondeos de estado** y después selecciona **Agregar**.
+1. En el recurso del equilibrador de carga, seleccione **Configuración**, **Sondeos de estado** y, después, **Agregar**.
 
 1. En la página **Agregar sondeo de estado**, escriba la información de la tabla siguiente.
 
    | **Configuración**         | **Valor**         |
    | ------------------- | ----------------- |
-   | Nombre                | **myHealthProbe** |
+   | Nombre                | `myHealthProbe` |
    | Protocolo            | **HTTP**          |
    | Port                | **80**            |
    | Ruta de acceso                | **/**             |
    | Intervalo            | **15**            |
 
-1. Seleccione **Agregar**.
+1. Seleccione **Guardar**.
 
    ![Sondeo de estado creado en el equilibrador de carga](../media/create-healthprobe.png)
 
@@ -156,25 +154,21 @@ El equilibrador de carga supervisa el estado de la aplicación con un sondeo de 
 
 Las reglas de equilibrador de carga se utilizan para definir cómo se distribuye el tráfico a las máquinas virtuales. Defina la configuración IP del front-end para el tráfico entrante y el grupo de direcciones IP de back-end para recibir el tráfico. Los puertos de origen y de destino se definen en la regla. Aquí creará una regla de equilibrador de carga.
 
-1. En la página **Grupos back-end** del equilibrador de carga, en **Configuración**, selecciona **Reglas de equilibrio de carga** y después selecciona **Agregar**.
-
-1. En la página **Agregar regla de equilibrio de carga**, escriba la información de la tabla siguiente.
+1. En el recurso del equilibrador de carga, seleccione **Configuración**, **Reglas de equilibrio de carga** y, después, **Agregar**.
 
    | **Configuración**            | **Valor**                |
    | ---------------------- | ------------------------ |
    | Nombre                   | **myHTTPRule**           |
    | Versión de la dirección IP             | **IPv4**                 |
    | Dirección IP del front-end    | **LoadBalancerFrontEnd** |
+   | Grupo back-end           | **myBackendPool**        |
    | Protocolo               | **TCP**                  |
    | Port                   | **80**                   |
    | Puerto back-end           | **80**                   |
-   | Grupo back-end           | **myBackendPool**        |
    | Sondeo de mantenimiento           | **myHealthProbe**        |
    | Persistencia de la sesión    | **None**                 |
    | Tiempo de espera de inactividad (minutos) | **15**                   |
    | Dirección IP flotante            | **Deshabilitado**             |
-
-1. Seleccione **Agregar**.
 
    ![Regla de equilibrio de carga creada en el equilibrador de carga](../media/create-loadbalancerrule.png)
 
@@ -191,90 +185,41 @@ En esta sección, creará tres máquinas virtuales para el grupo de back-end del
 
     > **Nota:** Si estás trabajando en tu propia suscripción los [archivos de plantilla](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) están disponibles en el repositorio de laboratorio de GitHub.
 
-1. Implementa las siguientes plantillas de ARM para crear la red virtual, las subredes y las máquinas virtuales necesarias para este ejercicio:
-
-   >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+1. Implemente las siguientes plantillas de ARM para crear la red virtual, las subredes y las máquinas virtuales necesarias para este ejercicio. **Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    $RGName = "IntLB-RG"
-
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-  
-    > **Nota:** Esto tardará varios minutos en implementarse.
+1. La implementación puede tardar varios minutos. Puede comprobar el progreso en el portal actualizando la página de recursos de la máquina virtual.   
 
 ## Tarea 7: Adición de máquinas virtuales al grupo de back-end
 
-1. En la página principal de Azure Portal, selecciona **Todos los recursos** y después selecciona **myIntLoadBalancer** en la lista de recursos.
+1. En Azure Portal, busque y seleccione el recurso **myIntLoadBalancer**.
 
 1. En **Configuración**, seleccione **Grupos de back-end** y después **myBackendPool**.
 
-1. En el cuadro **Asociado a**, selecciona **Máquinas virtuales**.
+1. En la sección **Configuraciones de IP**, seleccione **Agregar**.
 
-1. En **Máquinas virtuales**, selecciona **Agregar**.
+1. Seleccione todas las máquinas virtuales que se muestran y, a continuación, seleccione **Agregar**.
 
-1. Activa las casillas de las tres máquinas virtuales (**myVM1**, **myVM2** y **myVM3**) y después selecciona **Agregar**.
+1. Active las casillas **myVM1** y **myVM2** y, a continuación, seleccione **Agregar**.
 
 1. En la página ** myBackendPool** selecciona **Guardar**.
-
-   ![Máquinas virtuales agregadas al grupo de back-end en el equilibrador de carga](../media/add-vms-backendpool.png)
 
 ## Tarea 8: Prueba del equilibrador de carga
 
 En esta sección, creará una máquina virtual de prueba y, después, probará el equilibrador de carga.
 
-### Creación de la máquina virtual de prueba
+### Conexión a la máquina virtual de prueba (VM3) para probar el equilibrador de carga
 
-   >**Nota**: puedes encontrar pequeñas diferencias entre las instrucciones y la interfaz de Azure Portal, pero el concepto principal es el mismo.
-
-1. En la página principal de Azure, en la búsqueda global, escribe **Máquinas virtuales** y selecciona máquinas virtuales en servicios.
-
-1. Selecciona **Crear una máquina virtual**, en la pestaña **Datos básicos**, usa la información de la tabla siguiente para crear la primera máquina virtual.
-
-   | **Configuración**          | **Valor**                                    |
-   | -------------------- | -------------------------------------------- |
-   | Suscripción         | Selecciona la suscripción                     |
-   | Resource group       | **IntLB-RG**                                 |
-   | Nombre de la máquina virtual | **myTestVM**                                 |
-   | Region               | **(EE. UU.) Oeste de EE. UU.**                             |
-   | Opciones de disponibilidad | **No se requiere redundancia de la infraestructura**    |
-   | Tipo de seguridad        | **Estándar**                                 |
-   | Imagen                | **Ver todas las imágenes** --> **Datacenter para Windows Server 2019**  |
-   | Tamaño                 | **Standard_DS2_v3: 2 vcpu, 8 GiB de memoria** |
-   | Nombre de usuario             | **TestUser**                                 |
-   | Contraseña             | **Proporcione una contraseña segura**                |
-   | Confirmar contraseña     | **Proporcione una contraseña segura**                |
-
-1. Selecciona **Siguiente: Discos** y después **Siguiente: Redes**.
-
-1. En la pestaña **Redes**, use la información de la tabla siguiente para configurar las opciones de red.
-
-   | **Configuración**                                                  | **Valor**                     |
-   | ------------------------------------------------------------ | ----------------------------- |
-   | Virtual network                                              | **IntLB-VNet**                |
-   | Subnet                                                       | **myBackendSubnet**           |
-   | Dirección IP pública                                                    | Cambiar a **Ninguno**            |
-   | Grupo de seguridad de red de NIC                                   | **Avanzado**                  |
-   | Configuración del grupo de seguridad de red                             | Seleccione el grupo **myNSG** existente. |
-   | Equilibrio de carga                                               | **Ninguno** (o desactivado)       |
-
-1. Seleccione **Revisar + crear**.
-
-1. Seleccione **Crear**.
-
-1. Espere a que se implemente esta última máquina virtual antes de avanzar con la tarea siguiente.
-
-### Conexión a la máquina virtual de prueba para probar el equilibrador de carga
-
-1. En la página principal de Azure Portal, selecciona **Todos los recursos** y después selecciona **myIntLoadBalancer** en la lista de recursos.
+1. En Azure Portal, busque y seleccione el recurso **myIntLoadBalancer**.
 
 1. En la página **Información general**, anote la **Dirección IP privada** o cópiela en el Portapapeles. Nota: Es posible que tengas que seleccionar **Ver más** para ver la **Dirección IP privada**.
 
-1. Selecciona **Inicio** y después en la página principal de Azure Portal, selecciona **Todos los recursos** y luego selecciona en la máquina virtual **myTestVM** que acabas de crear.
+1. Busque y seleccione **myVM3**. 
 
-1. En la página **Introducción**, seleccione **Conectar** y después **Instancia de Bastion**.
-
-1. Seleccione **Usar Bastion**.
+1. Seleccione **Conectar** y, a continuación, **Conectar a través de Bastion**.
 
 1. En el cuadro **Nombre de usuario**, escribe **TestUser** y en el cuadro **Contraseña**, escribe la contraseña que has proporcionado durante la implementación y luego selecciona **Conectar**.
 
@@ -286,21 +231,14 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 1. Selecciona **Aceptar** en el cuadro de diálogo **Configurar Internet Explorer 11**.
 
-1. Escriba (o pegue) la **Dirección IP privada** (por ejemplo, 10.1.0.4) del paso anterior en la barra de direcciones del explorador y presione Entrar.
+1. Escriba (o pegue) la dirección IP del equilibrador de carga (por ejemplo, 10.1.0.4).
 
-1. La página principal web predeterminada del servidor web IIS se muestra en la ventana del explorador. Responderá una de las tres máquinas virtuales del grupo de back-end.
-    ![Ventana del explorador en la que se muestra la respuesta "Hola mundo" de VM1](../media/load-balancer-web-test-1.png)
-
-1. Si seleccionas varias veces el botón Actualizar del explorador, verás que la respuesta procede aleatoriamente de las distintas máquinas virtuales del grupo back-end del equilibrador de carga interno.
-
-    ![Ventana del explorador en la que se muestra la respuesta "Hola mundo" de VM3](../media/load-balancer-web-test-2.png)
+1. Una de las dos máquinas virtuales de servidores back-end (myVM1 o myVM2) responderá. Continúe actualizando la página y observe que la respuesta procede aleatoriamente de los servidores back-end. 
 
 ## Tarea 9: Creación de un área de trabajo de Log Analytics
 
-1. En la página principal de Azure Portal principal, selecciona **Todos los servicios** y luego en el cuadro de búsqueda de la parte superior de la página, escribe **Log Analytics** y selecciona **Áreas de trabajo de Log Analytics** en la lista filtrada.
-
-   ![Acceso a Áreas de trabajo de Log Analytics desde la página principal de Azure Portal](../media/log-analytics-workspace-1.png)
-
+1. En Azure Portal, busque y seleccione el recurso **Áreas de trabajo de Log Analytics**.
+   
 1. Seleccione **Crear**.
 
 1. En la página **Crear área de trabajo de Log Analytics**, en la pestaña **Datos básicos**, use la información de la tabla siguiente para crear el área de trabajo.
@@ -314,30 +252,13 @@ En esta sección, creará una máquina virtual de prueba y, después, probará e
 
 1. Seleccione **Revisar y crear** y, a continuación, seleccione **Crear**.
 
-   ![Lista de áreas de trabajo de Log Analytics](../media/log-analytics-workspace-2.png)
-
 ## Tarea 110: Uso de la vista de dependencias funcionales
 
-1. En la página principal de Azure Portal, selecciona **Todos los recursos** y luego selecciona **myIntLoadBalancer** en la lista de recursos.
+1. En Azure Portal, busque y seleccione el recurso **myIntLoadBalancer**. 
 
    ![Lista Todos los recursos de Azure Portal](../media/network-insights-functional-dependency-view-1.png)
 
 1. En **Supervisión**, seleccione **Conclusiones**.
-
-1. En la esquina superior derecha de la página, selecciona la **X** para cerrar el panel **Métricas** por ahora. Lo volverá a abrir en breve.
-
-1. Esta vista de página se conoce como Vista de dependencia funcional y ofrece un diagrama interactivo útil, en el que se muestra la topología del recurso de red seleccionado, en este caso un equilibrador de carga. En el caso de Standard Load Balancer, los recursos del grupo de back-end están codificados por colores con el estado de sondeo de estado que indica la disponibilidad actual del grupo de back-end para atender el tráfico.
-
-1. Use los botones **Acercar (+)** y **Alejar (-)** de la esquina inferior derecha de la página para acercar y alejar el diagrama de topología (también puede usar la rueda del mouse si tiene una). También puede arrastrar el diagrama de topología por la página para moverlo.
-
-1. Mantenga el puntero sobre el componente **LoadBalancerFrontEnd** en el diagrama y después sobre el componente **myBackendPool**.
-
-1. Observe que puede usar los vínculos de estas ventanas emergentes para ver información sobre estos componentes del equilibrador de carga y abrir sus respectivos paneles de Azure Portal.
-
-1. Para descargar una copia del archivo .SVG del diagrama de topología, selecciona **Descargar topología** y guarda el archivo en la carpeta **Descargas**.
-
-1. En la esquina superior derecha, selecciona **Ver métricas** para volver a abrir el panel de métricas en el lado derecho de la pantalla.
-    ![Vista de dependencia funcional de las conclusiones de red de Azure Monitor: botón Ver métricas resaltado](../media/network-insights-functional-dependency-view-3.png)
 
 1. En el panel Métricas se proporciona una vista rápida de algunas métricas clave para este recurso de equilibrador de carga, en forma de gráficos de barras y líneas.
 

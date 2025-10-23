@@ -19,10 +19,6 @@ En este ejercicio, aprenderá a:
 + Tarea 2: creación de un centro de conectividad mediante Azure Portal
 + Tarea 3: Conexión de una red virtual al centro de conectividad virtual
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
->
 ### Tiempo estimado: 65 minutos (incluido un tiempo de espera de implementación de aproximadamente 45 minutos)
 
 ## Tarea 1: Creación de una instancia de Virtual WAN

@@ -10,10 +10,6 @@ Exercise:
 
 En este ejercicio, creará un perfil de Traffic Manager para ofrecer alta disponibilidad para la aplicación web ficticia de la organización Contoso Ltd.
 
-### Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ### Tiempo estimado: 35 minutos
 
 Creará dos instancias de una aplicación web implementada en dos regiones diferentes (Este de EE. UU. y Oeste de Europa). La región Este de EE. UU. actuará como punto de conexión principal para Traffic Manager y la región Oeste de Europa actuará como punto de conexión de conmutación por error.
@@ -51,13 +47,13 @@ En esta sección, creará dos instancias de una aplicación web implementada en 
    | Sistema operativo | **Windows**                                                  |
    | Region           | **Este de EE. UU.**                                                  |
    | Plan de Windows     | Seleccione **Crear nuevo**  Nombre: **ContosoAppServicePlanEastUS** |
-   | Plan de precios     | **Estándar S1, 100 de total de ACU, 1,75 GB de memoria**               |
+   | Plan de precios     | **Premium V3 P1V3**  (seleccione otro plan si este no está disponible)          |
 
-1. Selecciona la pestaña **Supervisión**.
+1. Seleccione la pestaña **Supervisar y proteger**.
 
-1. En la pestaña **Supervisión**, seleccione la opción **No** para **Habilitar Application Insights**.
+1. Seleccione la opción **No** para **Habilitar Application Insights**.
 
-1. Seleccione **Revisar + crear**.
+1. Selecciona **Revisar + crear.**
 
    ![Imagen 18](../media/create-web-app-1.png)
 
